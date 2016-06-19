@@ -1,0 +1,51 @@
+@import '../../vendor/bootstrap/less/variables';
+
+table.table {
+
+  tbody {
+    tr {
+      td {
+        p {
+          margin: 0;
+        }
+
+        // Kein Abstand nach dem letzten address_tag
+        address, ul {
+          &:last-child {
+            margin-bottom: 0;
+          }
+        }
+      }
+    }
+  }
+
+  tfoot {
+    tr {
+
+      td {
+        border-left: 0;
+        border-right: 0;
+      }
+
+      &.subtotal {
+        td {
+          padding: 2px;
+          padding-right: 5px;
+        }
+      }
+
+      &.total {
+        td {
+          padding-top: 10px;
+          border-bottom: none;
+
+          &:last-child {
+            border-bottom: 3px solid black;
+            font-size: 1.05em;
+            padding-right: 5px;
+          }
+        }
+      }
+    }
+  }
+}
