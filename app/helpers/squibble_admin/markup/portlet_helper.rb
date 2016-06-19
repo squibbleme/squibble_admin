@@ -74,7 +74,7 @@ module SquibbleAdmin::Markup::PortletHelper
   end
 
   def portlet_form_additional_field_landing_page(form)
-    render partial: 'helpers/squibble_admin/markup//portlet_helper/portlet_form_additional_field_landing_page',
+    render partial: 'helpers/squibble_admin/markup/portlet_helper/portlet_form_additional_field_landing_page',
            locals: { f: form }
   end
 end

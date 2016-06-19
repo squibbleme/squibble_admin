@@ -6,6 +6,14 @@
 
 ## Integration
 
+### Gemfile
+
+```ruby
+[...]
+gem 'elasticsearch-model', git: 'git://github.com/elasticsearch/elasticsearch-rails.git'
+[...]
+```
+
 ### Helper
 
 ```ruby
