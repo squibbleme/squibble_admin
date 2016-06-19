@@ -1,4 +1,4 @@
-require "squibble_admin/version"
+require 'squibble_admin/version'
 
 module SquibbleAdmin
   class Engine < ::Rails::Engine
