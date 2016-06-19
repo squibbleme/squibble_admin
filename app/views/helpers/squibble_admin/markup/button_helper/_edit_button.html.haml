@@ -1,0 +1,13 @@
+- cache [ 'helpers/squibble_admin/markup/button_helper/edit_button', size, path ] do
+  - case size
+  - when :small
+    = link_to ( enabled ? path : 'javascript:;' ), class: [ default_light_blue, 'btn btn-xs' ], title: t('helpers.edit'), disabled: !enabled do
+      %i.fa.fa-pencil-square
+  - when :default
+    = link_to ( enabled ? path : 'javascript:;' ), class: [ default_light_blue, 'btn' ], title: t('helpers.edit'), disabled: !enabled do
+      %i.fa.fa-pencil-square
+      %span= t 'helpers.application_helper.edit_button.default_text'
+  - when :large
+    = link_to ( enabled ? path : 'javascript:;' ), class: [ default_light_blue, 'btn btn-lg' ], title: t('helpers.edit'), disabled: !enabled do
+      %i.fa.fa-pencil-square
+      %span= t 'helpers.application_helper.edit_button.large_text'

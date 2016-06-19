@@ -1,7 +1,7 @@
 # coding: utf-8
 lib = File.expand_path('../lib', __FILE__)
 $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
-require 'squibble_validators/version'
+require 'squibble_admin/version'
 
 Gem::Specification.new do |spec|
   spec.name          = "squibble_admin"

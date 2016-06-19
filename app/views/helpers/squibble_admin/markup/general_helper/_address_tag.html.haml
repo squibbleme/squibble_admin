@@ -1,0 +1,15 @@
+- cache [ 'helpers/squibble_admin/markup/general_helper/address_tag', resource ] do
+  %address
+    - if resource.name.present? && options[:hide_name] != true
+      %span.address-name
+        %strong= resource.name
+      %br/
+
+    %span.address-street= resource.street
+
+    %br/
+    - if resource.country.present?
+      %span.address-country= resource.country
+
+    %span.address-zip_code= resource.zip_code
+    %span.address-town= resource.town
