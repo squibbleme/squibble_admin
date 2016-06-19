@@ -38,7 +38,7 @@ module SquibbleAdmin::Markup::GeneralHelper
   # Diese Methode kümmert sich um die einheitliche Ausgabe der Timestamps
   # für die Detailseiten von Datensätzen.
   def show_timestamps(show, resourze = resource)
-    render partial: 'helpers/squibble_admin/markup/general_helpershow_timestamps',
+    render partial: 'helpers/squibble_admin/markup/general_helper/show_timestamps',
            locals: { resource: resource, show: show }
   end
 end
