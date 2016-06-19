@@ -1,0 +1,7 @@
+- cache [ 'helpers/squibble_admin/markup/google_helper/google_map_for_address', resource, options ] do
+  - if resource.coordinates?
+    %div.google-map-for-address{ id: resource.id, data: { latitude: resource.latitude, longitude: resource.longitude, full_address: resource.full_address, options: options }, style: "height: #{options[:height]}px;" }
+  - else
+    .note.note-info
+      Für diese Adresse stehen aktuell keine
+      Koordinaten zur Verfügung.

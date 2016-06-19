@@ -1,0 +1,6 @@
+- cache [ 'helpers/squibble_admin/markup/general_helper/async_background_processing', resource ] do
+  = show.attribute :async_background_processing do
+    = resource.async_background_processing_translated
+
+    %span.pull-right
+      = async_background_processing_icon(resource.async_background_processing)

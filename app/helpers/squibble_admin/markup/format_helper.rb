@@ -16,6 +16,10 @@ module SquibbleAdmin::Markup::FormatHelper
     end
   end
 
+  def nl2br(text)
+    text.gsub(/\n/, '<br />').html_safe
+  end
+
   def sq_distance(value, unit = :km)
     Rails.cache.fetch ['SquibbleAdmin::Markup::FormatHelper.sq_distance', value, unit] do
       content_tag(:span, "#{number_with_precision(value, precision: 2, separator: '.', delimiter: ' ')} #{unit}", class: 'sq-distance')
