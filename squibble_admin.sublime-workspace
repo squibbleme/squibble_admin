@@ -519,14 +519,6 @@
 	},
 	"buffers":
 	[
-		{
-			"file": "app/helpers/squibble_admin/markup/format_helper.rb",
-			"settings":
-			{
-				"buffer_size": 2704,
-				"line_ending": "Unix"
-			}
-		}
 	],
 	"build_system": "",
 	"build_system_choices":
@@ -783,34 +775,35 @@
 	[
 		"/Z/squibble/plugins/squibble_admin",
 		"/Z/squibble/plugins/squibble_admin/app",
-		"/Z/squibble/plugins/squibble_admin/app/helpers",
-		"/Z/squibble/plugins/squibble_admin/app/helpers/squibble_admin",
+		"/Z/squibble/plugins/squibble_admin/app/controllers/concerns",
+		"/Z/squibble/plugins/squibble_admin/app/controllers/concerns/squibble",
 		"/Z/squibble/plugins/squibble_admin/app/helpers/squibble_admin/markup",
-		"/Z/squibble/plugins/squibble_admin/app/views",
 		"/Z/squibble/plugins/squibble_admin/app/views/helpers",
 		"/Z/squibble/plugins/squibble_admin/app/views/helpers/squibble_admin",
 		"/Z/squibble/plugins/squibble_admin/app/views/helpers/squibble_admin/markup",
 		"/Z/squibble/plugins/squibble_admin/app/views/helpers/squibble_admin/markup/portlet_helper",
 		"/Z/squibble/plugins/squibble_admin/app/views/helpers/squibble_admin/markup/resource_helper",
-		"/Z/squibble/plugins/squibble_admin/app/workers/slack",
-		"/Z/squibble/plugins/squibble_admin/config/locales",
 		"/Z/squibble/plugins/squibble_admin/lib",
 		"/Z/squibble/plugins/squibble_admin/lib/squibble_admin"
 	],
 	"file_history":
 	[
+		"/Z/squibble/plugins/squibble_admin/app/controllers/concerns/squibble/meta_keyword_attributes.rb",
+		"/Z/squibble/plugins/squibble_admin/app/uploaders/squibble_base_uploader.rb",
+		"/Z/squibble/plugins/squibble_admin/app/controllers/concerns/squibble/landing_page_attributes.rb",
+		"/Z/squibble/plugins/squibble_admin/README.md",
+		"/Z/squibble/plugins/squibble_admin/app/views/helpers/squibble_admin/markup/portlet_helper/_portlet_form_additional_field_landing_page.html.haml",
+		"/Z/squibble/plugins/squibble_admin/app/helpers/squibble_admin/markup/format_helper.rb",
 		"/Z/squibble/plugins/squibble_admin/app/helpers/squibble_admin/markup/portlet_helper.rb",
 		"/Z/squibble/plugins/squibble_admin/Gemfile",
 		"/Z/squibble/plugins/squibble_admin/lib/squibble_admin/version.rb",
 		"/Z/squibble/plugins/squibble_admin/lib/squibble_admin.rb",
-		"/Z/squibble/plugins/squibble_admin/app/views/helpers/squibble_admin/markup/portlet_helper/_portlet_form_additional_field_landing_page.html.haml",
 		"/Z/squibble/plugins/squibble_admin/app/workers/elasticsearch/indexer_worker.rb",
 		"/Z/squibble/plugins/squibble_admin/pkg/squibble_admin-0.0.1.gem",
 		"/Z/squibble/plugins/squibble_admin/app/assets/stylesheets/squibble_admin/general/password.less",
 		"/Z/squibble/plugins/squibble_admin/app/assets/stylesheets/squibble_admin/general/table-tiny.less",
 		"/Z/krolop-gerst/www-krolop-gerst-com/app/assets/stylesheets/general/layout.less",
 		"/Z/squibble/plugins/squibble_admin/squibble_admin.gemspec",
-		"/Z/squibble/plugins/squibble_admin/README.md",
 		"/Z/krolop-gerst/www-krolop-gerst-com/app/views/admin/_form_actions.html.haml",
 		"/Z/krolop-gerst/www-krolop-gerst-com/app/workers/elasticsearch/tracking_worker.rb",
 		"/Z/squibble/plugins/squibble_admin/app/helpers/squibble_admin/resource_helper.rb",
@@ -828,7 +821,6 @@
 		"/Z/squibble/plugins/squibble_admin/app/views/helpers/squibble_admin/markup/general_helper/_address_tag.html.haml",
 		"/Z/squibble/plugins/squibble_admin/app/views/helpers/squibble_admin/markup/google_helper/_google_map_for_address.html.haml",
 		"/Z/squibble/plugins/squibble_admin/app/views/helpers/squibble_admin/markup/general_helper/_show_timestamps.html.haml",
-		"/Z/squibble/plugins/squibble_admin/app/helpers/squibble_admin/markup/format_helper.rb",
 		"/Z/squibble/plugins/squibble_admin/app/views/helpers/squibble_admin/markup/button_helper/_show_button.html.haml",
 		"/Z/squibble/plugins/squibble_admin/app/views/helpers/squibble_admin/markup/button_helper/_edit_button.html.haml",
 		"/Z/squibble/plugins/squibble_admin/app/views/helpers/squibble_admin/markup/button_helper/_destroy_button.html.haml",
@@ -923,10 +915,7 @@
 		"/Z/squibble/squibble-2016/app/operations/business/order/calculate_price_operation.rb",
 		"/Z/squibble/squibble-2016/app/operations/business/order/position/calculate_price_operation.rb",
 		"/Z/squibble/squibble-2016/app/models/business/accounting_year.rb",
-		"/Z/squibble/squibble-2016/app/views/print/business/invoices/_table_row.html.haml",
-		"/Z/squibble/squibble-2016/app/views/print/business/invoices/_table_head.html.haml",
-		"/Z/squibble/squibble-2016/app/views/print/business/accounts/accounting_years.html.haml",
-		"/Z/squibble/squibble-2016/app/controllers/admin/business/payments_controller.rb"
+		"/Z/squibble/squibble-2016/app/views/print/business/invoices/_table_row.html.haml"
 	],
 	"find":
 	{
@@ -937,6 +926,7 @@
 		"height": 327.0,
 		"where_history":
 		[
+			"Z:\\squibble\\plugins\\squibble_admin\\app\\helpers\\squibble_admin\\markup",
 			"Z:\\squibble\\squibble-2016\\app\\controllers",
 			"Z:\\squibble\\squibble-2016\\app\\operations\\business\\accounting_year",
 			"Z:\\squibble\\squibble-2016\\app\\assets\\stylesheets\\admin",
@@ -982,6 +972,7 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"portlet_form_additional_field_landing_page",
 			"landing_",
 			"ids_permitted_params",
 			"updated_at",
@@ -1108,8 +1099,7 @@
 			"address:",
 			"active",
 			"actions",
-			"accounting_year",
-			"backend"
+			"accounting_year"
 		],
 		"highlight": true,
 		"in_selection": false,
@@ -1184,42 +1174,8 @@
 	"groups":
 	[
 		{
-			"selected": 0,
 			"sheets":
 			[
-				{
-					"buffer": 0,
-					"file": "app/helpers/squibble_admin/markup/format_helper.rb",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 2704,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								1599,
-								1599
-							]
-						],
-						"settings":
-						{
-							"editorconfig": true,
-							"ensure_newline_at_eof_on_save": true,
-							"syntax": "Packages/Ruby/Ruby.sublime-syntax",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true,
-							"trim_trailing_white_space_on_save": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 0,
-					"type": "text"
-				}
 			]
 		}
 	],
@@ -1816,7 +1772,7 @@
 	"show_open_files": false,
 	"show_tabs": true,
 	"side_bar_visible": true,
-	"side_bar_width": 461.0,
+	"side_bar_width": 580.0,
 	"status_bar_visible": true,
 	"template_settings":
 	{
