@@ -1,0 +1,6 @@
+%table.table.table-hover.table-striped.table-condensed
+  %thead
+    %tr
+      = render partial: 'table_head'
+  %tbody
+    = render partial: 'table_row', collection: collection, as: :resource

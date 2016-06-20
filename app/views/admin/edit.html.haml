@@ -1,0 +1,9 @@
+- content_for :page_head do
+  - if @page_title.present?
+    %h1
+      = @page_title
+      - if @subtitle.present?
+        %small= @subtitle
+
+%section.sq-resource-edit{ id: "sq_resource:edit:#{resource.id}" }
+  = render 'form'

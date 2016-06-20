@@ -1,0 +1,15 @@
+- if resource.preview?
+  .col-md-3
+    = portlet do
+      = portlet_title do
+        = portlet_title_caption resource_attribute_name(:preview)
+      = portlet_body do
+        = image_tag resource.preview.thumb.url, class: 'img-responsive'
+
+        %hr
+
+        = show.attribute :preview_file_name
+        = show.attribute :preview_file_size do
+          = number_to_human_size resource.preview_file_size
+        = show.attribute :preview_extension
+        = show.attribute :preview_content_type

@@ -1,0 +1,27 @@
+.admin-index-filter
+  .input-group
+    - cache [ 'admin/index_filter/dropdown', current_principal, resource_class, params] do
+      .input-group-btn
+        %button.btn.btn-default.btn-sm.dropdown-toggle{ type: :button, data: { toggle: :dropdown, hower: :dropdown, close: { others: :true } } }
+          = t('routes.admin.index.filter.label')
+          %i.fa.fa-angle-down
+
+        %ul.dropdown-menu{ role: :menu }
+          %li
+            = link_to t('helpers.show_all'), collection_path, class: ( request.query_parameters.empty? ? default_light_blue : nil )
+          - @scopes_configuration.each do |key, scope_configuration|
+            - if scope_configuration[:type] == :boolean
+              %li{ class: ( params[key] == 'true' ? 'active' : nil ) }
+                = render 'admin/index_filter_list_item', resource_class: resource_class, key: key
+
+    - cache [ 'admin/index_filter/search', current_principal, resource_class, params[:query] ] do
+      %form.search-form{ action: collection_path, method: :get }
+        %input.form-control.input-sm{ type: :search, placeholder: t('routes.admin.index.filter.search.placeholder'), value: params[:query], name: :query, autofocus: true, data: { url: api_v1_general_search_suggestions_path( subject_class: ActiveModel::Naming.singular(resource_class) ) } }
+
+      .input-group-btn
+        %button.btn.btn-sm.btn-default{ type: :submit, data: { toggle: :tooltip }, title: t('routes.admin.index.filter.search.label') }
+          %i.fa.fa-search
+
+        - unless params[:query].nil?
+          %a.btn.btn-sm.btn-default{ href: collection_path, data: { toggle: :tooltip }, title: t('routes.admin.index.filter.search.reset') }
+            %i.fa.fa-times

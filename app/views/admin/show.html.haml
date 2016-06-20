@@ -1,0 +1,19 @@
+- breadcrumb default_breadcrumb_symbol(params), resource
+
+- content_for :page_head do
+  - if @page_title.present?
+    %h1
+      = @page_title
+      - if @subtitle.present?
+        %small= @subtitle
+
+%section.admin_show.sq-resource-show{ id: "sq_resource:show:#{resource.id}", class: resource_class.to_s.parameterize.underscore }
+  = render 'show_dashboard', resource: resource
+
+  - cache [ 'admin/show/show_for', resource ] do
+    = show_for resource do |show|
+      = render 'show_general', show: show
+
+  %a.hidden-print{ class: [ default_button_classes, default_light_blue ], href: collection_path }
+    %i.fa.fa-angle-double-left
+    = t 'helpers.back_to_overview'

@@ -1,0 +1,5 @@
+- cache [ 'admin/index_filter_list_item', current_principal, resource_class, key, params[key] ] do
+  = link_to collection_path( key => true) do
+    = route_translation "filters.#{key}"
+    - if params[key] == 'true'
+      %i.fa.fa-filter.pull-right

@@ -1,0 +1,11 @@
+- cache [ 'admin/index/empty_collection', resource_class, params[:query] ] do
+  .row
+    .col-lg-6
+      .note.note-info
+        - if params[:query].nil?
+          %strong= t('helpers.clue')
+          = t('helpers.collections.no_resources_found')
+
+        - else
+          %strong= t('routes.admin.index.filter.search.label')
+          = t('routes.admin.index.filter.collection_empty', query: params[:query]).html_safe

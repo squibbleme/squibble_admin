@@ -1,0 +1,23 @@
+- cache [ 'admin/index/filters_and_actions/actions', resource_class, current_admin_user, current_principal ] do
+  - unless actions.nil?
+
+    - if actions.length < 3
+      - actions.each do |action|
+        - cache [ 'admin/index_actions/button_item', action[:path], action[:resource_class]] do
+          .btn-group
+            = link_to action[:path], class: [ 'btn btn-sm', default_green ] do
+              %i.fa.fa-plus
+              = t('helpers.new_resource', model_name: translated_resource_class(action[:resource_class]))
+    - else
+      .btn-group
+        %a.dropdown-toggle{ class: [ default_button_classes, 'btn-sm', default_green ], type: :button, data: { toggle: :dropdown, hower: :dropdown, close: { others: :true } } }
+          = t('routes.admin.index.actions.label')
+          %i.fa.fa-angle-down
+
+        %ul.dropdown-menu{ role: :menu }
+          - actions.each do |action|
+            - cache [ 'admin/index_actions/dropdown_item', action[:path], action[:resource_class]] do
+              %li
+                = link_to action[:path] do
+                  %i.fa.fa-plus
+                  = t('helpers.new_resource', model_name: translated_resource_class(action[:resource_class]))
