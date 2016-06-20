@@ -47,8 +47,6 @@
   end
 ```
 
-
-
 ### Helper
 
 ```ruby
