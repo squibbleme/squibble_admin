@@ -57,7 +57,18 @@ module ApplicationHelper
 end
 ```
 
+#### Dashboard Custom
+
+```haml
+  = show_dashboard_custom do
+    = show_dashboard_custom_link print_business_invoice_path(resource.id), icon: 'fa fa-print', label: route_translation(:'dashboard.print_with_esr')
+
+  = show_dashboard_custom do
+    = show_dashboard_custom_link admin_business_period_generate_csv_analysis_path(period_id: resource.id), method: :post, icon: 'fa fa-line-chart', label: resource_attribute_name(:generate_csv_analysis)
+```
+
 ## Changelog
 
 * 19.06.2016: Init
 * 20.06.2016: Auslagerung der :permitted_params für :landing_page und :meta_keywords in Controller Concern
+* 20.06.2016: Helper für DashboardCustom
