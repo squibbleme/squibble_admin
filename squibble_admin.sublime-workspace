@@ -528,10 +528,13 @@
 			}
 		},
 		{
-			"file": "README.md",
+			"contents": "- content_for :page_head do\n  - cache [ 'admin/index/page_head', resource_class, collection.total_count ] do\n    %h1\n      = translated_resource_class(resource_class, collection.total_count)\n      %small= page_entries_info collection\n\n- content_for :page_subheading do\n  .row.hidden-print.margin-bottom-15\n    .col-md-8\n    \n      = render 'admin/index_actions', actions: @actions_index, resource_class: resource_class, current_admin_user: current_admin_user, current_principal: current_principal\n\n    .col-md-4\n      = render 'admin/index_filter', resource_class: resource_class\n\n- cache index_collection_cache_key_with_pagination do\n  - breadcrumb \"admin_#{params[:controller].sub('admin/', '').gsub('/', '_')}\".to_sym\n\n  %section#sq_collection.admin_index\n    - if collection.empty?\n      = render 'admin/index_collection_empty', resource_class: resource_class, params: params\n    - else\n      = render partial: list_partial_type.to_s, locals: { collection: collection }\n      = paginate collection\n",
+			"file": "app/views/admin/index.html.haml",
+			"file_size": 997,
+			"file_write_time": 131108845802898134,
 			"settings":
 			{
-				"buffer_size": 1568,
+				"buffer_size": 1002,
 				"line_ending": "Unix"
 			}
 		}
@@ -791,15 +794,22 @@
 	[
 		"/Z/squibble/plugins/squibble_admin",
 		"/Z/squibble/plugins/squibble_admin/app",
-		"/Z/squibble/plugins/squibble_admin/app/helpers",
-		"/Z/squibble/plugins/squibble_admin/app/helpers/squibble_admin",
-		"/Z/squibble/plugins/squibble_admin/app/helpers/squibble_admin/markup",
-		"/Z/squibble/plugins/squibble_admin/lib/squibble_admin"
+		"/Z/squibble/plugins/squibble_admin/app/views",
+		"/Z/squibble/plugins/squibble_admin/app/views/admin"
 	],
 	"file_history":
 	[
-		"/Z/squibble/plugins/squibble_admin/app/helpers/squibble_admin/markup/show_helper.rb",
 		"/Z/squibble/plugins/squibble_admin/README.md",
+		"/Z/squibble/plugins/squibble_admin/app/views/admin/_helpers/_preview_show.html.haml",
+		"/Z/squibble/plugins/squibble_admin/app/views/admin/_form.html.haml",
+		"/Z/squibble/plugins/squibble_admin/app/views/admin/_form_actions.html.haml",
+		"/Z/squibble/plugins/squibble_admin/app/views/admin/edit.html.haml",
+		"/Z/squibble/plugins/squibble_admin/app/views/admin/new.html.haml",
+		"/Z/squibble/plugins/squibble_admin/app/views/admin/_table.html.haml",
+		"/Z/squibble/plugins/squibble_admin/app/views/admin/_show_dashboard.html.haml",
+		"/Z/squibble/plugins/squibble_admin/app/views/admin/_index_filter_list_item.html.haml",
+		"/Z/squibble/plugins/squibble_admin/app/views/admin/show.html.haml",
+		"/Z/squibble/plugins/squibble_admin/app/helpers/squibble_admin/markup/show_helper.rb",
 		"/Z/squibble/plugins/squibble_admin/app/controllers/concerns/squibble/meta_keyword_attributes.rb",
 		"/Z/squibble/plugins/squibble_admin/app/uploaders/squibble_base_uploader.rb",
 		"/Z/squibble/plugins/squibble_admin/app/controllers/concerns/squibble/landing_page_attributes.rb",
@@ -916,16 +926,7 @@
 		"/Z/squibble/squibble-2016/app/controllers/print/business/accounts_code_controller.rb",
 		"/Z/squibble/squibble-2016/app/models/business/invoice.rb",
 		"/Z/squibble/squibble-2016/app/models/business/price.rb",
-		"/Z/squibble/squibble-2016/app/models/business/invoice/reversal.rb",
-		"/Z/squibble/squibble-2016/app/models/business/order/position.rb",
-		"/Z/squibble/squibble-2016/app/models/business/account.rb",
-		"/Z/squibble/squibble-2016/app/views/admin/business/invoices/_show_general.html.haml",
-		"/Z/squibble/squibble-2016/app/models/business/payment_receipt.rb",
-		"/Z/squibble/squibble-2016/app/operations/business/invoice/create_reversal_operation.rb",
-		"/Z/squibble/squibble-2016/app/workers/business/order/calculate_price_worker.rb",
-		"/Z/squibble/squibble-2016/app/operations/business/order/calculate_price_operation.rb",
-		"/Z/squibble/squibble-2016/app/operations/business/order/position/calculate_price_operation.rb",
-		"/Z/squibble/squibble-2016/app/models/business/accounting_year.rb"
+		"/Z/squibble/squibble-2016/app/models/business/invoice/reversal.rb"
 	],
 	"find":
 	{
@@ -1200,8 +1201,8 @@
 						"selection":
 						[
 							[
-								39,
-								39
+								45,
+								45
 							]
 						],
 						"settings":
@@ -1223,19 +1224,19 @@
 				},
 				{
 					"buffer": 1,
-					"file": "README.md",
+					"file": "app/views/admin/index.html.haml",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 1568,
+						"buffer_size": 1002,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								1568,
-								1568
+								324,
+								324
 							]
 						],
 						"settings":
@@ -1243,13 +1244,13 @@
 							"color_scheme": "Packages/User/Color Highlighter/themes/Monokai.tmTheme",
 							"editorconfig": true,
 							"ensure_newline_at_eof_on_save": true,
-							"syntax": "Packages/Markdown/Markdown.sublime-syntax",
+							"syntax": "Packages/Rails/Ruby Haml.sublime-syntax",
 							"tab_size": 2,
 							"translate_tabs_to_spaces": true,
-							"trim_trailing_white_space_on_save": false
+							"trim_trailing_white_space_on_save": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 1200.0,
+						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 0,

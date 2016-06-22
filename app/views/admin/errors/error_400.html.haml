@@ -1,0 +1,17 @@
+.row
+  .col-md-12.page-404
+    .number 400
+    .details
+      %h3
+        Error 400
+        %small Bad Request
+
+      %p
+        = link_to 'Back to Dashboard', root_path, class: %w(btn btn-default)
+
+
+      - if admin_user_signed_in? and current_admin_user.role? :super_administrator
+        = debug(params)
+        - begin
+          = debug(exception)
+        - rescue Exception

@@ -1,0 +1,26 @@
+%section.error
+  .row
+    .col-md-6
+      %h1
+        Suche
+        %small Fehler bei der Suchanfrage
+      %p.lead
+        Bei Ihrer Suchanfrage ist ein Fehler aufgetreten. Bitte versuchen Sie es erneut oder wenden Sie sich an unseren
+        = mail_to Settings.site.support.email do
+          = Settings.site.support.email
+
+      %p
+        Kehren Sie
+        %a{ href: admin_dashboard_path } hier
+        direkt zum Dashboard zurück.
+
+
+    - if admin_user_signed_in? and current_admin_user.role? :super_administrator
+      .col-md-6
+        %h3 Exception
+        %blockquote= exception.message
+
+        %hr
+
+        %h3 Params
+        %blockquote= params
