@@ -1,0 +1,46 @@
+@import 'app/assets/vendor/bootstrap/less/variables';
+
+table.table {
+
+  &.table-tiny {
+    thead tr th,
+    tbody tr td,
+    tfoot tr td {
+      padding: 2px 3px;
+      font-size: 8pt;
+      line-height: 10pt;
+      vertical-align: top;
+      font-family: 'Arial Narrow';
+
+      small {
+        font-size: 7pt;
+      }
+    }
+
+    tbody tr {
+      &:nth-child(odd) td {
+        background-color: #f9f9f9 !important;
+      }
+    }
+  }
+
+
+  // Tabelleneinträge deaktivieren
+  //
+  tbody {
+    tr.disabled {
+      td,
+      td *,
+      td i.fa {
+        color: lighten(@text-color, 60%) !important;
+      }
+    }
+    tr.disabled-light {
+      td,
+      td *,
+      td i.fa {
+        color: lighten(@text-color, 30%) !important;
+      }
+    }
+  }
+}

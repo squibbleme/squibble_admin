@@ -1,0 +1,19 @@
+@import 'for';
+@kind-list: margin, padding;
+@position-list: top, bottom, left, right;
+@screen-xlg: 1600px;
+
+.loop-simple(@j:50) when (@j >= 0){
+
+  .for(@kind-list); .-each(@kind){
+
+    .for(@position-list); .-each(@position){
+
+      .@{kind}-@{position}-@{j}{
+        @{kind}-@{position}: @j * 1px;
+      }
+    }
+  }
+  .loop-simple((@j - 10));
+}
+.loop-simple();

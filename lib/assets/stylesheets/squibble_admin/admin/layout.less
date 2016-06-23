@@ -1,0 +1,141 @@
+@import 'app/assets/vendor/bootstrap/less/variables';
+@import 'app/assets/vendor/lesshat/build/lesshat';
+
+body.rails-env-development {
+
+  nav.navbar {
+    ul.nav {
+      &>li:first-child {
+        border-left: 15px solid #d14836;
+      }
+    }
+  }
+
+  .page-content {
+    border-left: 5px solid #d14836;
+    padding-left: 25px;
+
+    border-bottom: 3px solid #d14836;
+    padding-bottom: 27px;
+
+    @media( max-width: @screen-md ) {
+      .breadcrumbs {
+        margin-bottom: 0;
+
+        h1 {
+          margin-bottom: 0;
+        }
+      }
+    }
+  }
+}
+
+.page-header.navbar {
+  .page-logo {
+    .logo-default {
+      margin-top: 13px;
+    }
+  }
+}
+
+// Logo Bild
+//
+.class-logo {
+  img {
+    height: 50px;
+    width: auto;
+  }
+}
+
+
+.page-breadcrumb {
+  li {
+
+    &:after {
+      content: "\f105";
+      font-family: FontAwesome;
+
+      margin: 0 5px;
+    }
+
+    &:last-child {
+      &:after {
+        content: none;
+      }
+    }
+  }
+}
+
+.portlet {
+  address,
+  ul {
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+}
+
+
+a {
+  small.text-muted {
+    color: @link-color;
+  }
+}
+
+// Markieren des aktiven Navigationseintrages
+// mit einem Icon
+//
+nav.navbar {
+
+  ul.dropdown-menu {
+    li.dropdown-menu-item {
+      &.active {
+        a {
+
+          &:after {
+            margin-left: 10px;
+            content: "\f101";
+            font-family: FontAwesome;
+          }
+        }
+      }
+    }
+  }
+}
+
+
+.margin (@index) when (@index >= 0) {
+  @value: (@index*10);
+
+  .margin-top-@{value} {
+    margin-top: (@value);
+  }
+  .margin-left-@{value} {
+    margin-left: (@value);
+  }
+  .margin-bottom-@{value} {
+    margin-bottom: (@value);
+  }
+  .margin-right-@{value} {
+    margin-right: (@value);
+  }
+
+  .margin(@index - 1);
+}
+
+.margin (5);
+
+
+// Überschreiben der "Standard Grünen Buttons"
+//
+.green-button () {
+  background-color: #1BBC9B;
+  .transition(all 0.5s ease-in-out);
+
+
+  &:hover {
+    background-color: #26C281;
+  }
+}
+
+

@@ -1,0 +1,8 @@
+%section#sq-flash
+  %div{ class: container ? 'container' : nil }
+    - if notice.present?
+      .note.note-success
+        = notice.html_safe
+    - if alert.present?
+      .note.note-danger
+        = alert.html_safe

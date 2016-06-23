@@ -1,0 +1,49 @@
+@import 'app/assets/vendor/bootstrap/less/variables';
+@import 'app/assets/vendor/lesshat/build/lesshat';
+
+.form-body {
+  .form-group {
+
+    .help-block {
+      display: block;
+      position: relative;
+      width: 100%;
+    }
+  }
+}
+
+.form-actions {
+
+  .portlet.light {
+    padding: 0px;
+    margin-bottom: 0;
+    border: none !important;
+
+    .portlet-body {
+      padding-top: 0;
+
+      @media ( max-width: @grid-float-breakpoint-max) {
+
+        .btn {
+          width: 100%;
+          margin-bottom: 3px;
+
+          &:last-child {
+            margin-bottom: 0;
+          }
+        }
+      }
+    }
+  }
+}
+
+// Entfernen des riesigen Abstandes unter Eingabe-
+// elementen
+//
+.form-group.form-md-line-input {
+  margin-bottom: 0;
+
+  .help-block {
+    .opacity(1);
+  }
+}

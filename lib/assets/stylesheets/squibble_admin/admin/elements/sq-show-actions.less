@@ -1,0 +1,146 @@
+@import 'app/assets/vendor/bootstrap/less/variables';
+@import 'app/assets/vendor/bootstrap/less/mixins';
+@import 'app/assets/vendor/lesshat/build/lesshat';
+
+.sq-actions {
+  .make-lg-column(4);
+
+  @media (max-width: @grid-float-breakpoint-max) {
+    padding-top: @grid-gutter-width/2;
+    padding-bottom: @grid-gutter-width/2;
+  }
+
+  .sq-actions-container {
+    .make-row();
+  }
+  .sq-action {
+    .make-xs-column(6);
+    .make-sm-column(4);
+    .make-md-column(3);
+
+    margin-bottom: @grid-gutter-width/2;
+
+    @media (min-width: @grid-float-breakpoint) {
+      float: right !important;
+    }
+  }
+
+  .sq-action {
+
+    //@media (min-width: @grid-float-breakpoint) {
+    //  &:first-child {
+    //    margin-right: -15px;
+    //  }
+    //}
+
+    a {
+      background-color: #E1E5EC;
+
+      span,
+      i.fa {
+        color: #666;
+
+        .transition(0.5s all ease-in-out);
+      }
+
+      &:hover {
+        i.fa {
+          color: #333;
+        }
+      }
+
+      &:active {
+        text-decoration: none;
+      }
+    }
+
+    &.sq-action-edit {
+
+      a {
+        background-color: #67809F;
+
+        span,
+        i.fa {
+          color: #FAFAFA;
+        }
+
+        &:hover {
+          background-color: #578EBE;
+
+          .i.fa {
+            color: white;
+          }
+        }
+      }
+    }
+
+    &.sq-action-clone {
+
+      a {
+        background-color: #1BBC9B;
+
+        span,
+        i.fa {
+          color: #FAFAFA;
+        }
+
+        &:hover {
+          background-color: #26C281;
+
+          .i.fa {
+            color: white;
+          }
+        }
+      }
+    }
+
+    &.sq-action-destroy {
+
+      a {
+        background-color: #d9534f;
+
+        span,
+        i.fa {
+          color: white;
+        }
+
+        &:hover {
+          background-color: #D91E18;
+        }
+      }
+    }
+
+    a {
+
+      padding-top: 12px;
+      padding-bottom: 15px;
+
+      text-align: center;
+
+      width: 100%;
+      height: 100%;
+      display: inline-block;
+
+      .transition(all 0.5s ease-in-out);
+
+      .sq-action-title,
+      .sq-action-text {
+        display: block;
+      }
+
+      .sq-action-title {
+        color: #7f90a4;
+        font-size: 25px;
+      }
+      .sq-action-text {
+        height: 1.05em;
+        overflow: hidden;
+        color: #5b9bd1;
+        font-size: 11px;
+        font-weight: 800;
+        text-transform: uppercase;
+      }
+    }
+
+  }
+}
