@@ -73,3 +73,5 @@ end
 * 20.06.2016: Auslagerung der :permitted_params für :landing_page und :meta_keywords in Controller Concern
 * 20.06.2016: Helper für DashboardCustom
 * 22.06.2016: Auslagern der admin/errors Templates
+* 23.06.2016: Auslagerung der Standard Assets (admin und general)
+* 23.06.2016: Auslagerung des Helpers für Flash Messages
