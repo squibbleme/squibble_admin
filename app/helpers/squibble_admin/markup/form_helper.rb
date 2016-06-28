@@ -2,7 +2,7 @@ module SquibbleAdmin::Markup::FormHelper
   def form_field_ckeditor(principal, form, key, options = {})
     base_options = { class: 'ckeditor' }
 
-    if principal.main_domain_connected.present?
+    if !principal.nil? && principal.main_domain_connected.present?
       base_options['data-ckeditor-base-href'] = principal.main_domain_connected.squibble_alias.find_by(key: :production).uri
       base_options['data-ckeditor-assets-name'] = '/assets/application-custom.css,/assets/application-squibble.css,/assets/application-vendor.css'
     end
