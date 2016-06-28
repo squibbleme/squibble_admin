@@ -1,12 +1,12 @@
 .form-actions
   = portlet do
     = portlet_body do
-      %a{ class: [default_button_classes, default_light_blue], href: collection_path }
+      %a.btn-default{ class: [default_button_classes], href: collection_path }
         %i.fa.fa-angle-double-left
         = t('helpers.back_to_overview')
 
       - unless resource.new_record?
-        %a{ class: [ default_button_classes, default_light_blue ], href: resource_path(resource.id) }
+        %a.btn-default{ class: [ default_button_classes ], href: resource_path(resource.id) }
           = t('helpers.admin.form.actions.buttons.detail_button.label', model_name: translated_resource_class)
 
       = f.button :submit, class: [ default_button_classes, default_green, :save_resource ]
