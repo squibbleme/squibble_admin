@@ -9,11 +9,11 @@ class Elasticsearch::IndexerWorker
 
     case operation.parameterize.underscore.to_sym
     when :index
-      resource = eval(resource_class).find(resource_id)
-      resource.__elasticsearch__.index_document
+      resource = _get_resource(resource_class, resource_id)
+      resource.__elasticsearch__.index_document unless resource.nil?
     when :update
-      resource = eval(resource_class).find(resource_id)
-      resource.__elasticsearch__.update_document
+      resource = _get_resource(resource_class, resource_id)
+      resource.__elasticsearch__.update_document unless resource.nil?
     when :destroy
       begin
         eval(resource_class).__elasticsearch__.client.delete(
@@ -27,5 +27,15 @@ class Elasticsearch::IndexerWorker
     else
       log(:error, "Unregistered operation #{operation} called.")
     end
+  end
+
+  private
+
+  def _get_resource(resource_class, resource_id)
+    eval(resource_class).find(resource_id)
+  rescue Mongoid::Errors::DocumentNotFound
+    msg = "Unable to find #{resource_class} ##{resource_id}"
+    log(:error, msg, resource_class: resource_class, resource_id: resource_id)
+    return nil
   end
 end
