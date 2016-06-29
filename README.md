@@ -75,3 +75,4 @@ end
 * 22.06.2016: Auslagern der admin/errors Templates
 * 23.06.2016: Auslagerung der Standard Assets (admin und general)
 * 23.06.2016: Auslagerung des Helpers für Flash Messages
+* 29.06.2016: Squibble::Mongoid::Tree::TouchParent Concern, welcher bei :save und :touch einen :touch auf den :parent Objekten ausführt
