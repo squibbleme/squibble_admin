@@ -47,6 +47,16 @@
   end
 ```
 
+### Model Concerns
+
+#### Squibble::Mongoid::Tree::TouchParent
+
+  Soll ein Model bei :touch und :save auf den :parent-Objekten ebenfalls ein :touch auslösen, so muss nur im Model selbst folgender include eingetragen werden:
+
+```ruby
+  include Squibble::Mongoid::Tree::TouchParent
+```
+
 ### Helper
 
 ```ruby
