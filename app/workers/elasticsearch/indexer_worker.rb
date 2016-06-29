@@ -1,7 +1,7 @@
 class Elasticsearch::IndexerWorker
   include Sidekiq::Worker
   include SquibbleService
-  sidekiq_options queue: Settings.sidekiq.default_queue,
+  sidekiq_options queue: Settings.sidekiq.squibble_elasticsearch,
                   retry: false
 
   def perform(callback_method, resource_class, operation, resource_id)
