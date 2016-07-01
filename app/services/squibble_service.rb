@@ -31,10 +31,10 @@ module SquibbleService
       #         "#{self.class}: #{message} {#{options_array.join(', ')}}"
       #       end
 
-      entry = Elasticsearch::LogEntry.new(class: self.class, level: level, message: message, options: options)
+      entry = Elasticsearch::LogEntry.new(class_name: self.class.to_s, level: level, message: message, options: options)
       entry.save
 
-      eval("Rails.logger.application.#{level} \'#{message}\'")
+      # eval("Rails.logger.application.#{level} \'#{message}\'")
 
       return unless Rails.env.production?
       if [:error, :fatal].include?(level)

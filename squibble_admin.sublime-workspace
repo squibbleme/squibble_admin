@@ -526,6 +526,14 @@
 				"buffer_size": 2234,
 				"line_ending": "Unix"
 			}
+		},
+		{
+			"file": "app/services/squibble_service.rb",
+			"settings":
+			{
+				"buffer_size": 2862,
+				"line_ending": "Unix"
+			}
 		}
 	],
 	"build_system": "",
@@ -785,15 +793,12 @@
 		"/Z/squibble/plugins/squibble_admin/app",
 		"/Z/squibble/plugins/squibble_admin/app/services",
 		"/Z/squibble/plugins/squibble_admin/lib",
-		"/Z/squibble/plugins/squibble_admin/lib/assets/stylesheets",
-		"/Z/squibble/plugins/squibble_admin/lib/assets/stylesheets/squibble_admin",
-		"/Z/squibble/plugins/squibble_admin/lib/assets/stylesheets/squibble_admin/admin",
 		"/Z/squibble/plugins/squibble_admin/lib/squibble_admin"
 	],
 	"file_history":
 	[
-		"/Z/squibble/plugins/squibble_admin/app/services/squibble_service.rb",
 		"/Z/squibble/plugins/squibble_admin/lib/squibble_admin/version.rb",
+		"/Z/squibble/plugins/squibble_admin/app/services/squibble_service.rb",
 		"/Z/squibble/plugins/squibble_admin/lib/assets/stylesheets/squibble_admin/admin/styles.less",
 		"/Z/squibble/plugins/squibble_admin/lib/assets/javascripts/squibble_admin/general/sq-price.coffee",
 		"/Z/squibble/plugins/squibble_admin/app/workers/elasticsearch/indexer_worker.rb",
@@ -1179,7 +1184,7 @@
 	"groups":
 	[
 		{
-			"selected": 0,
+			"selected": 1,
 			"sheets":
 			[
 				{
@@ -1210,7 +1215,40 @@
 							"trim_trailing_white_space_on_save": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 1080.0,
+						"translation.y": 990.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "app/services/squibble_service.rb",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 2862,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1482,
+								1482
+							]
+						],
+						"settings":
+						{
+							"editorconfig": true,
+							"ensure_newline_at_eof_on_save": true,
+							"syntax": "Packages/Ruby/Ruby.sublime-syntax",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true,
+							"trim_trailing_white_space_on_save": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 0,
