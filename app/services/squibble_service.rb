@@ -31,15 +31,15 @@ module SquibbleService
       #         "#{self.class}: #{message} {#{options_array.join(', ')}}"
       #       end
 
-      entry = Elasticsearch::LogEntry.new(level: level, message: msg, options: options)
+      entry = Elasticsearch::LogEntry.new(class: self.class, level: level, message: message, options: options)
       entry.save
 
-      eval("Rails.logger.application.#{level} \'#{msg}\'")
+      eval("Rails.logger.application.#{level} \'#{message}\'")
 
       return unless Rails.env.production?
       if [:error, :fatal].include?(level)
         Slack::PingWorker.perform_async(
-          Rails.application.secrets['slack']['webhook_url'], "[#{level.upcase}]: #{msg}",
+          Rails.application.secrets['slack']['webhook_url'], "[#{level.upcase}]: #{message}",
           {username: 'Squibble'}
         )
       end
