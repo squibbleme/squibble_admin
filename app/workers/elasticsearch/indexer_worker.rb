@@ -5,7 +5,7 @@ class Elasticsearch::IndexerWorker
                   retry: false
 
   def perform(callback_method, resource_class, operation, resource_id)
-    log(:debug, "#{callback_method} performs :#{operation} at #{resource_class} for ##{resource_id}")
+    # log(:debug, "#{callback_method} performs :#{operation} at #{resource_class} for ##{resource_id}")
 
     case operation.parameterize.underscore.to_sym
     when :index
