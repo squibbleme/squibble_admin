@@ -20,16 +20,19 @@ module SquibbleService
 
     if ALLOWED_LOG_LEVELS.include?(level)
 
-      msg = if options.empty?
-              "#{self.class}: #{message}"
-            else
-              options_array = []
-              options.each do |key, value|
-                options_array << "#{key}: #{value} {#{options_array.join(', ')}}"
-              end
+      # msg = if options.empty?
+      #         "#{self.class}: #{message}"
+      #       else
+      #         options_array = []
+      #         options.each do |key, value|
+      #           options_array << "#{key}: #{value} {#{options_array.join(', ')}}"
+      #         end
 
-              "#{self.class}: #{message} {#{options_array.join(', ')}}"
-            end
+      #         "#{self.class}: #{message} {#{options_array.join(', ')}}"
+      #       end
+
+      entry = Elasticsearch::LogEntry.new(level: level, message: msg, options: options)
+      entry.save
 
       eval("Rails.logger.application.#{level} \'#{msg}\'")
 

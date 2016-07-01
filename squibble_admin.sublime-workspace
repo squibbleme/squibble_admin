@@ -519,6 +519,22 @@
 	},
 	"buffers":
 	[
+		{
+			"file": "lib/assets/stylesheets/squibble_admin/admin/styles.less",
+			"settings":
+			{
+				"buffer_size": 231,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "lib/assets/javascripts/squibble_admin/general/sq-price.coffee",
+			"settings":
+			{
+				"buffer_size": 344,
+				"line_ending": "Unix"
+			}
+		}
 	],
 	"build_system": "",
 	"build_system_choices":
@@ -775,12 +791,11 @@
 	[
 		"/Z/squibble/plugins/squibble_admin",
 		"/Z/squibble/plugins/squibble_admin/app",
-		"/Z/squibble/plugins/squibble_admin/app/models",
-		"/Z/squibble/plugins/squibble_admin/app/models/concerns",
-		"/Z/squibble/plugins/squibble_admin/app/models/concerns/squibble",
-		"/Z/squibble/plugins/squibble_admin/app/models/concerns/squibble/mongoid",
-		"/Z/squibble/plugins/squibble_admin/app/models/concerns/squibble/mongoid/tree",
-		"/Z/squibble/plugins/squibble_admin/app/workers/elasticsearch"
+		"/Z/squibble/plugins/squibble_admin/lib",
+		"/Z/squibble/plugins/squibble_admin/lib/assets",
+		"/Z/squibble/plugins/squibble_admin/lib/assets/stylesheets",
+		"/Z/squibble/plugins/squibble_admin/lib/assets/stylesheets/squibble_admin",
+		"/Z/squibble/plugins/squibble_admin/lib/assets/stylesheets/squibble_admin/admin"
 	],
 	"file_history":
 	[
@@ -969,6 +984,7 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"a",
 			"show_dashboard_custom_link",
 			"portlet_form_additional_field_landing_page",
 			"landing_",
@@ -1095,8 +1111,7 @@
 			"file",
 			"_presence_of_firstname_and_lastname_or_company_name",
 			"address:",
-			"active",
-			"actions"
+			"active"
 		],
 		"highlight": true,
 		"in_selection": false,
@@ -1171,8 +1186,76 @@
 	"groups":
 	[
 		{
+			"selected": 1,
 			"sheets":
 			[
+				{
+					"buffer": 0,
+					"file": "lib/assets/stylesheets/squibble_admin/admin/styles.less",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 231,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								88,
+								88
+							]
+						],
+						"settings":
+						{
+							"color_scheme": "Packages/User/Color Highlighter/themes/Monokai.tmTheme",
+							"editorconfig": true,
+							"ensure_newline_at_eof_on_save": true,
+							"syntax": "Packages/LESS/LESS.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true,
+							"trim_trailing_white_space_on_save": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "lib/assets/javascripts/squibble_admin/general/sq-price.coffee",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 344,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								343,
+								343
+							]
+						],
+						"settings":
+						{
+							"editorconfig": true,
+							"ensure_newline_at_eof_on_save": true,
+							"syntax": "Packages/CoffeeAngular Syntax/CoffeeAngular.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true,
+							"trim_trailing_white_space_on_save": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				}
 			]
 		}
 	],
@@ -1228,6 +1311,10 @@
 		"last_filter": "",
 		"selected_items":
 		[
+			[
+				"sq_price",
+				"lib\\assets\\javascripts\\squibble_admin\\general\\sq-price.coffee"
+			],
 			[
 				"read",
 				"README.md"
@@ -1735,10 +1822,6 @@
 			[
 				"execut",
 				"app\\operations\\business\\invoice\\payment\\pay_pal\\execute_operation.rb"
-			],
-			[
-				"gemfile",
-				"Gemfile"
 			]
 		],
 		"width": 0.0
