@@ -32,6 +32,20 @@ module SquibbleService
       #       end
 
       entry = Elasticsearch::LogEntry.new(class_name: self.class.to_s, level: level, message: message, options: options)
+
+      if options[:principal_id].present?
+        begin
+          principal = Backend::Principal.find(options[:principal_id])
+        rescue Mongoid::Errors::DocumentNotFound
+        else
+          entry.options[:principal] = {
+            id: principal.id,
+            name: principal.name,
+            to_param: principal.to_param
+          }
+        end
+      end
+
       entry.save
 
       # eval("Rails.logger.application.#{level} \'#{message}\'")
