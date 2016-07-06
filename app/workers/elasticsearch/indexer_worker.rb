@@ -7,12 +7,13 @@ class Elasticsearch::IndexerWorker
   def perform(callback_method, resource_class, operation, resource_id)
     # log(:debug, "#{callback_method} performs :#{operation} at #{resource_class} for ##{resource_id}")
 
-    case operation.parameterize.underscore.to_sym
+    method = operation.parameterize.underscore.to_sym
+    case method
     when :index
-      resource = _get_resource(resource_class, resource_id)
+      resource = _get_resource(resource_class, resource_id, method)
       resource.__elasticsearch__.index_document unless resource.nil?
     when :update
-      resource = _get_resource(resource_class, resource_id)
+      resource = _get_resource(resource_class, resource_id, method)
       resource.__elasticsearch__.update_document unless resource.nil?
     when :destroy
       begin
@@ -22,7 +23,7 @@ class Elasticsearch::IndexerWorker
           id: resource_id
         )
       rescue Elasticsearch::Transport::Transport::Errors::NotFound
-        log(:error, "Unable to find elasticsearch index for #{resource_class} ##{resource_id} to delete.")
+        log(:debug, "Unable to find elasticsearch index for #{resource_class} ##{resource_id} to delete.")
       end
     else
       log(:error, "Unregistered operation #{operation} called.")
@@ -31,11 +32,11 @@ class Elasticsearch::IndexerWorker
 
   private
 
-  def _get_resource(resource_class, resource_id)
+  def _get_resource(resource_class, resource_id, method)
     eval(resource_class).find(resource_id)
   rescue Mongoid::Errors::DocumentNotFound
-    msg = "Unable to find #{resource_class} ##{resource_id}"
-    log(:error, msg, resource_class: resource_class, resource_id: resource_id)
+    msg = "Unable to find #{resource_class} ##{resource_id} for :#{method}"
+    log(:error, msg, resource_class: resource_class, resource_id: resource_id, method: method)
     return nil
   end
 end
