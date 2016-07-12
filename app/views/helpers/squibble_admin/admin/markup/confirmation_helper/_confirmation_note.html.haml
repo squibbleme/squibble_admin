@@ -1,0 +1,13 @@
+.row
+  .col-md-6
+    .note.note-info
+      %h4.block= route_translation(:'content.note.title', resource: resource).html_safe
+      %p= route_translation(:'content.note.body', resource: resource).html_safe
+
+      %ul.list-inline.margin-top-10
+        %li
+          %a{ class: [ default_button_classes, 'btn-primary' ], href: path, data: options[:data] }
+            = resource_attribute_name(options[:translation_key])
+        %li
+          %a{ class: [ default_button_classes, 'btn-default' ], href: options[:cancel_path] }
+            = t('helpers.cancel')

@@ -528,10 +528,10 @@
 			}
 		},
 		{
-			"file": "/Z/squibble/plugins/squibble_mongoid_fields/app/models/concerns/squibble/date_time_validity_optional.rb",
+			"file": "lib/assets/stylesheets/squibble_admin/admin/table.less",
 			"settings":
 			{
-				"buffer_size": 8835,
+				"buffer_size": 740,
 				"line_ending": "Unix"
 			}
 		}
@@ -791,15 +791,12 @@
 	[
 		"/Z/squibble/plugins/squibble_admin",
 		"/Z/squibble/plugins/squibble_admin/app",
-		"/Z/squibble/plugins/squibble_admin/app/models/concerns/squibble",
-		"/Z/squibble/plugins/squibble_admin/app/models/concerns/squibble/mongoid",
 		"/Z/squibble/plugins/squibble_admin/lib",
-		"/Z/squibble/plugins/squibble_admin/lib/squibble_admin",
-		"/Z/squibble/plugins/squibble_mongoid_fields",
-		"/Z/squibble/plugins/squibble_mongoid_fields/app",
-		"/Z/squibble/plugins/squibble_mongoid_fields/app/models",
-		"/Z/squibble/plugins/squibble_mongoid_fields/app/models/concerns",
-		"/Z/squibble/plugins/squibble_mongoid_fields/app/models/concerns/squibble"
+		"/Z/squibble/plugins/squibble_admin/lib/assets",
+		"/Z/squibble/plugins/squibble_admin/lib/assets/stylesheets",
+		"/Z/squibble/plugins/squibble_admin/lib/assets/stylesheets/squibble_admin",
+		"/Z/squibble/plugins/squibble_admin/lib/assets/stylesheets/squibble_admin/admin",
+		"/Z/squibble/plugins/squibble_admin/lib/squibble_admin"
 	],
 	"file_history":
 	[
@@ -934,7 +931,7 @@
 	],
 	"find":
 	{
-		"height": 36.0
+		"height": 38.0
 	},
 	"find_in_files":
 	{
@@ -1213,6 +1210,7 @@
 						],
 						"settings":
 						{
+							"color_scheme": "Packages/User/Color Highlighter/themes/Monokai.tmTheme",
 							"editorconfig": true,
 							"ensure_newline_at_eof_on_save": true,
 							"syntax": "Packages/Ruby/Ruby.sublime-syntax",
@@ -1229,32 +1227,33 @@
 				},
 				{
 					"buffer": 1,
-					"file": "/Z/squibble/plugins/squibble_mongoid_fields/app/models/concerns/squibble/date_time_validity_optional.rb",
-					"semi_transient": true,
+					"file": "lib/assets/stylesheets/squibble_admin/admin/table.less",
+					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 8835,
+						"buffer_size": 740,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								1668,
-								1668
+								361,
+								361
 							]
 						],
 						"settings":
 						{
+							"color_scheme": "Packages/User/Color Highlighter/themes/Monokai.tmTheme",
 							"editorconfig": true,
 							"ensure_newline_at_eof_on_save": true,
-							"syntax": "Packages/Ruby/Ruby.sublime-syntax",
+							"syntax": "Packages/LESS/LESS.tmLanguage",
 							"tab_size": 2,
 							"translate_tabs_to_spaces": true,
 							"trim_trailing_white_space_on_save": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 337.0,
+						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 0,
