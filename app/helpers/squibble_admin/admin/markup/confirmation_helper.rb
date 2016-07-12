@@ -1,7 +1,7 @@
 # Helper für die Darstellung von Bestätigungsseiten
 # im Admin Bereich.
 #
-module Admin::Markup::ConfirmationHelper
+module SquibbleAdmin::Admin::Markup::ConfirmationHelper
 
   def confirmation_note(path, options = {})
     options[:data] = {}
@@ -11,7 +11,7 @@ module Admin::Markup::ConfirmationHelper
 
     options[:cancel_path] = resource_path if options[:cancel_path].nil?
 
-    render partial: 'helpers/admin/markup/confirmation_helper/confirmation_note',
+    render partial: 'helpers/squibble_admin/admin/markup/confirmation_helper/confirmation_note',
            locals: {
              path: path,
              options: options
