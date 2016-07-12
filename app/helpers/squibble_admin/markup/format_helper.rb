@@ -33,6 +33,7 @@ module SquibbleAdmin::Markup::FormatHelper
   end
 
   def sq_time(time, format = nil)
+    return if time.nil?
     Rails.cache.fetch ['SquibbleAdmin::Markup::FormatHelper.sq_time', time, format] do
       content_tag(:time, (time.present? ? time.to_time : ''), :'data-sq-datetime' => time, class: 'sq-time', :'data-sq-format' => format)
     end
@@ -45,6 +46,7 @@ module SquibbleAdmin::Markup::FormatHelper
   end
 
   def sq_date(date, format = nil)
+    return if date.nil?
     Rails.cache.fetch ['SquibbleAdmin::Markup::FormatHelper.sq_date', date, format] do
       content_tag(:date, (date.present? ? date.to_date : ''), :'data-sq-date' => date, class: 'sq-date', :'data-sq-format' => format)
     end
