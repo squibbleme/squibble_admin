@@ -17,11 +17,13 @@
           .btn-group-red.btn-group
             %button.btn.btn-sm.md-skip.dropdown-toggle{ type: :button, data: { toggle: :dropdown, hover: :dropdown, close: { others: :true } } }
               %i.fa.fa-info
-            %ul.dropdown-menu-v2{ role: :menu }
-              %li
-                %a{ href: new_admin_ticket_request_path }
-                  %i.fa.fa-plus
-                  = t('routes.admin.ticket.requests.new.title')
+
+            - if self.respond_to?(:new_admin_ticket_request_path)
+              %ul.dropdown-menu-v2{ role: :menu }
+                %li
+                  %a{ href: new_admin_ticket_request_path }
+                    %i.fa.fa-plus
+                    = t('routes.admin.ticket.requests.new.title')
 
           - cache [ 'admin/admin_top_menu_principals_dropdown', current_admin_user, current_principal ] do
             - unless current_admin_user.principals.empty?
