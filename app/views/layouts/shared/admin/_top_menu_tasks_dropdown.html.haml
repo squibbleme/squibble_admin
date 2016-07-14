@@ -1,0 +1,21 @@
+- unless current_employee.nil?
+  - cache [ 'layouts/shared/admin/top_menu/top_menu_tasks_dropdown', current_employee ] do
+    .btn-group-notification.btn-group#header_task_bar
+      %button.btn.btn-sm.dropdown-toggle{ type: :button, data: { toggle: :dropdown, hover: :dropdown, close: { others: :trhe } } }
+        %i.fa.fa-tasks
+        %span.badge.badge-primary
+          = uncompleted_business_tasks_for_employee(current_employee).total_count
+
+      %ul.dropdown-menu-v2
+        %li.external
+          %h3
+            You have
+            %span.bold
+              = uncompleted_business_tasks_for_employee(current_employee).total_count
+              pending
+            tasks
+          %a{ href: admin_business_tasks_path( uncompleted: true, assigned_to_employee_id: current_employee.id ) }
+            view all
+        %li
+          %ul.dropdown-menu-list.scroller{ style: 'height: 250px;', data: { handle: { color: '#637283' } } }
+            = render partial: 'admin/business/tasks/top_menu_dropdown_list_item', collection: uncompleted_business_tasks_for_employee(current_employee), as: :resource

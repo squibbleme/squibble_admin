@@ -4,7 +4,7 @@ module SquibbleAdmin::CachingHelper
       params,
       resource_clazz.to_s,
       coll.count,
-      coll.max(:updated_at)
+      coll.max(:updated_at).to_i
     ]
   end
 
@@ -13,7 +13,7 @@ module SquibbleAdmin::CachingHelper
       params,
       resource_class.to_s,
       collection.total_count,
-      collection.max(:updated_at),
+      collection.max(:updated_at).to_i,
     ]
   end
 end

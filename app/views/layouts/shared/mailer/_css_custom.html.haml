@@ -1,0 +1,29 @@
+- cache 'layouts/mailer/css_custom' do
+  :css
+
+    /* GENERAL SQUIBBLE CSS */
+    body, table.body, h1, h2, h3, h4, h5, h6, p, td {
+      font-family: "Roboto Condensed", sans-serif !important;
+      color: #{sq_mail_color(:text, @principal)};
+    }
+
+    a {
+      outline: none !important;
+      text-decoration: none;
+      -webkit-transition: back 0.2s ease-out;
+      -moz-transition: all 0.2s ease-out;
+      -o-transition: all 0.2s ease-out;
+      -ms-transition: all 0.2s ease-out;
+    }
+
+    a:focus,
+    a:hover,
+    a:active,
+    a:visited {
+      outline: none !important;
+      text-decoration: none;
+    }
+
+    a:hover {
+      color: #{sq_mail_color(:primary, @principal)} !important;
+    }

@@ -3,6 +3,9 @@
 	[
 		{
 			"path": "."
+		},
+		{
+			"path": "Z:\\squibble\\plugins\\squibble_carrierwave_attributes"
 		}
 	]
 }

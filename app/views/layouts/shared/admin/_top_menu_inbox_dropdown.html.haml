@@ -1,0 +1,23 @@
+- cache [ 'layouts/shared/admin/top_menu/top_menu_inbox_dropdown' ] do
+  .btn-group-notification.btn-group#header_inbox_bar
+    %button.btn.btn-sm.dropdown-toggle{ type: :button, data: { toggle: :dropdown, hover: :dropdown, close: { others: :trhe } } }
+      %i.fa.fa-envelope
+      %span.badge.badge-success 4
+    %ul.dropdown-menu-v2
+      %li.external
+        %h3
+          You have
+          %span.bold 7 new
+          messages
+        %a{ href: '#' } view all
+      %li
+        %ul.dropdown-menu-list.scroller{ style: 'height: 250px;', data: { handle: { color: '#637283' } } }
+          - 5.times.each do |i|
+            %li
+              %a{ href: 'javascript:;' }
+                %span.photo
+                  %img.img-cicle{ src: 'http://lorempixel.com/50/50/' }
+                %span.subject
+                  %span.from Lisa Wong
+                  %span.time just now
+                %span.message Vivamus sed auctor nibh congue nibh. auctor nibh auctor nibh...

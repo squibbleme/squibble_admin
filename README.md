@@ -87,3 +87,6 @@ end
 * 23.06.2016: Auslagerung des Helpers für Flash Messages
 * 29.06.2016: Squibble::Mongoid::Tree::TouchParent Concern, welcher bei :save und :touch einen :touch auf den :parent Objekten ausführt
 * 01.07.2016: Indizierung der Application Log Einträge in ElasticSearch
+* 14.07.2016: Auslagerung der SearchableModel und SearchableController aus Squibble in SquibbleAdmin
+* 14.07.2016: Auslagerung der Squibble::LandingPage, Squibble::MetaAttributes und Squibble::BackgroundProcessing Concerns
+* 14.07.2016: Auslagerung der layouts/shared/admin und layouts/shared/mailer inkl. mailer Layout
