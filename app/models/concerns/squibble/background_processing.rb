@@ -7,7 +7,7 @@
 # include Squibble::BackgroundProcessing
 # [...]
 #
-# Über die Methode resource.can_start_background_progessing? kann geprüft
+# Über die Methode resource.can_start_background_processing? kann geprüft
 # werden, ob eine entsprechende Verarbeitung aktuell zulässig ist oder ob
 # bereits eine Verarbeitung im Hintergrund läuft.
 #
@@ -31,7 +31,7 @@ module Squibble::BackgroundProcessing
       # state :background_processing_failed do
       # end
 
-      event :start_background_progessing do
+      event :start_background_processing do
         transition [:background_processing_init, :background_processing_succeeded, :background_processing_halted, :background_processing_failed] => :background_processing_in_progress
       end
 
