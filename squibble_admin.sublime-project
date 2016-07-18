@@ -6,6 +6,9 @@
 		},
 		{
 			"path": "Z:\\squibble\\plugins\\squibble_carrierwave_attributes"
+		},
+		{
+			"path": "Z:\\squibble\\plugins\\squibble_mongoid_fields"
 		}
 	]
 }
