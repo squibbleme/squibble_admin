@@ -7,8 +7,8 @@
       %title= Settings.site.name
 
     %body{align: :center, valign: :top, style: "background: #{sq_mail_color(:body_bg, @principal)};"}
-      = render 'layouts/mailer/css'
-      = render 'layouts/mailer/css_custom'
+      = render 'layouts/shared/mailer/css'
+      = render 'layouts/shared/mailer/css_custom'
 
       %table.body{style: "background: #{sq_mail_color(:body_bg, @principal)}; border-spacing: 0; border-collapse: collapse; vertical-align: top; text-align: left; height: 100%; width: 100%; margin: 0; padding: 0;"}
         %tr
