@@ -46,9 +46,12 @@ module SquibbleService
         end
       end
 
-      entry.save
+      begin
+        entry.save
+      rescue Faraday::TimeoutError => e
+        eval("Rails.logger.application.#{level} \'#{message}\'")
+      end
 
-      # eval("Rails.logger.application.#{level} \'#{message}\'")
 
       return unless Rails.env.production?
       if [:error, :fatal].include?(level)
@@ -114,7 +117,6 @@ module SquibbleService
     options[:resource_class] = resource.class.to_s
     options[:resource_id] = resource.id.to_s
     options[:resource_attributes] = resource.attributes
-
 
     if resource.save
       msg = "Successfully saved #{resource.class} ##{resource.id} #{resource}."
