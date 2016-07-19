@@ -100,6 +100,43 @@ module SquibbleService
     path_object
   end
 
+  # Speichern eines Datensatzes und entsprechende Verarbeitung für standardtisiertes Log Verhalten.
+  #
+  # === Attribute
+  # *+resource+ - Der zu speichernde Datensatz.
+  #
+  # === Optionen
+  # *+options+ - [Hash] für die Übergabe von zusätzlichen Attributen, die
+  # für die Ausgabe im Log verwendet werden.
+  #
+  def save_resource(resource, options = {})
+    options[:principal_id] = resource.principal_id if resource.respond_to?(:principal)
+    options[:resource_class] = resource.class.to_s
+    options[:resource_id] = resource.id.to_s
+    options[:resource_attributes] = resource.attributes
+
+    if resource.save
+      msg = "Successfully saved #{resource.class} ##{resource.id} #{resource}."
+
+      begin
+        log(:info, msg, options)
+      rescue Elasticsearch::Transport::Transport::Errors::BadRequest
+        options.delete(:resource_attributes)
+        log(:info, msg, options)
+      end
+    else
+      msg = "Unable to save #{resource.class} ##{resource.id} #{resource}: #{resource.errors.messages}"
+      options[:error] = resource.errors.messages
+
+      begin
+        log(:error, msg, options)
+      rescue Elasticsearch::Transport::Transport::Errors::BadRequest
+        options.delete(:resource_attributes)
+        log(:error, msg, options)
+      end
+    end
+  end
+
   def write_content_to_file(content, path)
     path = create_directory_recursively_unless_exists_and_return(path)
 

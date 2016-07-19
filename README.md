@@ -90,3 +90,4 @@ end
 * 14.07.2016: Auslagerung der SearchableModel und SearchableController aus Squibble in SquibbleAdmin
 * 14.07.2016: Auslagerung der Squibble::LandingPage, Squibble::MetaAttributes und Squibble::BackgroundProcessing Concerns
 * 14.07.2016: Auslagerung der layouts/shared/admin und layouts/shared/mailer inkl. mailer Layout
+* 19.07.2016: Erweiterung um ```save_resource(resource, options = {})``` im Squibble Service für standartisiertes Speichern inkl. Logging von Datensätzen.

@@ -535,6 +535,22 @@
 				"buffer_size": 53,
 				"line_ending": "Unix"
 			}
+		},
+		{
+			"file": "lib/squibble_admin/version.rb",
+			"settings":
+			{
+				"buffer_size": 46,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "app/views/layouts/mailer.html.haml",
+			"settings":
+			{
+				"buffer_size": 2219,
+				"line_ending": "Unix"
+			}
 		}
 	],
 	"build_system": "",
@@ -790,17 +806,17 @@
 	},
 	"expanded_folders":
 	[
+		"/Z/squibble/plugins/squibble_admin",
 		"/Z/squibble/plugins/squibble_admin/app",
 		"/Z/squibble/plugins/squibble_admin/app/views",
-		"/Z/squibble/plugins/squibble_admin/app/views/admin",
-		"/Z/squibble/plugins/squibble_admin/app/views/admin/_helpers",
-		"/Z/squibble/plugins/squibble_carrierwave_attributes/app/models",
-		"/Z/squibble/plugins/squibble_mongoid_fields",
+		"/Z/squibble/plugins/squibble_admin/app/views/layouts",
+		"/Z/squibble/plugins/squibble_admin/app/views/layouts/shared",
+		"/Z/squibble/plugins/squibble_admin/app/views/layouts/shared/mailer",
+		"/Z/squibble/plugins/squibble_admin/lib",
+		"/Z/squibble/plugins/squibble_admin/lib/squibble_admin",
 		"/Z/squibble/plugins/squibble_mongoid_fields/app",
 		"/Z/squibble/plugins/squibble_mongoid_fields/app/views",
-		"/Z/squibble/plugins/squibble_mongoid_fields/app/views/admin",
 		"/Z/squibble/plugins/squibble_mongoid_fields/app/views/admin/_helpers",
-		"/Z/squibble/plugins/squibble_mongoid_fields/lib",
 		"/Z/squibble/plugins/squibble_mongoid_fields/lib/squibble_mongoid_fields"
 	],
 	"file_history":
@@ -936,7 +952,7 @@
 	],
 	"find":
 	{
-		"height": 34.0
+		"height": 35.0
 	},
 	"find_in_files":
 	{
@@ -1193,7 +1209,7 @@
 	"groups":
 	[
 		{
-			"selected": 1,
+			"selected": 2,
 			"sheets":
 			[
 				{
@@ -1216,6 +1232,7 @@
 						"settings":
 						{
 							"auto_name": "_promotion_attributes_show.html.haml",
+							"color_scheme": "Packages/User/Color Highlighter/themes/Monokai.tmTheme",
 							"editorconfig": true,
 							"ensure_newline_at_eof_on_save": true,
 							"syntax": "Packages/Rails/Ruby Haml.sublime-syntax",
@@ -1227,7 +1244,7 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 1,
+					"stack_index": 3,
 					"type": "text"
 				},
 				{
@@ -1249,6 +1266,41 @@
 						],
 						"settings":
 						{
+							"color_scheme": "Packages/User/Color Highlighter/themes/Monokai.tmTheme",
+							"editorconfig": true,
+							"ensure_newline_at_eof_on_save": true,
+							"syntax": "Packages/Ruby/Ruby.sublime-syntax",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true,
+							"trim_trailing_white_space_on_save": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "lib/squibble_admin/version.rb",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 46,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								46,
+								46
+							]
+						],
+						"settings":
+						{
+							"color_scheme": "Packages/User/Color Highlighter/themes/Monokai.tmTheme",
 							"editorconfig": true,
 							"ensure_newline_at_eof_on_save": true,
 							"syntax": "Packages/Ruby/Ruby.sublime-syntax",
@@ -1261,6 +1313,40 @@
 						"zoom_level": 1.0
 					},
 					"stack_index": 0,
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "app/views/layouts/mailer.html.haml",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 2219,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								974,
+								976
+							]
+						],
+						"settings":
+						{
+							"color_scheme": "Packages/User/Color Highlighter/themes/Monokai.tmTheme",
+							"editorconfig": true,
+							"ensure_newline_at_eof_on_save": true,
+							"syntax": "Packages/Rails/Ruby Haml.sublime-syntax",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true,
+							"trim_trailing_white_space_on_save": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
 					"type": "text"
 				}
 			]
