@@ -111,7 +111,6 @@ module SquibbleService
   #
   def save_resource(resource, options = {})
     options[:principal_id] = resource.principal_id if resource.respond_to?(:principal)
-    options[:error] = options[:error].to_s if options[:error].present?
     options[:resource_class] = resource.class.to_s
     options[:resource_id] = resource.id.to_s
     options[:resource_attributes] = resource.attributes
@@ -128,7 +127,7 @@ module SquibbleService
       end
     else
       msg = "Unable to save #{resource.class} ##{resource.id} #{resource}: #{resource.errors.messages}"
-      options[:error] = resource.errors.messages
+      options[:error] = resource.errors.messages.to_s
 
       begin
         log(:error, msg, options)
