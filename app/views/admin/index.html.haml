@@ -15,7 +15,7 @@
 - cache index_collection_cache_key_with_pagination do
   - breadcrumb "admin_#{params[:controller].sub('admin/', '').gsub('/', '_')}".to_sym
 
-  %section#sq_collection.admin_index{ class: [ resource_class.to_s.underscore ] }
+  %section#sq_collection.admin_index{ class: [ resource_class.to_s.dasherize ] }
     - if collection.empty?
       = render 'admin/index_collection_empty', resource_class: resource_class, params: params
     - else
