@@ -20,6 +20,10 @@ module SquibbleAdmin::Markup::GeneralHelper
            locals: {state: state}
   end
 
+  def sq_image_responsive_tag(source, title = nil, options = {})
+    image_tag(source, class: [ 'img-responsive', options[:class] ], alt: title)
+  end
+
   # Diese Methode retourniert die Standard ID
   # für eine Objekt. Dieser Helper soll auf Übersichts-Seiten
   # verwendet werden, damit eine konsistente ID für die entsprechenden
