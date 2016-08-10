@@ -4,7 +4,12 @@
       = capture &block
 
     = show_button(resource, :small)
-    = edit_button(resource, :small)
+
+    - begin
+      = edit_button(resource, :small)
+    - rescue NoMethodError
+      = edit_button(resource, :small, nil)
+
     - begin
       = clone_button(resource, :small)
     - rescue NoMethodError
