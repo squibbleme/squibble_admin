@@ -9,6 +9,9 @@
 		},
 		{
 			"path": "Z:\\squibble\\plugins\\squibble_mongoid_fields"
+		},
+		{
+			"path": "Z:\\squibble\\plugins\\squibble_print"
 		}
 	]
 }

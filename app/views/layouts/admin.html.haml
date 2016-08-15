@@ -1,0 +1,54 @@
+!!! 5
+%html{ lang: I18n.locale}
+  %head
+    = display_meta_tags
+    = csrf_meta_tags
+
+    - cache [ :admin, :meta, current_principal, current_admin_user ] do
+      = render 'favicon'
+
+      %meta{content: 'text/html; charset=utf-8', 'http-equiv' => 'Content-Type'}
+      %meta{content: 'IE=edge', 'http-equiv' => 'X-UA-Compatible'}
+      %meta{content: 'width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=0', name: 'viewport'}
+
+      %meta{ name: :current_admin_user, data: { current_admin_user: { email: current_admin_user.email, name: current_admin_user.name, id: current_admin_user.id, roles: current_admin_user.role_keys } } }
+
+      %meta{ name: :current_principal, data: { current_principal: { id: current_principal.id, slug: current_principal.to_param, site_name: current_principal.site_name, modules: current_principal.module_keys } } }
+
+      %meta{ name: :'sq-current-principal-currency-unit', content: current_principal.currency.unit }
+
+    = stylesheet_link_tag 'https://fonts.googleapis.com/css?family=Oswald:400,300,700', media: :all, :'data-turbolinks-track' => true
+    = stylesheet_link_tag 'https://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700&subset=all', media: :all, :'data-turbolinks-track' => true
+
+    = stylesheet_link_tag :general, media: :all, :'data-turbolinks-track' => true
+    = stylesheet_link_tag :admin, media: :all, :'data-turbolinks-track' => true
+
+    = javascript_include_tag '//maps.google.com/maps/api/js?sensor=true'
+    = javascript_include_tag :general, :'data-turbolinks-track' => true, debug: false
+    = javascript_include_tag :admin, :'data-turbolinks-track' => true, debug: false
+
+  %body.page-header-fixed.page-sidebar-closed-hide-logo{ class: "rails-env-#{Rails.env}"}
+
+    .wrapper
+      = render 'layouts/shared/admin/header'
+
+      .container-fluid.sq-content
+        .page-content
+
+          .breadcrumbs
+            .heading.row.margin-bottom-10
+              .col-md-9
+                = yield :page_head
+              .col-md-3{ class: hidden_mobile }
+                = breadcrumbs style: :bootstrap, container_tag: :ul, class: 'breadcrumb'
+
+          .page-subheading
+            = yield :page_subheading
+
+          = flash_messages
+
+          = yield
+
+        = render 'layouts/shared/admin/footer'
+
+    = render 'layouts/shared/google_analytics'
