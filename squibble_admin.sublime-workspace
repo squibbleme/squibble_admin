@@ -520,41 +520,10 @@
 	"buffers":
 	[
 		{
-			"file": "/Z/squibble/plugins/squibble_print/lib/squibble_print/version.rb",
 			"settings":
 			{
-				"buffer_size": 45,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"contents": "%header.page-header\n  %nav.navbar.mega-menu{ role: :navigation }\n    .container-fluid\n      .clearfix.navbar-fixed-top\n\n        %button.navbar-toggle{ type: :button, data: { toggle: :collapse, target: :'.navbar-responsive-collapse'} }\n          %span.sr-only Toggle navigation\n          %span.toggle-icon\n            %span.icon-bar\n            %span.icon-bar\n            %span.icon-bar\n\n        %a#index.class-logo{ href: admin_dashboard_path }\n          %img{ src: asset_path('logo-black.png'), alt: 'Squibble' }\n\n        .topbar-actions\n          .btn-group-red.btn-group\n            %button.btn.btn-sm.md-skip.dropdown-toggle{ type: :button, data: { toggle: :dropdown, hover: :dropdown, close: { others: :true } } }\n              %i.fa.fa-info\n\n            - if self.respond_to?(:new_admin_ticket_request_path)\n              %ul.dropdown-menu-v2{ role: :menu }\n                %li\n                  %a{ href: new_admin_ticket_request_path }\n                    %i.fa.fa-plus\n                    = t('routes.admin.ticket.requests.new.title')\n\n          - cache [ 'admin/admin_top_menu_principals_dropdown', current_admin_user, current_principal ] do\n            - unless current_admin_user.principals.empty?\n              .btn-group-img.btn-group#sq-application-top-menu-principals-dropdown{ data: { turbolinks: { permanent: true } } }\n                - cache [ 'admin/admin_top_menu_principals_dropdown/current_principal', current_principal ] do\n                  %button.btn.btn-sm.dropdown-toggle{ type: :button, data: { toggle: :dropdown, hower: :dropdown, close: { others: :true } } }\n                    %span= current_principal.name\n\n                - cache [ 'admin/admin_top_menu_principals_dropdown/selection', current_admin_user ] do\n                  %ul.dropdown-menu-v2{ role: :menu }\n                    = render partial: 'admin/backend/principals/top_menu_list_item', collection: current_admin_user.principals, as: :resource\n\n          - cache [ 'layouts/admin/nav/current_admin_user', current_admin_user ] do\n            .btn-group-img.btn-group\n              %button.btn.btn-sm.dropdown-toggle{ type: :button, data: { toggle: :dropdown, hower: :dropdown, close: { others: :true } } }\n                %span\n                  = current_admin_user.name\n                = gravatar_tag current_admin_user.email, size: 35, secure: true\n              %ul.dropdown-menu-v2{ role: :menu }\n                %li\n                  %a{ href: '#' }\n                    %i.fa.fa-user\n                    My Profile\n                %li\n                  %a{ href: '#' }\n                    %i.fa.fa-list\n                    My Tasks\n\n                %li\n                  %a{ href: destroy_admin_user_session_path }\n                    %i.fa.fa-sign-out\n                    Logout\n\n      = navigation\n",
-			"file": "app/views/layouts/shared/admin/_header.html.haml",
-			"file_size": 2804,
-			"file_write_time": 131156450575534909,
-			"settings":
-			{
-				"buffer_size": 2804,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "app/helpers/squibble_admin/markup/form_helper.rb",
-			"settings":
-			{
-				"buffer_size": 4272,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"contents": "'use strict'\n\n###\n  @description Sämtliche Preis Elemente (as: :price) werden mit der\n  aktuellen Währung markiert. Zudem wird priceFormat ausgeführt, damit\n  die Eingabe bereits clientseitig validiert werden kann.\n###\nhandlePriceInput = () ->\n  currency = $('meta[name=sq-current-principal-currency-unit]').attr 'content'\n\n  $('input.price:not(.processed)').each ( index ) ->\n    that = $(this)\n\n    # Anpassen des Markups, damit das Addon korrekt\n    # dargestellt wird.\n    #\n    that.wrap \"<div class='input-group price'></div>\"\n\n    # Hinzufügen des Addons für die Darstellung\n    # der Währung.\n    #\n    that.after \"<span class='input-group-addon'>#{currency}</span>\"\n\n    # Hinzufügen der Klasse zur Markierung der erfolgreichen\n    # Verarbeitung des Elements.\n    #\n    that.addClass 'processed'\n\n    return\n\n  $('input.price').priceFormat\n    prefix: ''\n    thousandsSeparator: ''\n\n$(document).on 'ready page:change', (event) ->\n  handlePriceInput()\n\n$(document).on 'cocoon:after-insert', (e, insertedItem) ->\n  handlePriceInput()\n",
-			"file": "lib/assets/javascripts/squibble_admin/admin/elements/input-price.coffee",
-			"file_size": 1050,
-			"file_write_time": 131158079444357638,
-			"settings":
-			{
-				"buffer_size": 1042,
-				"line_ending": "Unix"
+				"buffer_size": 0,
+				"line_ending": "Windows"
 			}
 		}
 	],
@@ -813,19 +782,23 @@
 	[
 		"/Z/squibble/plugins/squibble_admin",
 		"/Z/squibble/plugins/squibble_admin/app",
+		"/Z/squibble/plugins/squibble_admin/app/helpers",
 		"/Z/squibble/plugins/squibble_admin/app/views",
 		"/Z/squibble/plugins/squibble_admin/app/views/layouts",
 		"/Z/squibble/plugins/squibble_admin/app/views/layouts/shared",
-		"/Z/squibble/plugins/squibble_admin/app/views/layouts/shared/admin",
-		"/Z/squibble/plugins/squibble_admin/lib",
-		"/Z/squibble/plugins/squibble_admin/lib/assets",
-		"/Z/squibble/plugins/squibble_admin/lib/assets/javascripts",
-		"/Z/squibble/plugins/squibble_admin/lib/assets/javascripts/squibble_admin",
-		"/Z/squibble/plugins/squibble_admin/lib/assets/javascripts/squibble_admin/admin",
-		"/Z/squibble/plugins/squibble_admin/lib/assets/javascripts/squibble_admin/admin/elements"
+		"/Z/squibble/plugins/squibble_admin/app/views/layouts/shared/admin"
 	],
 	"file_history":
 	[
+		"/Z/squibble/plugins/squibble_admin/lib/assets/javascripts/squibble_admin/admin/elements/input-price.coffee",
+		"/Z/squibble/plugins/squibble_admin/app/views/layouts/admin.html.haml",
+		"/Z/squibble/plugins/squibble_admin/README.md",
+		"/Z/squibble/plugins/squibble_admin/lib/assets/stylesheets/squibble_admin/general/elements/input-creditcard.less",
+		"/Z/squibble/plugins/squibble_admin/lib/assets/javascripts/squibble_admin/admin/elements/input-creditcard.coffee",
+		"/Z/squibble/plugins/squibble_admin/lib/squibble_admin/version.rb",
+		"/Z/squibble/plugins/squibble_admin/app/helpers/squibble_admin/markup/form_helper.rb",
+		"/Z/squibble/plugins/squibble_print/lib/squibble_print/version.rb",
+		"/Z/squibble/plugins/squibble_admin/app/views/layouts/shared/admin/_header.html.haml",
 		"/Z/squibble/plugins/squibble_mongoid_fields/app/models/concerns/squibble/promotion_attributes.rb",
 		"/Z/squibble/plugins/squibble_admin/app/helpers/squibble_admin/resource_helper.rb",
 		"/Z/squibble/plugins/squibble_print/lib/assets/stylesheets/squibble_print/print/general/observation-window.less",
@@ -848,11 +821,8 @@
 		"/Z/squibble/plugins/squibble_print/app/views/print/show.html.haml",
 		"/Z/squibble/plugins/squibble_print/lib/assets/stylesheets/squibble_print/print_manifest.css",
 		"/Z/squibble/plugins/squibble_print/lib/assets/javascripts/squibble_print/print_manifest.js",
-		"/Z/squibble/plugins/squibble_admin/README.md",
-		"/Z/squibble/plugins/squibble_admin/lib/squibble_admin/version.rb",
 		"/Z/squibble/plugins/squibble_admin/app/helpers/squibble_admin/markup/button_helper.rb",
 		"/Z/squibble/plugins/squibble_print/lib/squibble_print.rb",
-		"/Z/squibble/plugins/squibble_print/lib/squibble_print/version.rb",
 		"/Z/squibble/plugins/squibble_print/.gitignore",
 		"/Z/squibble/plugins/squibble_admin/app/views/helpers/squibble_admin/markup/resource_helper/_default_resource_actions.html.haml",
 		"/Z/squibble/plugins/squibble_print/squibble_print.gemspec",
@@ -868,7 +838,6 @@
 		"/Z/squibble/plugins/squibble_mongoid_fields/README.md",
 		"/Z/squibble/plugins/squibble_mongoid_fields/app/views/admin/_helpers/_promotion_attributes_form.html.haml",
 		"/Z/squibble/plugins/squibble_admin/app/models/concerns/squibble/promotion_attributes.rb",
-		"/Z/squibble/plugins/squibble_admin/app/views/layouts/shared/admin/_header.html.haml",
 		"/Z/squibble/plugins/squibble_admin/app/views/helpers/squibble_admin/markup/flash_messages_helper/_flash_messages.html.haml",
 		"/Z/squibble/plugins/squibble_admin/app/models/concerns/searchable_model.rb",
 		"/Z/squibble/plugins/squibble_admin/app/controllers/concerns/searchable_controller.rb",
@@ -948,12 +917,7 @@
 		"/Z/squibble/squibble-2016/app/views/admin/business/product/tangible_goods/_form_general.html.haml",
 		"/Z/squibble/squibble-2016/app/controllers/admin/business/product_controller.rb",
 		"/Z/squibble/squibble-2016/app/helpers/collection/business_helper.rb",
-		"/Z/squibble/squibble-2016/app/views/admin/business/product/_show_general.html.haml",
-		"/Z/squibble/squibble-2016/config/locales/models/de.business.attributes.yml",
-		"/Z/squibble/squibble-2016/config/locales/routes/de.routes.business.yml",
-		"/Z/squibble/squibble-2016/app/models/default/business/product.rb",
-		"/Z/squibble/squibble-2016/app/uploaders/photography/gallery/preview_uploader.rb",
-		"/Z/squibble/squibble-2016/app/controllers/api/v1/general/sync_controller.rb"
+		"/Z/squibble/squibble-2016/app/views/admin/business/product/_show_general.html.haml"
 	],
 	"find":
 	{
@@ -1214,135 +1178,30 @@
 	"groups":
 	[
 		{
-			"selected": 3,
+			"selected": 0,
 			"sheets":
 			[
 				{
 					"buffer": 0,
-					"file": "/Z/squibble/plugins/squibble_print/lib/squibble_print/version.rb",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 45,
+						"buffer_size": 0,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								45,
-								45
+								0,
+								0
 							]
 						],
 						"settings":
 						{
 							"color_scheme": "Packages/User/Color Highlighter/themes/Monokai.tmTheme",
-							"editorconfig": true,
-							"ensure_newline_at_eof_on_save": true,
-							"syntax": "Packages/Ruby/Ruby.sublime-syntax",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true,
-							"trim_trailing_white_space_on_save": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 3,
-					"type": "text"
-				},
-				{
-					"buffer": 1,
-					"file": "app/views/layouts/shared/admin/_header.html.haml",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 2804,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								666,
-								666
-							]
-						],
-						"settings":
-						{
-							"color_scheme": "Packages/User/Color Highlighter/themes/Monokai.tmTheme",
-							"editorconfig": true,
-							"ensure_newline_at_eof_on_save": true,
-							"syntax": "Packages/Rails/Ruby Haml.sublime-syntax",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true,
-							"trim_trailing_white_space_on_save": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 44.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 2,
-					"type": "text"
-				},
-				{
-					"buffer": 2,
-					"file": "app/helpers/squibble_admin/markup/form_helper.rb",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 4272,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								2518,
-								2518
-							]
-						],
-						"settings":
-						{
-							"editorconfig": true,
-							"ensure_newline_at_eof_on_save": true,
-							"syntax": "Packages/Ruby/Ruby.sublime-syntax",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true,
-							"trim_trailing_white_space_on_save": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 1117.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 1,
-					"type": "text"
-				},
-				{
-					"buffer": 3,
-					"file": "lib/assets/javascripts/squibble_admin/admin/elements/input-price.coffee",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 1042,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								606,
-								606
-							]
-						],
-						"settings":
-						{
-							"editorconfig": true,
-							"ensure_newline_at_eof_on_save": true,
-							"syntax": "Packages/CoffeeAngular Syntax/CoffeeAngular.tmLanguage",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true,
-							"trim_trailing_white_space_on_save": true
+							"default_dir": "Z:\\squibble\\plugins\\squibble_admin\\app\\inputs",
+							"syntax": "Packages/Text/Plain text.tmLanguage"
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
@@ -1947,7 +1806,7 @@
 	"show_open_files": false,
 	"show_tabs": true,
 	"side_bar_visible": true,
-	"side_bar_width": 385.0,
+	"side_bar_width": 362.0,
 	"status_bar_visible": true,
 	"template_settings":
 	{

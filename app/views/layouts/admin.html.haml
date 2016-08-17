@@ -12,9 +12,7 @@
       %meta{content: 'width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=0', name: 'viewport'}
 
       %meta{ name: :current_admin_user, data: { current_admin_user: { email: current_admin_user.email, name: current_admin_user.name, id: current_admin_user.id, roles: current_admin_user.role_keys } } }
-
       %meta{ name: :current_principal, data: { current_principal: { id: current_principal.id, slug: current_principal.to_param, site_name: current_principal.site_name, modules: current_principal.module_keys } } }
-
       %meta{ name: :'sq-current-principal-currency-unit', content: current_principal.currency.unit }
 
     = stylesheet_link_tag 'https://fonts.googleapis.com/css?family=Oswald:400,300,700', media: :all, :'data-turbolinks-track' => true
