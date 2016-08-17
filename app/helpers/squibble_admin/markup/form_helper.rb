@@ -115,7 +115,7 @@ module SquibbleAdmin::Markup::FormHelper
 
   def form_credit_card_security_code(form, attribute, options = {})
     form.input attribute,
-               input_html: { data: options[:data], class: :'sq-credit-card', min: 3, max: 4 },
+               input_html: { data: options[:data], class: :'sq-credit-card', minlength: 3, maxlength: 4 },
                required: (options[:required] == true ? true : false),
                placeholder: (options[:placeholder].present? ? options[:placeholder] : nil),
                wrapper: (options[:wrapper].present? ? options[:wrapper] : nil),

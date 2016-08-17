@@ -1,0 +1,26 @@
+<%
+  base_path = ''
+  if ENV['PROJECT'] =~ /editor/i
+    base_path << "/#{Rails.root.basename.to_s}/"
+  end
+  base_path << Rails.application.config.assets.prefix
+  base_path << '/ckeditor/'
+%>
+var CKEDITOR_BASEPATH = '<%= base_path %>';
+
+CKEDITOR.editorConfig = function (config) {
+  // Definieren der zu verwendenden Templates
+  config.template_files = ['/assets/ckeditor/bootstrap-templates.js'];
+  config.templates = 'bootstrap';
+
+  config.language = 'de';
+
+  // Sämtlicher HTML wird genau so abgespeichert, wie er übertragen wurde
+  config.allowedContent = true;
+  config.ignoreEmptyParagraph = false;
+
+  config.protectedSource.push(/<i [\s\S]*?\>/g); //allows beginning <i> tag
+  config.protectedSource.push(/<\/i[\s\S]*?\>/g); //allows ending </i> tag
+
+  config.removeButtons = 'Smiley,Underline,Subscript,Superscript,Iframe,Flash,Form,Checkbox,Radio,TextField,Textarea,Select,Button,ImageButton,HiddenField,Language,Div,Styles,Font,FontSize,About';
+};
