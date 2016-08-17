@@ -1,0 +1,14 @@
+- cache ['helpers/squibble_admin/admin/markup/show_helper/image_show', resource, preview_path ] do
+  = portlet do
+    = portlet_title do
+      = portlet_title_caption resource_attribute_name(:image)
+    = portlet_body do
+
+      = sq_image_responsive_tag preview_path
+      %hr
+
+      = show.attribute :image_file_name
+      = show.attribute :image_file_size do
+        = number_to_human_size resource.image_file_size
+      = show.attribute :image_extension
+      = show.attribute :image_content_type
