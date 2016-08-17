@@ -112,4 +112,35 @@ module SquibbleAdmin::Markup::FormHelper
     render partial: 'helpers/squibble_admin/markup/form_helper/form_error_messages',
            locals: { errors: errors, options: options }
   end
+
+  def form_credit_card_security_code(form, attribute, options = {})
+    form.input attribute,
+               input_html: { data: options[:data], class: :'sq-credit-card', min: 3, max: 4 },
+               required: (options[:required] == true ? true : false),
+               placeholder: (options[:placeholder].present? ? options[:placeholder] : nil),
+               wrapper: (options[:wrapper].present? ? options[:wrapper] : nil),
+               disabled: (options[:disabled] == true ? true : false),
+               autofocus: options[:autofocus],
+               hint: options[:hint]
+  end
+
+  def form_credit_card_number(form, attribute, options = {})
+    content_tag(:div, nil, class: 'input-group sq-credit-card') do
+      tmp = form.input attribute,
+                       input_html: {
+                         data: options[:data],
+                         class: :'sq-credit-card'
+                       },
+                       required: (options[:required] == true ? true : false),
+                       placeholder: (options[:placeholder].present? ? options[:placeholder] : nil),
+                       wrapper: (options[:wrapper].present? ? options[:wrapper] : nil),
+                       disabled: (options[:disabled] == true ? true : false),
+                       autofocus: options[:autofocus],
+                       hint: options[:hint]
+
+      tmp << content_tag(:span, nil, class: 'input-group-addon') do
+        content_tag(:i, nil, class: 'fa fa-cc')
+      end
+    end
+  end
 end

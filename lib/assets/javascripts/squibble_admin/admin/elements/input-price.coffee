@@ -29,6 +29,7 @@ handlePriceInput = () ->
     return
 
   $('input.price').priceFormat
+
     prefix: ''
     thousandsSeparator: ''
 

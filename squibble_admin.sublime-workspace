@@ -537,6 +537,25 @@
 				"buffer_size": 2804,
 				"line_ending": "Unix"
 			}
+		},
+		{
+			"file": "app/helpers/squibble_admin/markup/form_helper.rb",
+			"settings":
+			{
+				"buffer_size": 4272,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"contents": "'use strict'\n\n###\n  @description Sämtliche Preis Elemente (as: :price) werden mit der\n  aktuellen Währung markiert. Zudem wird priceFormat ausgeführt, damit\n  die Eingabe bereits clientseitig validiert werden kann.\n###\nhandlePriceInput = () ->\n  currency = $('meta[name=sq-current-principal-currency-unit]').attr 'content'\n\n  $('input.price:not(.processed)').each ( index ) ->\n    that = $(this)\n\n    # Anpassen des Markups, damit das Addon korrekt\n    # dargestellt wird.\n    #\n    that.wrap \"<div class='input-group price'></div>\"\n\n    # Hinzufügen des Addons für die Darstellung\n    # der Währung.\n    #\n    that.after \"<span class='input-group-addon'>#{currency}</span>\"\n\n    # Hinzufügen der Klasse zur Markierung der erfolgreichen\n    # Verarbeitung des Elements.\n    #\n    that.addClass 'processed'\n\n    return\n\n  $('input.price').priceFormat\n    prefix: ''\n    thousandsSeparator: ''\n\n$(document).on 'ready page:change', (event) ->\n  handlePriceInput()\n\n$(document).on 'cocoon:after-insert', (e, insertedItem) ->\n  handlePriceInput()\n",
+			"file": "lib/assets/javascripts/squibble_admin/admin/elements/input-price.coffee",
+			"file_size": 1050,
+			"file_write_time": 131158079444357638,
+			"settings":
+			{
+				"buffer_size": 1042,
+				"line_ending": "Unix"
+			}
 		}
 	],
 	"build_system": "",
@@ -797,7 +816,13 @@
 		"/Z/squibble/plugins/squibble_admin/app/views",
 		"/Z/squibble/plugins/squibble_admin/app/views/layouts",
 		"/Z/squibble/plugins/squibble_admin/app/views/layouts/shared",
-		"/Z/squibble/plugins/squibble_admin/app/views/layouts/shared/admin"
+		"/Z/squibble/plugins/squibble_admin/app/views/layouts/shared/admin",
+		"/Z/squibble/plugins/squibble_admin/lib",
+		"/Z/squibble/plugins/squibble_admin/lib/assets",
+		"/Z/squibble/plugins/squibble_admin/lib/assets/javascripts",
+		"/Z/squibble/plugins/squibble_admin/lib/assets/javascripts/squibble_admin",
+		"/Z/squibble/plugins/squibble_admin/lib/assets/javascripts/squibble_admin/admin",
+		"/Z/squibble/plugins/squibble_admin/lib/assets/javascripts/squibble_admin/admin/elements"
 	],
 	"file_history":
 	[
@@ -932,7 +957,7 @@
 	],
 	"find":
 	{
-		"height": 35.0
+		"height": 36.0
 	},
 	"find_in_files":
 	{
@@ -987,6 +1012,7 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"price",
 			"header",
 			"name",
 			"callback_method",
@@ -1113,8 +1139,7 @@
 			"backend_application",
 			"_presence_of_foreign_id_and_application_id",
 			"application_id",
-			"receipt_download_file_name",
-			"touch"
+			"receipt_download_file_name"
 		],
 		"highlight": true,
 		"in_selection": false,
@@ -1189,7 +1214,7 @@
 	"groups":
 	[
 		{
-			"selected": 1,
+			"selected": 3,
 			"sheets":
 			[
 				{
@@ -1223,7 +1248,7 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 1,
+					"stack_index": 3,
 					"type": "text"
 				},
 				{
@@ -1239,8 +1264,8 @@
 						"selection":
 						[
 							[
-								1043,
-								1043
+								666,
+								666
 							]
 						],
 						"settings":
@@ -1254,7 +1279,73 @@
 							"trim_trailing_white_space_on_save": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 64.0,
+						"translation.y": 44.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "app/helpers/squibble_admin/markup/form_helper.rb",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 4272,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								2518,
+								2518
+							]
+						],
+						"settings":
+						{
+							"editorconfig": true,
+							"ensure_newline_at_eof_on_save": true,
+							"syntax": "Packages/Ruby/Ruby.sublime-syntax",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true,
+							"trim_trailing_white_space_on_save": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 1117.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "lib/assets/javascripts/squibble_admin/admin/elements/input-price.coffee",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1042,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								606,
+								606
+							]
+						],
+						"settings":
+						{
+							"editorconfig": true,
+							"ensure_newline_at_eof_on_save": true,
+							"syntax": "Packages/CoffeeAngular Syntax/CoffeeAngular.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true,
+							"trim_trailing_white_space_on_save": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 0,
@@ -1315,6 +1406,10 @@
 		"last_filter": "",
 		"selected_items":
 		[
+			[
+				"form_he",
+				"squibble_admin\\app\\helpers\\squibble_admin\\markup\\form_helper.rb"
+			],
 			[
 				"routes.rb",
 				"squibble_mongoid_fields\\app\\models\\concerns\\squibble\\promotion_attributes.rb"
@@ -1822,10 +1917,6 @@
 			[
 				"routesdevise",
 				"config\\locales\\routes\\de.routes.devise.yml"
-			],
-			[
-				"class_helper",
-				"app\\helpers\\global\\class_helper.rb"
 			]
 		],
 		"width": 0.0
