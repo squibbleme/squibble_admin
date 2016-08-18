@@ -17,6 +17,7 @@ handleSelect2 = () ->
     #     )
 
   return
+
 jQuery ->
   handleSelect2()
 

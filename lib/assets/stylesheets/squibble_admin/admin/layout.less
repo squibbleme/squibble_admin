@@ -30,6 +30,7 @@ body.rails-env-development {
   }
 }
 
+
 .page-header.navbar {
   .page-logo {
     .logo-default {
@@ -86,7 +87,6 @@ a {
 // mit einem Icon
 //
 nav.navbar {
-
   ul.dropdown-menu {
     li.dropdown-menu-item {
       &.active {
@@ -96,6 +96,24 @@ nav.navbar {
             margin-left: 10px;
             content: "\f101";
             font-family: FontAwesome;
+          }
+        }
+      }
+    }
+  }
+}
+
+// FIX: Darstellung des Dropdowns für Mandanten auf Mobil
+//
+@media (max-width: 768px) {
+  header.page-header {
+    nav.navbar {
+      .topbar-actions {
+        .btn-group-img {
+          .btn {
+            &> span {
+              display: inline-table !important;
+            }
           }
         }
       }
