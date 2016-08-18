@@ -1,0 +1,9 @@
+.row
+  .col-md-6
+    = portlet do
+      = portlet_title do
+        = portlet_title_default_show_caption
+      = portlet_body do
+        = show.attributes :id
+
+        = show_timestamps(show)

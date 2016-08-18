@@ -1,0 +1,45 @@
+# === Beschreibung
+# Diese Operation kümmert sich darum, dass ein <%= @name %>
+# als Relation eines anderen Datensatzes immer gleich ausgegeben wird.
+#
+# === Verwendung
+# <%= @name %>::DataHandling::CSVRelationOperation::CSV_HEADER.flatten
+# <%= @name %>::DataHandling::CSVRelationOperation.perform(resource, relation: :<%= relation %>)
+#
+# === Date
+# <%= Time.zone.today %>
+#
+# === Name
+# <%= @name %>::DataHandling::CSVRelationOperation < ComposableOperations::Operation
+#
+class <%= @name %>::DataHandling::CSVRelationOperation < ComposableOperations::Operation
+  include CSVService
+
+   CSV_HEADER = [
+    :'<%= @relation %>[id]'
+  ].flatten.freeze
+
+  # Datensatz, auf welchem die Verbindung dargestellt werden soll.
+  #
+  processes :resource
+
+  property :relation,
+           required: false,
+           default: :<%= @relation %>,
+           converts: :to_sym
+
+  def execute
+    if resource.class.method_defined?(relation) && resource.send(relation).present?
+      # dynamische Relation
+      #
+      d_relation = resource.send(relation)
+
+      [
+        d_relation.id.to_s
+      ]
+    else
+      Array.new(CSV_HEADER.size)
+    end
+  end
+
+end

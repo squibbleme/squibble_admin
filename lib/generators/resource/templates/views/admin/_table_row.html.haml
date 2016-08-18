@@ -1,0 +1,4 @@
+- cache [ 'admin/<%= @internal_module_name %>/table_row', resource ] do
+  %tr{ default_overview_resource_attributes( resource ) }
+    %td
+    %td.text-right= default_resource_actions(resource)

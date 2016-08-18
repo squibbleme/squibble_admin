@@ -1,0 +1,12 @@
+# Diese Operation wurde automatisch am <%= Time.now.strftime("%F %T") %> generiert
+# und kümmert sich um die Verarbeitung von Issue #<%= @name %>.
+#
+# operation = <%= @operation_class_name %>.perform()
+#
+class <%= @operation_class_name %> < ComposableOperations::Operation
+  include SquibbleService
+
+  def execute
+
+  end
+end

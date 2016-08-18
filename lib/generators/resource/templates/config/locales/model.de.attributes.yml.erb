@@ -1,0 +1,11 @@
+de:
+  defaults: &defaults
+    created_at: Erstellt am
+    description: Beschreibung
+    id: ID
+    label: Titel
+    updated_at: Aktualisiert am
+  mongoid:
+    attributes:
+      <%= name.gsub('::', '/').underscore %>:
+        <<: *defaults

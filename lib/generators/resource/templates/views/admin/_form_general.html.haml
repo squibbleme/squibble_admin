@@ -1,0 +1,14 @@
+.row
+  .col-md-6
+    = portlet do
+      = portlet_title_form_general_information
+      = portlet_body_form do
+        links
+
+
+  .col-md-6
+    = portlet do
+      = portlet_title_form_additional_information(resource_attribute_name(:key))
+      = portlet_body_form_additional_information do
+        rechts
+

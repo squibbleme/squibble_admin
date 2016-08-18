@@ -1,0 +1,9 @@
+Description:
+    Dieser Generator kümmert sich um die korrekte Generierung
+    der Migrate Operation für einen entsprechenden Issue.
+
+Example:
+    rails generate migrate 202
+
+    This will create:
+        app/operations/migrate/<timestamp>_issue_202_operation.rb

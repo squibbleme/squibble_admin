@@ -1,0 +1,30 @@
+#
+# === Author
+# Patrick Lehmann <lehmann@squibble.me>
+#
+# === Date
+# <%= Date.today %>
+#
+# === Name
+# <%= @admin_controller %> extended by AdminController
+#
+class <%= @admin_controller %> < AdminController
+  load_and_authorize_resource class: '::<%= class_name %>'
+
+  defaults resource_class: ::<%= class_name %>,
+           collection_name: '<%= @collection_name %>',
+           instance_name: '<%= @resource_name %>'
+
+  include SearchableController
+
+  protected
+
+  # def end_of_association_chain
+  #   super.includes()
+  # end
+
+  def <%= @resource_name %>_params
+    params.require(:<%= @resource_name %>)
+          .permit()
+  end
+end

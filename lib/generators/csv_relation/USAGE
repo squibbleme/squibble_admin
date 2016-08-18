@@ -1,0 +1,12 @@
+Description:
+    Dieser Generator kümmert sich darum, dass die benötigten Operationen
+    für die Ausgabe von Relationen als .csv in ihrer Basis korrekt generiert
+    werden.
+
+Example:
+    rails generate csv_relation Business::Invoice invoice
+
+    This will create:
+        app/operation/business/invoice/data_handling/collection_to_csv_operation.rb
+        app/operation/business/invoice/data_handling/csv_entry_operation.rb
+        app/operation/business/invoice/data_handling/csv_relation_operation.rb

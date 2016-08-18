@@ -1,0 +1,40 @@
+# === Beschreibung
+# Diese Operation kümmert sich darum, dass ein Datensatz als entsprechendes Array
+# retourniert wird.
+#
+# === Verwendung
+# <%= @name %>::DataHandling::CSVEntryOperation.new( resource ).perform
+#
+# === Date
+# <%= Time.zone.today %>
+#
+# === Name
+# <%= @name %>::DataHandling::CSVEntryOperation < ComposableOperations::Operation
+#
+class <%= @name %>::DataHandling::CSVEntryOperation < ComposableOperations::Operation
+  processes :resource
+
+  include CSVService
+
+  CSV_HEADER = [
+    :<%= relation %>_id,
+
+    Business::AccountingYear::DataHandling::CSVRelationOperation::CSV_HEADER.flatten,
+    Business::Period::DataHandling::CSVRelationOperation::CSV_HEADER.flatten,
+
+    :created_at_date, :created_at_time, :updated_at_date, :updated_at_time,
+    :year, :month, :week, :weekday
+  ].flatten.freeze
+
+  def execute
+    [
+      resource.id.to_s,
+
+      Business::AccountingYear::DataHandling::CSVRelationOperation.perform(resource),
+      Business::Period::DataHandling::CSVRelationOperation.perform(resource),
+
+      csv_content_timestamps(resource),
+      resource.date.year, resource.date.month, resource.date.cweek, (resource.date.wday + 1)
+    ].flatten
+  end
+end

@@ -1,0 +1,42 @@
+# === Beschreibung
+# Diese Operation kümmert sich um die Ausgabe der übergebenen
+# <%= @name %> in der :collection als .csv Datei.
+#
+# Die Datei wird im :file_path abgelegt und kann als zusätzliches
+# Attribut angepasst werden.
+#
+# === Verwendung
+# operation = <%= @name %>::DataHandling::CollectionToCSVOperation.new(
+#   collection, file_path: :custom_file_path
+# )
+# operation.perform
+#
+# === Date
+# <%= Time.zone.today %>
+#
+# === Name
+# <%= @name %>::DataHandling::CSVEntryOperation < ComposableOperations::Operation
+#
+class <%= @name %>::DataHandling::CollectionToCSVOperation < ComposableOperations::Operation
+  include CSVService
+
+  CURRENT_RESOURCE_CLASS = <%= @name %>
+  CSV_ENTRY_OPERATION = <%= @name %>::DataHandling::CSVEntryOperation
+  EXPORT_VERSION = 1.0
+
+  processes :collection
+
+  # Der Standard Speicherdateiname enthält einen
+  # Zeitstempel und den bearbeiteten Klassennamen
+  #
+  property :file_path,
+           required: false,
+           default: Rails.root.join(
+             Settings.export_path,
+             "#{I18n.l(Time.zone.now, format: :system)}_<%= @relation.pluralize %>_v#{EXPORT_VERSION.to_s.gsub('.', '_')}.csv"
+           )
+
+  def execute
+    _handle_default_execution(collection, file_path)
+  end
+end
