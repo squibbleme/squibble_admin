@@ -28,25 +28,4 @@ Gem::Specification.new do |spec|
 
   spec.add_development_dependency "bundler", "~> 1.11"
   spec.add_development_dependency "rake", "~> 10.0"
-
-  spec.add_dependency('active_link_to')
-  spec.add_dependency('carrierwave')
-  spec.add_dependency('carrierwave_backgrounder')
-  spec.add_dependency('cocoon')
-  spec.add_dependency('countries')
-  spec.add_dependency('country_select')
-  spec.add_dependency('has_scope')
-  spec.add_dependency('haml')
-  spec.add_dependency('slack-notifier')
-  spec.add_dependency('kaminari-mongoid')
-  spec.add_dependency('state_machine')
-  spec.add_dependency('jquery-rails')
-  spec.add_dependency('exception_notification')
-  spec.add_dependency('jquery-ui-rails')
-  spec.add_dependency('jquery-turbolinks')
-  spec.add_dependency('show_for')
-  spec.add_dependency('sidekiq')
-  spec.add_dependency('sidekiq-cron', '~> 0.4.0')
-  spec.add_dependency('simple_form')
-  spec.add_dependency('turbolinks', '~> 5.0.0')
 end
