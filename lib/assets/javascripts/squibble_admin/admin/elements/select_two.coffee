@@ -2,19 +2,19 @@
 
 handleSelect2 = () ->
 
-  return if /Mobi/.test(navigator.userAgent)
+  if !/Mobi/.test(navigator.userAgent)
 
     $('select:not(.processed)').each ( index ) ->
-      $(this).select2
+      $(this).select2(
         allowClear: !$(this).closest('.form-group').hasClass('required')
-      .addClass 'processed'
+      ).addClass 'processed'
 
-    #   $('input.select_two_array').each ( index ) ->
+      #   $('input.select_two_array').each ( index ) ->
 
-    #     $(this).select2(
-    #       tags: true
-    #       tokenSeparators: [',']
-    #     )
+      #     $(this).select2(
+      #       tags: true
+      #       tokenSeparators: [',']
+      #     )
 
   return
 
