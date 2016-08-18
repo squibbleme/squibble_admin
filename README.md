@@ -94,3 +94,7 @@ end
 * 21.07.2016: Erweiterung um ```sq_image_responsive_tag```
 * 17.08.2016: Erweiterung um Helper für Darstellung von Kreditkarten Elementen und die entsprechenden Assets. Die Installation von ```bower install --save jquery-creditcardvalidator``` ist zwingend notwendig.
 * 17.08.2016: Auslagerung von Assets
+
+## Version 0.1.0
+
+* 18.08.2016: Integration von blockUI und Formular Validierung. Für die Installation ist ```gem 'turbolinks', '~> 5.0.0'``` notwendig.

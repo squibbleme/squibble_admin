@@ -1,6 +1,6 @@
 'use strict'
 
-$(document).on 'ready page:change', (event) ->
+jQuery ->
 
   $('.sq-time').each ( index ) ->
     # Setzen des Formates für die Ausgabe in MomentJS

@@ -1,5 +1,5 @@
 'use strict'
 
-$(document).on 'ready page:change', (event) ->
+jQuery ->
 
   $('[data-toggle="tooltip"]').tooltip()

@@ -26,7 +26,7 @@ handleNumberInput = () ->
       that.addClass 'processed'
 
     return
-$(document).on 'ready page:change', (event) ->
+jQuery ->
   handleNumberInput()
 
 $(document).on 'cocoon:after-insert', (e, insertedItem) ->

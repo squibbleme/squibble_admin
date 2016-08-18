@@ -32,7 +32,7 @@ googleMapsForAddress = () ->
 
     that.addClass 'processed'
 
-$(document).on 'ready page:change', (event) ->
+jQuery ->
   googleMapsForAddress()
 
 $(document).on 'cocoon:after-insert', (e, insertedItem) ->

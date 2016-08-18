@@ -59,7 +59,7 @@ $(document).on 'ready', (event) ->
                       level_2.removeClass 'display-none'
 
 
-$(document).on 'ready page:change', (event) ->
+jQuery ->
   handleNavigation()
 
 

@@ -1,5 +1,5 @@
-- cache [ :admin, :footer ] do
-  %p.copyright#sq-application-page-footer{ data: { turbolinks: { permanent: true } } }
+- cache 'admin/footer' do
+  %p.copyright#sq-application-page-footer
     2016 &copy; get squibbled by
     %a{ href: 'http://www.squibble.me', target: :_blank }
       Squibble GmbH

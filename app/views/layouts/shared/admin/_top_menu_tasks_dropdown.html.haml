@@ -1,7 +1,7 @@
 - unless current_employee.nil?
   - cache [ 'layouts/shared/admin/top_menu/top_menu_tasks_dropdown', current_employee ] do
     .btn-group-notification.btn-group#header_task_bar
-      %button.btn.btn-sm.dropdown-toggle{ type: :button, data: { toggle: :dropdown, hover: :dropdown, close: { others: :trhe } } }
+      %button.btn.btn-sm.dropdown-toggle{ type: :button, data: { toggle: :dropdown, hover: :dropdown, close: { others: :true } } }
         %i.fa.fa-tasks
         %span.badge.badge-primary
           = uncompleted_business_tasks_for_employee(current_employee).total_count

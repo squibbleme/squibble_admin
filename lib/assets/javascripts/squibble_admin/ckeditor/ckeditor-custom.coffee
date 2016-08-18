@@ -1,6 +1,6 @@
 'use strict'
 
-$(document).on 'ready page:change', (event) ->
+jQuery ->
 
   # Diese Methode kümmert sich darum, dass, sofern das Attribute
   # data-ckeditor-asset-name gesetzt ist, der Wert an den entsprechenden

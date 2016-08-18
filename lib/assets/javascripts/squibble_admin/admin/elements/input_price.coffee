@@ -33,7 +33,7 @@ handlePriceInput = () ->
     prefix: ''
     thousandsSeparator: ''
 
-$(document).on 'ready page:change', (event) ->
+jQuery ->
   handlePriceInput()
 
 $(document).on 'cocoon:after-insert', (e, insertedItem) ->

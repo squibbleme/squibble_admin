@@ -101,7 +101,7 @@ handleDateTimeInput = () ->
 
     return
 
-$(document).on 'ready page:change', (event) ->
+jQuery ->
   handleDateTimeInput()
 
 $(document).on 'cocoon:after-insert', (e, insertedItem) ->

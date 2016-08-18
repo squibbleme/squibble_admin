@@ -1,6 +1,6 @@
 'use strict'
 
-$(document).on 'ready page:change', (event) ->
+jQuery ->
 
   $('textarea.codemirror').each ( element ) ->
     unless $(this).hasClass('processed')

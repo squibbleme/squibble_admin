@@ -216,9 +216,20 @@ form {
 
 
       &.form-md-line-input {
+        // Einfärben des Hilfeblocks für alle Formularfelder
+        //
         span.help-block {
           font-size: 0.8em;
           color: #737373 !important;
+        }
+
+        // Einfärben des Hilfeblocks bei der Eingabe von
+        // ungültigen Daten
+        //
+        &.has-error {
+          span.help-block {
+            color: #e73d4a !important;
+          }
         }
       }
     }

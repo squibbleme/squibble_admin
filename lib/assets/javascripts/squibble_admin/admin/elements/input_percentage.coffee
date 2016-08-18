@@ -18,7 +18,7 @@ handlePercentageInput = () ->
 
     return
 
-$(document).on 'ready page:change', (event) ->
+jQuery ->
   handlePercentageInput()
 
 $(document).on 'cocoon:after-insert', (e, insertedItem) ->

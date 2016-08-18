@@ -1,12 +1,11 @@
 'use strict'
 
-# $ ->
+handleSelect2 = () ->
 
-
-#   # $('select:not(.processed)').each ( index ) ->
-#   #   $(this).select2
-#   #     allowClear: !$(this).closest('.form-group').hasClass('required')
-#   #   .addClass 'processed'
+  $('select:not(.processed)').each ( index ) ->
+    $(this).select2
+      allowClear: !$(this).closest('.form-group').hasClass('required')
+    .addClass 'processed'
 
 #   $('input.select_two_array').each ( index ) ->
 
@@ -15,4 +14,9 @@
 #       tokenSeparators: [',']
 #     )
 
-#   return
+  return
+jQuery ->
+  handleSelect2()
+
+$(document).on 'cocoon:after-insert', (e, insertedItem) ->
+  handleSelect2()

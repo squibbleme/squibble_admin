@@ -59,7 +59,7 @@ handleCreditCardInput = () ->
 
     return
 
-$(document).on 'ready page:change', (event) ->
+jQuery ->
   handleCreditCardInput()
 
 $(document).on 'cocoon:after-insert', (e, insertedItem) ->

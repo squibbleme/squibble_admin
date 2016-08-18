@@ -1,6 +1,6 @@
 'use strict'
 
-$(document).on 'ready page:change', (event) ->
+jQuery ->
 
   DAY_IN_SECONDS = 24 * 3600
 
@@ -41,9 +41,6 @@ $(document).on 'ready page:change', (event) ->
       # das Format entsprechend angepasst, damit nicht 000: steht.
       #
       if _.isEqual(format, 'hhh:mm:ss')
-
         format = 'hh:mm:ss' if input <= DAY_IN_SECONDS
-
-
 
       $(this).text moment.duration(input, 'seconds').format(format, trim: false)

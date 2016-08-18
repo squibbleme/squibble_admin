@@ -34,7 +34,7 @@ handleDateInput = () ->
 
 
 
-$(document).on 'ready page:change', (event) ->
+jQuery ->
   handleDateInput()
 
 $(document).on 'cocoon:after-insert', (e, insertedItem) ->

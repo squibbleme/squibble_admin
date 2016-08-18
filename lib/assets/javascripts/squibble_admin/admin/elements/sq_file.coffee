@@ -1,6 +1,6 @@
 'use strict'
 
-$(document).on 'ready page:change', (event) ->
+jQuery ->
 
 
   # Bei der Änderung eines Datei Inputs, der bereits über eine verknüpfte Datei
