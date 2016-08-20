@@ -100,3 +100,4 @@ end
 * 18.08.2016: Integration von blockUI und Formular Validierung. Für die Installation ist ```gem 'turbolinks', '~> 5.0.0'``` notwendig.
 * 18.08.2016: Auslagern von gems in squibble_admin Gemfile
 * 18.08.2016: Auslagerung der Squibble Generatoren
+* 20.08.2016: Auslagerung des Meta Tags Handlings in ```MetaTagHandler```. Zur Verwendung ```include MetaTagsHandler``` im ApplicationController
