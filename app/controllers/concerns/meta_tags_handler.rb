@@ -31,6 +31,10 @@ module MetaTagsHandler
       @meta_tags[:'og:url'] = path
     end
 
+    def set_meta_keywords(keywords)
+      @meta_tags[:keywords] = keywords
+    end
+
     def set_meta_description(description)
       return if description.nil?
       description = ActionView::Base.full_sanitizer.sanitize(description)

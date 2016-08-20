@@ -520,10 +520,19 @@
 	"buffers":
 	[
 		{
-			"file": "lib/assets/stylesheets/squibble_admin/general/layout.less",
+			"file": "app/controllers/concerns/meta_tags_handler.rb",
 			"settings":
 			{
-				"buffer_size": 427,
+				"buffer_size": 1223,
+				"line_ending": "Unix",
+				"name": "meta_tags_handler.rb"
+			}
+		},
+		{
+			"file": "lib/squibble_admin/version.rb",
+			"settings":
+			{
+				"buffer_size": 45,
 				"line_ending": "Unix"
 			}
 		}
@@ -784,10 +793,10 @@
 		"/Z/squibble/plugins/squibble_admin",
 		"/Z/squibble/plugins/squibble_admin/app",
 		"/Z/squibble/plugins/squibble_admin/app/assets",
-		"/Z/squibble/plugins/squibble_admin/app/helpers/squibble_admin/markup",
-		"/Z/squibble/plugins/squibble_admin/app/views/layouts",
+		"/Z/squibble/plugins/squibble_admin/app/controllers",
+		"/Z/squibble/plugins/squibble_admin/app/controllers/concerns",
+		"/Z/squibble/plugins/squibble_admin/config",
 		"/Z/squibble/plugins/squibble_admin/lib",
-		"/Z/squibble/plugins/squibble_admin/lib/assets",
 		"/Z/squibble/plugins/squibble_admin/lib/assets/stylesheets",
 		"/Z/squibble/plugins/squibble_admin/lib/assets/stylesheets/squibble_admin",
 		"/Z/squibble/plugins/squibble_admin/lib/assets/stylesheets/squibble_admin/general",
@@ -797,6 +806,7 @@
 	],
 	"file_history":
 	[
+		"/Z/squibble/plugins/squibble_admin/README.md",
 		"/Z/squibble/plugins/squibble_admin/app/views/layouts/admin.html.haml",
 		"/Z/squibble/plugins/squibble_admin/lib/squibble_admin/version.rb",
 		"/Z/squibble/plugins/squibble_admin/app/views/admin/_form.html.haml",
@@ -805,7 +815,6 @@
 		"/Z/squibble/plugins/squibble_admin/lib/assets/javascripts/squibble_admin/general/turbolinks_compatibility.coffee",
 		"/Z/squibble/plugins/squibble_admin/lib/assets/javascripts/squibble_admin/admin/elements/select_two.coffee",
 		"/Z/squibble/plugins/squibble_admin/lib/assets/javascripts/squibble_admin/general_manifest.js",
-		"/Z/squibble/plugins/squibble_admin/README.md",
 		"/Z/squibble/plugins/squibble_admin/app/views/layouts/shared/admin/_header.html.haml",
 		"/Z/squibble/plugins/squibble_admin/lib/assets/stylesheets/squibble_admin/admin/layout.less",
 		"/Z/squibble/plugins/squibble_admin/squibble_admin.gemspec",
@@ -1188,32 +1197,65 @@
 	"groups":
 	[
 		{
-			"selected": 0,
+			"selected": 1,
 			"sheets":
 			[
 				{
 					"buffer": 0,
-					"file": "lib/assets/stylesheets/squibble_admin/general/layout.less",
-					"semi_transient": true,
+					"file": "app/controllers/concerns/meta_tags_handler.rb",
+					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 427,
+						"buffer_size": 1223,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								101,
-								101
+								379,
+								379
 							]
 						],
 						"settings":
 						{
-							"color_scheme": "Packages/User/Color Highlighter/themes/Monokai.tmTheme",
+							"auto_name": "meta_tags_handler.rb",
 							"editorconfig": true,
 							"ensure_newline_at_eof_on_save": true,
-							"syntax": "Packages/LESS/LESS.tmLanguage",
+							"syntax": "Packages/Ruby/Ruby.sublime-syntax",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true,
+							"trim_trailing_white_space_on_save": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "lib/squibble_admin/version.rb",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 45,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								39,
+								39
+							]
+						],
+						"settings":
+						{
+							"editorconfig": true,
+							"ensure_newline_at_eof_on_save": true,
+							"syntax": "Packages/Ruby/Ruby.sublime-syntax",
 							"tab_size": 2,
 							"translate_tabs_to_spaces": true,
 							"trim_trailing_white_space_on_save": true
@@ -1281,6 +1323,10 @@
 		"selected_items":
 		[
 			[
+				"readme",
+				"squibble_admin\\README.md"
+			],
+			[
 				"showhel",
 				"squibble_admin\\app\\helpers\\squibble_admin\\markup\\show_helper.rb"
 			],
@@ -1291,10 +1337,6 @@
 			[
 				"form.html",
 				"squibble_admin\\app\\views\\admin\\_form.html.haml"
-			],
-			[
-				"readme",
-				"squibble_admin\\README.md"
 			],
 			[
 				"form_he",
