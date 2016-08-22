@@ -537,10 +537,10 @@
 			}
 		},
 		{
-			"file": "app/views/admin/index.html.haml",
+			"file": "lib/assets/javascripts/squibble_admin/admin/elements/select_two.coffee",
 			"settings":
 			{
-				"buffer_size": 1044,
+				"buffer_size": 555,
 				"line_ending": "Unix"
 			}
 		}
@@ -800,8 +800,14 @@
 	[
 		"/Z/squibble/plugins/squibble_admin",
 		"/Z/squibble/plugins/squibble_admin/app",
-		"/Z/squibble/plugins/squibble_admin/app/controllers",
-		"/Z/squibble/plugins/squibble_admin/app/controllers/concerns"
+		"/Z/squibble/plugins/squibble_admin/app/assets/plugins",
+		"/Z/squibble/plugins/squibble_admin/app/controllers/concerns",
+		"/Z/squibble/plugins/squibble_admin/lib",
+		"/Z/squibble/plugins/squibble_admin/lib/assets",
+		"/Z/squibble/plugins/squibble_admin/lib/assets/javascripts",
+		"/Z/squibble/plugins/squibble_admin/lib/assets/javascripts/squibble_admin",
+		"/Z/squibble/plugins/squibble_admin/lib/assets/javascripts/squibble_admin/admin",
+		"/Z/squibble/plugins/squibble_admin/lib/assets/javascripts/squibble_admin/admin/elements"
 	],
 	"file_history":
 	[
@@ -1196,7 +1202,7 @@
 	"groups":
 	[
 		{
-			"selected": 2,
+			"selected": 1,
 			"sheets":
 			[
 				{
@@ -1263,32 +1269,31 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 1,
+					"stack_index": 0,
 					"type": "text"
 				},
 				{
 					"buffer": 2,
-					"file": "app/views/admin/index.html.haml",
-					"semi_transient": true,
+					"file": "lib/assets/javascripts/squibble_admin/admin/elements/select_two.coffee",
+					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 1044,
+						"buffer_size": 555,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								1044,
-								1044
+								437,
+								437
 							]
 						],
 						"settings":
 						{
-							"color_scheme": "Packages/User/Color Highlighter/themes/Monokai.tmTheme",
 							"editorconfig": true,
 							"ensure_newline_at_eof_on_save": true,
-							"syntax": "Packages/Rails/Ruby Haml.sublime-syntax",
+							"syntax": "Packages/CoffeeAngular Syntax/CoffeeAngular.tmLanguage",
 							"tab_size": 2,
 							"translate_tabs_to_spaces": true,
 							"trim_trailing_white_space_on_save": true
@@ -1297,7 +1302,7 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 0,
+					"stack_index": 1,
 					"type": "text"
 				}
 			]

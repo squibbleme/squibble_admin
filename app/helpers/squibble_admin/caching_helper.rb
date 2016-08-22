@@ -8,12 +8,12 @@ module SquibbleAdmin::CachingHelper
     ]
   end
 
-  def index_collection_cache_key_with_pagination
+  def index_collection_cache_key_with_pagination( resource_clazz = resource_class, coll = collection)
     [
       params,
-      resource_class.to_s,
-      collection.total_count,
-      collection.max(:updated_at).to_i,
+      resource_clazz.to_s,
+      coll.total_count,
+      coll.max(:updated_at).to_i,
     ]
   end
 end
