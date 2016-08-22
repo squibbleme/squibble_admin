@@ -6,7 +6,8 @@ handleSelect2 = () ->
 
     $('select:not(.processed)').each ( index ) ->
       $(this).select2(
-        allowClear: !$(this).closest('.form-group').hasClass('required')
+        allowClear: !$(this).closest('.form-group').hasClass('required'),
+        width: '100%'
       ).addClass 'processed'
 
       #   $('input.select_two_array').each ( index ) ->
