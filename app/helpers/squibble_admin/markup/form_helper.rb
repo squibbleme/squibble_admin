@@ -29,6 +29,18 @@ module SquibbleAdmin::Markup::FormHelper
                                       wrapper: options[:wrapper]
   end
 
+  def form_field_sq_search_keywords(form, options = {})
+    options[:rows] = 3 if options[:rows].nil?
+    options[:attribute] = :sq_search_keywords if options[:attribute].nil?
+    form.input options[:attribute],
+               as: :text,
+               input_html: {
+                 rows: options[:rows]
+               },
+               hint: resource_attribute_name(:sq_search_keywords_hint),
+               wrapper: options[:wrapper]
+  end
+
   def form_field_meta_attributes(form)
     render partial: 'helpers/squibble_admin/markup/form_helper/form_field_meta_attributes',
            locals: { f: form }
