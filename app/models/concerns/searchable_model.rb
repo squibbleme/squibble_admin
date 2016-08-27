@@ -4,6 +4,9 @@ module SearchableModel
   included do
     include ::Elasticsearch::Model
 
+    field :sq_search_keywords,
+          type: String
+
     mapping do
       # ...
     end

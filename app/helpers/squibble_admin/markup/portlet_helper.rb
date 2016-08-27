@@ -73,6 +73,18 @@ module SquibbleAdmin::Markup::PortletHelper
     end
   end
 
+  # Diese Methode retourniert das Standard Portlet für die Darstellung
+  # der :internal_description im "Additional Field" Stil.
+  #
+  def portlet_form_additional_field_sq_search_keywords(f, options = {})
+    portlet do
+      tmp = portlet_title_form_additional_information(resource_attribute_name(:sq_search_keywords))
+      tmp << portlet_body_form_additional_information do
+        form_field_sq_search_keywords(f, rows: (options[:rows].present? ? options[:rows] : 3), wrapper: :no_label)
+      end
+    end
+  end
+
   def portlet_form_additional_field_landing_page(form)
     render partial: 'helpers/squibble_admin/markup/portlet_helper/portlet_form_additional_field_landing_page',
            locals: { f: form }

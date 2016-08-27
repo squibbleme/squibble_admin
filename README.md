@@ -102,3 +102,4 @@ end
 * 18.08.2016: Auslagerung der Squibble Generatoren
 * 20.08.2016: Auslagerung des Meta Tags Handlings in ```MetaTagHandler```. Zur Verwendung ```include MetaTagsHandler``` im ApplicationController
 * 22.08.2016: Erweiterung des ```index_collection_cache_key_with_pagination``` um :resource_class und :collection
+* 23.08.2016: Erweiterung um ```:sq_search_keywords``` für SearchableModel, ```:thumbnail_show``` im SquibbleAdmin::Admin::Markup::ShowHelper
