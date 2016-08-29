@@ -70,11 +70,11 @@ module SearchableModel
   end
 
   def self.included(base)
-    base.after_touch   { |document| Elasticsearch::IndexerWorker.perform_async(:touch, document.class, :index, document.id) }
-    base.after_create  { |document| Elasticsearch::IndexerWorker.perform_async(:create, document.class, :index, document.id) }
-    base.after_update  { |document| Elasticsearch::IndexerWorker.perform_async(:update, document.class, :update, document.id) }
-    base.after_destroy { |document|
-      Elasticsearch::IndexerWorker.perform_async(:destroy, document.class, :destroy, document.id)
+    base.after_touch   { |resource| Elasticsearch::IndexerWorker.perform_async(:touch, resource.class, :index, resource.id) }
+    base.after_create  { |resource| Elasticsearch::IndexerWorker.perform_async(:create, resource.class, :index, resource.id) }
+    base.after_update  { |resource| Elasticsearch::IndexerWorker.perform_async(:update, resource.class, :update, resource.id) }
+    base.after_destroy { |resource|
+      Elasticsearch::IndexerWorker.perform_async(:destroy, resource.class, :destroy, resource.id)
 
       return unless resource.respond_to? :principal_id
       Deletion::CreateWorker.perform_async(resource.class.to_s, resource.id, resource.principal_id)
