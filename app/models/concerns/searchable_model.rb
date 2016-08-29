@@ -77,13 +77,7 @@ module SearchableModel
 
     base.before_destroy do |resource|
       return unless resource.respond_to? :principal_id
-
-      operation = Deletion::CreateOperation.new(
-        resource_class: resource.class.to_s,
-        resource_id: resource.id,
-        principal_id: resource.principal_id
-      )
-      operation.perform
+      Deletion::CreateWorker.perform_async(resource.class.to_s, resource.id, resource.principal_id)
     end
   end
 end
