@@ -529,6 +529,15 @@
 			}
 		},
 		{
+			"file": "app/operations/deletion/create_execution_operation.rb",
+			"settings":
+			{
+				"buffer_size": 1285,
+				"line_ending": "Unix",
+				"name": "create_execution_operation.rb"
+			}
+		},
+		{
 			"file": "app/workers/elasticsearch/indexer_worker.rb",
 			"settings":
 			{
@@ -800,15 +809,17 @@
 	[
 		"/Z/squibble/plugins/squibble_admin",
 		"/Z/squibble/plugins/squibble_admin/app",
-		"/Z/squibble/plugins/squibble_admin/app/models/concerns",
 		"/Z/squibble/plugins/squibble_admin/app/operations",
+		"/Z/squibble/plugins/squibble_admin/app/operations/deletion",
 		"/Z/squibble/plugins/squibble_admin/lib",
+		"/Z/squibble/plugins/squibble_admin/lib/assets",
 		"/Z/squibble/plugins/squibble_admin/lib/squibble_admin"
 	],
 	"file_history":
 	[
-		"/Z/squibble/plugins/squibble_admin/app/models/concerns/searchable_model.rb",
+		"/Z/squibble/plugins/squibble_mongoid_fields/app/models/concerns/squibble/sort.rb",
 		"/Z/squibble/plugins/squibble_admin/lib/squibble_admin/version.rb",
+		"/Z/squibble/plugins/squibble_admin/app/models/concerns/searchable_model.rb",
 		"/Z/squibble/plugins/squibble_admin/app/workers/deletion/create_worker.rb",
 		"/Z/squibble/plugins/squibble_admin/README.md",
 		"/Z/squibble/plugins/squibble_admin/app/views/helpers/squibble_admin/markup/button_helper/_destroy_button.html.haml",
@@ -933,8 +944,7 @@
 		"/Z/squibble/plugins/squibble_admin/lib/assets/stylesheets/squibble_admin/admin/elements/sq-acl-admin-user-list-item.less",
 		"/Z/squibble/plugins/squibble_admin/lib/assets/stylesheets/squibble_admin/admin/form.less",
 		"/Z/squibble/plugins/squibble_admin/lib/assets/stylesheets/squibble_admin/general/layout.less",
-		"/Z/squibble/plugins/squibble_admin/lib/assets/stylesheets/squibble_admin/general/table.less",
-		"/Z/squibble/plugins/squibble_admin/lib/assets/stylesheets/squibble_admin/general/be_margin_and_padding/margin_padding_grid.less"
+		"/Z/squibble/plugins/squibble_admin/lib/assets/stylesheets/squibble_admin/general/table.less"
 	],
 	"find":
 	{
@@ -1200,7 +1210,7 @@
 	"groups":
 	[
 		{
-			"selected": 0,
+			"selected": 1,
 			"sheets":
 			[
 				{
@@ -1234,11 +1244,45 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 0,
+					"stack_index": 1,
 					"type": "text"
 				},
 				{
 					"buffer": 1,
+					"file": "app/operations/deletion/create_execution_operation.rb",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1285,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								673,
+								673
+							]
+						],
+						"settings":
+						{
+							"auto_name": "create_execution_operation.rb",
+							"editorconfig": true,
+							"ensure_newline_at_eof_on_save": true,
+							"syntax": "Packages/Ruby/Ruby.sublime-syntax",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true,
+							"trim_trailing_white_space_on_save": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
 					"file": "app/workers/elasticsearch/indexer_worker.rb",
 					"semi_transient": false,
 					"settings":
@@ -1267,11 +1311,11 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 2,
+					"stack_index": 3,
 					"type": "text"
 				},
 				{
-					"buffer": 2,
+					"buffer": 3,
 					"file": "app/workers/deletion/create_worker.rb",
 					"semi_transient": false,
 					"settings":
@@ -1301,7 +1345,7 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 1,
+					"stack_index": 2,
 					"type": "text"
 				}
 			]
@@ -1359,6 +1403,10 @@
 		"last_filter": "",
 		"selected_items":
 		[
+			[
+				"sort.rb",
+				"squibble_mongoid_fields\\app\\models\\concerns\\squibble\\sort.rb"
+			],
 			[
 				"create_work",
 				"squibble_admin\\app\\workers\\deletion\\create_worker.rb"
@@ -1866,10 +1914,6 @@
 			[
 				"printincoinvoices_contr",
 				"app\\controllers\\print\\business\\incoming_invoices_controller.rb"
-			],
-			[
-				"printemailaccounts_",
-				"app\\controllers\\print\\backend\\email\\accounts_controller.rb"
 			]
 		],
 		"width": 0.0

@@ -1,0 +1,9 @@
+de:
+  flash:
+    actions:
+      create:
+        notice: "%{resource_name} wurde erfolgreich erstellt."
+      update:
+        notice: "%{resource_name} wurde erfolgreich aktualisiert."
+      destroy:
+        notice: "%{resource_name} wurde erfolgreich gelöscht."

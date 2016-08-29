@@ -1,0 +1,49 @@
+de:
+  helpers:
+    back_to_overview: Zurück zur Übersicht
+    cancel: Abbrechen
+    clue: Hinweis
+    confirm_destroy: Möchten Sie den Datensatz wirklich löschen?
+    copy: Kopieren
+    destroy: Löschen
+    download: Herunterladen
+    edit: Bearbeiten
+    edit_resource: ! '%{model_name} bearbeiten'
+    general_information: Allgemeine Informationen
+    new: Erstellen
+    new_resource: ! '%{model_name} erstellen'
+    print: Drucken
+    show: Anzeigen
+    view_more: Mehr anzeigen
+    show_all: Alle anzeigen
+    sign_out: Abmelden
+
+    application_helper:
+      edit_button:
+        default_text: Bearbeiten
+        large_text: Bearbeiten
+      show_button:
+        default_text: Anzeigen
+        large_text: Anzeigen
+      clone_button:
+        default_text: Kopieren
+        large_text: Kopieren
+      destroy_button:
+        default_text: Löschen
+        large_text: Löschen
+
+    collections:
+      no_resources_found: Es wurden keine Datensätze gefunden.
+
+    admin:
+      form:
+        actions:
+          buttons:
+            save_and_add_another:
+              label: Speichern und weiteren Datensatz hinzufügen
+            save_and_edit:
+              label: Speichern und bearbeiten
+            detail_button:
+              label: ! '%{model_name} anzeigen'
+            copy_resource_button:
+              label: ! '%{model_name} kopieren'
