@@ -7,9 +7,9 @@ module SearchableModel
     field :sq_search_keywords,
           type: String
 
-    mapping do
-      # ...
-    end
+    # mapping do
+    #   # ...
+    # end
 
     # Temporärer Fix, damit für erbende Klassen der StackLevel ToDeep Error nicht
     # geworfen wird.
@@ -74,5 +74,16 @@ module SearchableModel
     base.after_create  { |document| Elasticsearch::IndexerWorker.perform_async(:create, document.class, :index, document.id) }
     base.after_update  { |document| Elasticsearch::IndexerWorker.perform_async(:update, document.class, :update, document.id) }
     base.after_destroy { |document| Elasticsearch::IndexerWorker.perform_async(:destroy, document.class, :destroy, document.id) }
+
+    base.before_destroy do |resource|
+      return unless resource.respond_to? :principal_id
+
+      operation = Deletion::CreateOperation.new(
+        resource_class: resource.class.to_s,
+        resource_id: resource.id,
+        principal_id: resource.principal_id
+      )
+      operation.perform
+    end
   end
 end

@@ -1,13 +1,13 @@
 - cache [ 'helpers/application_helper/destroy_button', size, path, enabled ] do
   - case size
   - when :small
-    = button_to ( enabled ? path : 'javascript:;' ), remote: true, method: 'delete', class: 'btn btn-xs btn-danger', title: t('helpers.destroy'), data: { confirm: t('helpers.confirm_destroy') }, disabled: !enabled do
+    = button_to ( enabled ? path : 'javascript:;' ), remote: true, method: 'delete', class: 'sq-destroy-btn btn btn-xs btn-danger', title: t('helpers.destroy'), data: { confirm: t('helpers.confirm_destroy') }, disabled: !enabled do
       %i.fa.fa-trash-o
   - when :default
-    = button_to ( enabled ? path : 'javascript:;' ), remote: true, method: 'delete', class: 'btn btn-danger', title: t('helpers.destroy'), data: { confirm: t('helpers.confirm_destroy') }, disabled: !enabled do
+    = button_to ( enabled ? path : 'javascript:;' ), remote: true, method: 'delete', class: 'sq-destroy-btn btn btn-danger', title: t('helpers.destroy'), data: { confirm: t('helpers.confirm_destroy') }, disabled: !enabled do
       %i.fa.fa-trash-o
       %span= t 'helpers.application_helper.destroy_button.default_text'
   - when :large
-    = button_to ( enabled ? path : 'javascript:;' ), remote: true, method: 'delete', class: 'btn btn-lg btn-danger', title: t('helpers.destroy'), data: { confirm: t('helpers.confirm_destroy') }, disabled: !enabled do
+    = button_to ( enabled ? path : 'javascript:;' ), remote: true, method: 'delete', class: 'sq-destroy-btn btn btn-lg btn-danger', title: t('helpers.destroy'), data: { confirm: t('helpers.confirm_destroy') }, disabled: !enabled do
       %i.fa.fa-trash-o
       %span= t 'helpers.application_helper.destroy_button.large_text'

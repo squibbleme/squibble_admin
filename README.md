@@ -104,3 +104,4 @@ end
 * 22.08.2016: Erweiterung des ```index_collection_cache_key_with_pagination``` um :resource_class und :collection
 * 23.08.2016: Erweiterung um ```:sq_search_keywords``` für SearchableModel, ```:thumbnail_show``` im SquibbleAdmin::Admin::Markup::ShowHelper
 * 28.08.2016: Hinzufügen ```google_map_for_coordinates``` für SquibbleAdmin::Markup::GoogleHelper
+* 29.08.2016: Integration ```Deletion::CreateOperation``` in SearchabelModel Concern (Callback)
