@@ -6,9 +6,9 @@ class Deletion::CreateWorker
 
   def perform(resource_class, resource_id, principal_id)
     operation = Deletion::CreateOperation.new(
-      resource_class: resource.class.to_s,
-      resource_id: resource.id,
-      principal_id: resource.principal_id
+      resource_class: resource_class,
+      resource_id: resource_id,
+      principal_id: principal_id
     )
     operation.perform
 

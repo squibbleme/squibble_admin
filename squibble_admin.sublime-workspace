@@ -520,10 +520,27 @@
 	"buffers":
 	[
 		{
-			"file": "app/models/concerns/searchable_model.rb",
+			"file": "app/operations/deletion/create_operation.rb",
 			"settings":
 			{
-				"buffer_size": 2383,
+				"buffer_size": 1655,
+				"line_ending": "Unix",
+				"name": "create_operation.rb"
+			}
+		},
+		{
+			"file": "app/workers/elasticsearch/indexer_worker.rb",
+			"settings":
+			{
+				"buffer_size": 1628,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "app/workers/deletion/create_worker.rb",
+			"settings":
+			{
+				"buffer_size": 536,
 				"line_ending": "Unix"
 			}
 		}
@@ -783,18 +800,16 @@
 	[
 		"/Z/squibble/plugins/squibble_admin",
 		"/Z/squibble/plugins/squibble_admin/app",
-		"/Z/squibble/plugins/squibble_admin/app/helpers",
-		"/Z/squibble/plugins/squibble_admin/app/models",
 		"/Z/squibble/plugins/squibble_admin/app/models/concerns",
-		"/Z/squibble/plugins/squibble_admin/app/workers",
+		"/Z/squibble/plugins/squibble_admin/app/operations",
 		"/Z/squibble/plugins/squibble_admin/lib",
 		"/Z/squibble/plugins/squibble_admin/lib/squibble_admin"
 	],
 	"file_history":
 	[
+		"/Z/squibble/plugins/squibble_admin/app/models/concerns/searchable_model.rb",
 		"/Z/squibble/plugins/squibble_admin/lib/squibble_admin/version.rb",
 		"/Z/squibble/plugins/squibble_admin/app/workers/deletion/create_worker.rb",
-		"/Z/squibble/plugins/squibble_admin/app/models/concerns/searchable_model.rb",
 		"/Z/squibble/plugins/squibble_admin/README.md",
 		"/Z/squibble/plugins/squibble_admin/app/views/helpers/squibble_admin/markup/button_helper/_destroy_button.html.haml",
 		"/Z/squibble/plugins/squibble_admin/lib/assets/javascripts/squibble_admin/admin/elements/form.coffee",
@@ -1190,19 +1205,53 @@
 			[
 				{
 					"buffer": 0,
-					"file": "app/models/concerns/searchable_model.rb",
+					"file": "app/operations/deletion/create_operation.rb",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 2383,
+						"buffer_size": 1655,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								2211,
-								2211
+								1099,
+								1099
+							]
+						],
+						"settings":
+						{
+							"auto_name": "create_operation.rb",
+							"editorconfig": true,
+							"ensure_newline_at_eof_on_save": true,
+							"syntax": "Packages/Ruby/Ruby.sublime-syntax",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true,
+							"trim_trailing_white_space_on_save": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "app/workers/elasticsearch/indexer_worker.rb",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1628,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1059,
+								1059
 							]
 						],
 						"settings":
@@ -1215,10 +1264,44 @@
 							"trim_trailing_white_space_on_save": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 1080.0,
+						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 0,
+					"stack_index": 2,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "app/workers/deletion/create_worker.rb",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 536,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								310,
+								310
+							]
+						],
+						"settings":
+						{
+							"editorconfig": true,
+							"ensure_newline_at_eof_on_save": true,
+							"history_list_is_closing": true,
+							"syntax": "Packages/Ruby/Ruby.sublime-syntax",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true,
+							"trim_trailing_white_space_on_save": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
 					"type": "text"
 				}
 			]
@@ -1276,6 +1359,14 @@
 		"last_filter": "",
 		"selected_items":
 		[
+			[
+				"create_work",
+				"squibble_admin\\app\\workers\\deletion\\create_worker.rb"
+			],
+			[
+				"indexer_wo",
+				"squibble_admin\\app\\workers\\elasticsearch\\indexer_worker.rb"
+			],
 			[
 				"admin.html.haml",
 				"squibble_admin\\app\\views\\layouts\\admin.html.haml"
@@ -1779,14 +1870,6 @@
 			[
 				"printemailaccounts_",
 				"app\\controllers\\print\\backend\\email\\accounts_controller.rb"
-			],
-			[
-				"invoicedecoa",
-				"app\\decorators\\business\\invoice_decorator.rb"
-			],
-			[
-				"module_decora",
-				"app\\decorators\\backend\\module_decorator.rb"
 			]
 		],
 		"width": 0.0
