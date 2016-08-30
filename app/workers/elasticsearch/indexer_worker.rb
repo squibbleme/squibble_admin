@@ -5,7 +5,7 @@ class Elasticsearch::IndexerWorker
                   retry: false
 
   def perform(callback_method, resource_class, operation, resource_id)
-    resource = _get_resource
+    resource = _get_resource(resource_class, resource_id, method)
 
     method = operation.parameterize.underscore.to_sym
     operation = Elasticsearch::IndexOperation.new( resource: resource, operation: method )
