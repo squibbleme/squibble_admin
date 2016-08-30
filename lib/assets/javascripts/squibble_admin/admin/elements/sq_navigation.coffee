@@ -1,9 +1,9 @@
 'use strict'
 
-$(document).on 'ready', (event) ->
+jQuery ->
   # handleNavigationPermissions()
 
-  $('.sq-nav-item.level-0').each ( index ) ->
+  $('.sq-nav-item.level-0:not(.processed)').each ( index ) ->
     level_0 = $(this)
 
     # Das data-show Attribute ist gesetzt
@@ -59,6 +59,7 @@ $(document).on 'ready', (event) ->
                       level_2.removeClass 'display-none'
 
 
+    $(this).addClass 'processed'
 jQuery ->
   handleNavigation()
 

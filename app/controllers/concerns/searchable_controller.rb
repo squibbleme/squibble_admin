@@ -4,12 +4,12 @@ module SearchableController
 
   included do
     has_scope :query do |controller, scope, value|
-      search_request = Search::Request::AdminUser.new(
-        query: value,
-        params: controller.params,
-        admin_user_id: controller.current_admin_user.id
-      )
-      search_request.save!
+      # search_request = Search::Request::AdminUser.new(
+      #   query: value,
+      #   params: controller.params,
+      #   admin_user_id: controller.current_admin_user.id
+      # )
+      # search_request.save!
 
       scope.simple_query( value )
     end
@@ -22,9 +22,7 @@ module SearchableController
 
       render template: 'admin/errors/error_search',
              status: 500,
-             locals: {
-               exception: exception
-             }
+             locals: { exception: exception }
     end
   end
 end

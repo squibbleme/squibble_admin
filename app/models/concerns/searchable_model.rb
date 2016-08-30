@@ -55,15 +55,16 @@ module SearchableModel
     def custom_json_includes
     end
 
-    scope :simple_query, lambda { |query, filter_terms = nil|
+    scope :simple_query, lambda { |query, filter_terms = nil, options = {}|
       response = if filter_terms.nil?
                    search(query)
                  else
-                   search(
+      response = search(
                      query: { match: { _all: query } },
                      filter: { term: filter_terms }
                    )
-                 end
+      end
+
       response.records
     }
 

@@ -5,29 +5,14 @@ class Elasticsearch::IndexerWorker
                   retry: false
 
   def perform(callback_method, resource_class, operation, resource_id)
-    # log(:debug, "#{callback_method} performs :#{operation} at #{resource_class} for ##{resource_id}")
+    resource = _get_resource
 
     method = operation.parameterize.underscore.to_sym
-    case method
-    when :index
-      resource = _get_resource(resource_class, resource_id, method)
-      resource.__elasticsearch__.index_document unless resource.nil?
-    when :update
-      resource = _get_resource(resource_class, resource_id, method)
-      resource.__elasticsearch__.update_document unless resource.nil?
-    when :destroy
-      begin
-        eval(resource_class).__elasticsearch__.client.delete(
-          index: eval(resource_class).__elasticsearch__.index_name,
-          type: eval(resource_class).__elasticsearch__.document_type,
-          id: resource_id
-        )
-      rescue Elasticsearch::Transport::Transport::Errors::NotFound
-        log(:debug, "Unable to find elasticsearch index for #{resource_class} ##{resource_id} to delete.")
-      end
-    else
-      log(:error, "Unregistered operation #{operation} called.")
-    end
+    operation = Elasticsearch::IndexOperation.new( resource: resource, operation: method )
+    operation.perform
+
+    return if operation.succeeded?
+    log(:error, "Unable to execute Elasticsearch::IndexOperation: #{operation.message}")
   end
 
   private
