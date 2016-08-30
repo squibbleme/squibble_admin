@@ -520,10 +520,26 @@
 	"buffers":
 	[
 		{
+			"file": "app/workers/elasticsearch/indexer_worker.rb",
+			"settings":
+			{
+				"buffer_size": 972,
+				"line_ending": "Unix"
+			}
+		},
+		{
 			"file": "lib/squibble_admin/version.rb",
 			"settings":
 			{
 				"buffer_size": 46,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "app/models/concerns/searchable_model.rb",
+			"settings":
+			{
+				"buffer_size": 2385,
 				"line_ending": "Unix"
 			}
 		}
@@ -787,8 +803,9 @@
 		"/Z/squibble/plugins/squibble_admin/app/controllers/concerns",
 		"/Z/squibble/plugins/squibble_admin/app/models",
 		"/Z/squibble/plugins/squibble_admin/app/models/concerns",
-		"/Z/squibble/plugins/squibble_admin/app/operations",
 		"/Z/squibble/plugins/squibble_admin/app/operations/deletion",
+		"/Z/squibble/plugins/squibble_admin/app/workers",
+		"/Z/squibble/plugins/squibble_admin/app/workers/elasticsearch",
 		"/Z/squibble/plugins/squibble_admin/lib",
 		"/Z/squibble/plugins/squibble_admin/lib/squibble_admin",
 		"/Z/squibble/plugins/squibble_admin/lib/tasks"
@@ -985,6 +1002,7 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"_get_resource",
 			"callback_method",
 			"blockUI",
 			"index_collection_cache_key_without_pagination",
@@ -1111,8 +1129,7 @@
 			"                    .",
 			"label",
 			"completed",
-			"projects",
-			"attributes"
+			"projects"
 		],
 		"highlight": true,
 		"in_selection": false,
@@ -1188,29 +1205,24 @@
 	"groups":
 	[
 		{
-			"sheets":
-			[
-			]
-		},
-		{
 			"selected": 0,
 			"sheets":
 			[
 				{
 					"buffer": 0,
-					"file": "lib/squibble_admin/version.rb",
+					"file": "app/workers/elasticsearch/indexer_worker.rb",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 46,
+						"buffer_size": 972,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								40,
-								40
+								631,
+								631
 							]
 						],
 						"settings":
@@ -1226,7 +1238,80 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
+					"stack_index": 1,
+					"type": "text"
+				}
+			]
+		},
+		{
+			"selected": 0,
+			"sheets":
+			[
+				{
+					"buffer": 1,
+					"file": "lib/squibble_admin/version.rb",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 46,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								46,
+								46
+							]
+						],
+						"settings":
+						{
+							"editorconfig": true,
+							"ensure_newline_at_eof_on_save": true,
+							"history_list_is_closing": true,
+							"syntax": "Packages/Ruby/Ruby.sublime-syntax",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true,
+							"trim_trailing_white_space_on_save": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
 					"stack_index": 0,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "app/models/concerns/searchable_model.rb",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 2385,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								2114,
+								2114
+							]
+						],
+						"settings":
+						{
+							"editorconfig": true,
+							"ensure_newline_at_eof_on_save": true,
+							"syntax": "Packages/Ruby/Ruby.sublime-syntax",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true,
+							"trim_trailing_white_space_on_save": true
+						},
+						"translation.x": -0.0,
+						"translation.y": 456.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
 					"type": "text"
 				}
 			]
