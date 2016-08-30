@@ -8,7 +8,11 @@ class Elasticsearch::IndexerWorker
     resource = _get_resource(resource_class, resource_id, callback_method)
 
     method = operation.parameterize.underscore.to_sym
-    operation = Elasticsearch::IndexOperation.new( resource: resource, operation: method )
+    operation = Elasticsearch::IndexOperation.new(
+      operation: method,
+      resource_class: resource_class,
+      resource_id: resource_id
+    )
     operation.perform
 
     return if operation.succeeded?
