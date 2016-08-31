@@ -106,3 +106,4 @@ end
 * 28.08.2016: Hinzufügen ```google_map_for_coordinates``` für SquibbleAdmin::Markup::GoogleHelper
 * 29.08.2016: Integration ```Deletion::CreateOperation``` in SearchabelModel Concern (Callback)
 * 30.08.2016: FIX: Navigation wurde im prod. Einsatz teilweise ausgeblendet. Überarbeitung Indizierung von Datensätzen
+* 31.08.2016: FIX: Exceptions für CSVService bei einem Fehler in der CSVEntryOperation, leerer Collection oder falschen Typen innerhalb einer gegebenen Collection

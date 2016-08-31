@@ -101,7 +101,7 @@ module CSVService
       else
         msg = "Unable to create a valid csv entry object: #{op.message}"
         log(:error, msg)
-        raise msg
+        raise CSVService::CSVEntryOperationError, msg
       end
 
       # Counter der zählt, wieviele Einträge zum CSV-File
@@ -126,7 +126,7 @@ module CSVService
       msg = 'The given :collection is empty. Operation terminated.'
       log :error, msg
 
-      raise msg
+      raise CSVService::EmptyCollectionException, msg
     end
 
     # Prüfe, ob all Elemente der :collection auch vom Typ
@@ -137,7 +137,7 @@ module CSVService
       msg = "The given :collection holds resources of other types than #{self.class::CURRENT_RESOURCE_CLASS}"
       log :error, msg
 
-      raise msg
+      raise CSVService::CollectionContainsInvalidTypeException, msg
     end
 
     # Die Prüfungen sind nicht fehlgeschlagen,
@@ -146,3 +146,7 @@ module CSVService
     true
   end
 end
+class CSVService::Exception < Exception; end
+class CSVService::CSVEntryOperationError < CSVService::Exception; end
+class CSVService::EmptyCollectionException < CSVService::Exception; end
+class CSVService::CollectionContainsInvalidTypeException < CSVService::Exception; end
