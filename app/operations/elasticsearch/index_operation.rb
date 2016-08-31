@@ -50,7 +50,7 @@ class Elasticsearch::IndexOperation < ComposableOperations::Operation
     eval(resource_class).find(resource_id)
   rescue Mongoid::Errors::DocumentNotFound
     msg = "Unable to find #{resource_class} ##{resource_id}."
-    log(:msg, msg, _default_log_attributes)
+    log(:debug, msg, _default_log_attributes)
   end
 
   def _default_log_attributes(options = {})

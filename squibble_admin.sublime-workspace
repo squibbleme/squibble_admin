@@ -4,6 +4,14 @@
 		"selected_items":
 		[
 			[
+				"res",
+				"respond_to"
+			],
+			[
+				"resour",
+				"resource_class"
+			],
+			[
 				"E",
 				"Elasticsearch"
 			],
@@ -22,10 +30,6 @@
 			[
 				"inl",
 				"inline-table"
-			],
-			[
-				"resour",
-				"resource_id"
 			],
 			[
 				"cach",
@@ -134,10 +138,6 @@
 			[
 				"total",
 				"total_tracked_hours"
-			],
-			[
-				"res",
-				"reset_password_token"
 			],
 			[
 				"password",
@@ -520,10 +520,29 @@
 	"buffers":
 	[
 		{
-			"file": "app/models/concerns/searchable_model.rb",
+			"file": "app/views/layouts/shared/admin/_header.html.haml",
 			"settings":
 			{
-				"buffer_size": 2385,
+				"buffer_size": 2768,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"contents": "# Dieser Concern kümmert sich darum, dass eine Promotion für einen Datensatz korrekt verwaptet werden kann.\n# Zudem wird die entsprechende Validierung sichergestellt.\n#\nmodule Squibble::PromotionAttributes\n  extend ActiveSupport::Concern\n\n  included do\n\n    field :promotion_valid_from,\n          type: DateTime\n    field :promotion_valid_till,\n          type: DateTime\n\n    validate :_validates_promotion_valid_from_to_be_smaller_then_promotion_valid_till\n\n    scope :currently_in_promotion, -> (valuta = Time.zone.now) do\n      class_name = eval(name)\n      any_in(\n        id: [\n          class_name.where(:promotion_valid_from.lte => valuta, promotion_valid_till: nil).distinct(:id),\n          class_name.where(promotion_valid_from: nil, :promotion_valid_till.gte => valuta).distinct(:id),\n          class_name.where(:promotion_valid_from.lte => valuta, :promotion_valid_till.gte => valuta).distinct(:id)\n        ].flatten\n      )\n    end\n\n    private\n\n    def _validates_promotion_valid_from_to_be_smaller_then_promotion_valid_till\n      return unless promotion_valid_from.present?\n      return unless promotion_valid_till.present?\n      return if promotion_valid_from < promotion_valid_till\n\n      errors.add :promotion_valid_from, :promotion_valid_from_to_be_smaller_than_valid_till\n      errors.add :promotion_valid_till, :promotion_valid_till_to_be_larger_than_valid_from\n    end\n  end\nend\n",
+			"file": "/Z/squibble/plugins/squibble_mongoid_fields/app/models/concerns/squibble/promotion_attributes.rb",
+			"file_size": 1401,
+			"file_write_time": 131131520447132508,
+			"settings":
+			{
+				"buffer_size": 1399,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "/Z/squibble/plugins/squibble_mongoid_fields/app/models/concerns/squibble/firstname.rb",
+			"settings":
+			{
+				"buffer_size": 288,
 				"line_ending": "Unix"
 			}
 		}
@@ -787,19 +806,21 @@
 		"/Z/squibble/plugins/squibble_admin/app/controllers/concerns",
 		"/Z/squibble/plugins/squibble_admin/app/models",
 		"/Z/squibble/plugins/squibble_admin/app/models/concerns",
-		"/Z/squibble/plugins/squibble_admin/app/workers",
-		"/Z/squibble/plugins/squibble_admin/app/workers/elasticsearch",
+		"/Z/squibble/plugins/squibble_admin/app/views",
+		"/Z/squibble/plugins/squibble_admin/app/views/layouts",
+		"/Z/squibble/plugins/squibble_admin/app/views/layouts/shared",
+		"/Z/squibble/plugins/squibble_admin/app/views/layouts/shared/admin",
 		"/Z/squibble/plugins/squibble_admin/lib",
 		"/Z/squibble/plugins/squibble_admin/lib/squibble_admin",
 		"/Z/squibble/plugins/squibble_admin/lib/tasks"
 	],
 	"file_history":
 	[
-		"/Z/squibble/plugins/squibble_admin/app/workers/elasticsearch/indexer_worker.rb",
-		"/Z/squibble/plugins/squibble_admin/lib/squibble_admin/version.rb",
 		"/Z/squibble/plugins/squibble_admin/app/models/concerns/searchable_model.rb",
-		"/Z/squibble/plugins/squibble_admin/README.md",
+		"/Z/squibble/plugins/squibble_admin/app/workers/elasticsearch/indexer_worker.rb",
 		"/Z/squibble/plugins/squibble_admin/app/operations/elasticsearch/index_operation.rb",
+		"/Z/squibble/plugins/squibble_admin/lib/squibble_admin/version.rb",
+		"/Z/squibble/plugins/squibble_admin/README.md",
 		"/Z/squibble/plugins/squibble_mongoid_fields/app/models/concerns/squibble/internal_description.rb",
 		"/Z/squibble/plugins/squibble_admin/lib/assets/javascripts/squibble_admin/admin/elements/sq_navigation.coffee",
 		"/Z/squibble/plugins/squibble_admin/.rubocop.yml",
@@ -1188,24 +1209,91 @@
 	"groups":
 	[
 		{
-			"selected": 0,
+			"selected": 2,
 			"sheets":
 			[
 				{
 					"buffer": 0,
-					"file": "app/models/concerns/searchable_model.rb",
-					"semi_transient": false,
+					"file": "app/views/layouts/shared/admin/_header.html.haml",
+					"semi_transient": true,
 					"settings":
 					{
-						"buffer_size": 2385,
+						"buffer_size": 2768,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								422,
-								422
+								2720,
+								2720
+							]
+						],
+						"settings":
+						{
+							"color_scheme": "Packages/User/Color Highlighter/themes/Monokai.tmTheme",
+							"editorconfig": true,
+							"ensure_newline_at_eof_on_save": true,
+							"syntax": "Packages/Rails/Ruby Haml.sublime-syntax",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true,
+							"trim_trailing_white_space_on_save": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 342.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "/Z/squibble/plugins/squibble_mongoid_fields/app/models/concerns/squibble/promotion_attributes.rb",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1399,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								956,
+								956
+							]
+						],
+						"settings":
+						{
+							"editorconfig": true,
+							"ensure_newline_at_eof_on_save": true,
+							"syntax": "Packages/Ruby/Ruby.sublime-syntax",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true,
+							"trim_trailing_white_space_on_save": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "/Z/squibble/plugins/squibble_mongoid_fields/app/models/concerns/squibble/firstname.rb",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 288,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
 							]
 						],
 						"settings":
@@ -1280,16 +1368,28 @@
 		"selected_items":
 		[
 			[
+				"firstname",
+				"squibble_mongoid_fields\\app\\models\\concerns\\squibble\\firstname.rb"
+			],
+			[
+				"routes.rb",
+				"squibble_mongoid_fields\\app\\models\\concerns\\squibble\\promotion_attributes.rb"
+			],
+			[
+				"indexoper",
+				"squibble_admin\\app\\operations\\elasticsearch\\index_operation.rb"
+			],
+			[
+				"indexerworker",
+				"squibble_admin\\app\\workers\\elasticsearch\\indexer_worker.rb"
+			],
+			[
 				"searchablemodel",
 				"squibble_admin\\app\\models\\concerns\\searchable_model.rb"
 			],
 			[
 				"seeds",
 				"squibble_mongoid_fields\\app\\models\\concerns\\squibble\\internal_description.rb"
-			],
-			[
-				"indexerworker",
-				"squibble_admin\\app\\workers\\elasticsearch\\indexer_worker.rb"
 			],
 			[
 				"searchablemode",
@@ -1382,10 +1482,6 @@
 			[
 				"squibble_admin/general_manifest.js",
 				"squibble_admin\\lib\\assets\\javascripts\\squibble_admin\\general_manifest.js"
-			],
-			[
-				"routes.rb",
-				"squibble_mongoid_fields\\app\\models\\concerns\\squibble\\promotion_attributes.rb"
 			],
 			[
 				"helpers/squibble_admin/markup/resource_helper/default_resource_actions",
@@ -1782,14 +1878,6 @@
 			[
 				"principal",
 				"app\\models\\backend\\principal.rb"
-			],
-			[
-				"accounting_year.rb",
-				"app\\models\\business\\accounting_year.rb"
-			],
-			[
-				"accountingyearsshow_general_pri",
-				"app\\views\\admin\\business\\accounting_years\\_show_general_print.html.haml"
 			]
 		],
 		"width": 0.0
