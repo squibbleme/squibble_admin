@@ -111,7 +111,7 @@ module CSVService
     end
 
     msg = "Successfully added #{csvfile_counter} of #{collection.count} to csv file."
-    log :info, msg
+    log :debug, msg
   end
 
   # Prüfung der übergebenen :collection
@@ -124,7 +124,7 @@ module CSVService
     #
     if collection.empty?
       msg = 'The given :collection is empty. Operation terminated.'
-      log :error, msg
+      log :debug, msg
 
       raise CSVService::EmptyCollectionException, msg
     end
