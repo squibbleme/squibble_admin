@@ -72,25 +72,21 @@ module SearchableModel
 
   def self.included(base)
     base.after_touch do |resource|
-      return if resource.embedded?
-      Elasticsearch::IndexerWorker.perform_async(:touch, resource.class, :index, resource.id)
+      Elasticsearch::IndexerWorker.perform_async(:touch, resource.class, :index, resource.id) unless resource.embedded?
     end
 
     base.after_create do |resource|
-      return if resource.embedded?
-      Elasticsearch::IndexerWorker.perform_async(:create, resource.class, :index, resource.id)
+      Elasticsearch::IndexerWorker.perform_async(:create, resource.class, :index, resource.id) unless resource.embedded?
     end
 
     base.after_update do |resource|
-      return if resource.embedded?
-      Elasticsearch::IndexerWorker.perform_async(:update, resource.class, :update, resource.id)
+      Elasticsearch::IndexerWorker.perform_async(:update, resource.class, :update, resource.id) unless resource.embedded?
     end
 
     base.after_destroy do |resource|
       Elasticsearch::IndexerWorker.perform_async(:destroy, resource.class, :destroy, resource.id)
 
-      return unless resource.respond_to? :principal_id
-      Deletion::CreateWorker.perform_async(resource.class.to_s, resource.id, resource.principal_id)
+      Deletion::CreateWorker.perform_async(resource.class.to_s, resource.id, resource.principal_id) if resource.respond_to?(:principal_id)
     end
   end
 end
