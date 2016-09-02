@@ -22,5 +22,5 @@ module SquibbleAdmin::Admin::Markup::ShowHelper
     preview_path = resource.thumbnail.thumb.url if preview_path.nil?
     render partial: 'helpers/squibble_admin/admin/markup/show_helper/thumbnail_show',
            locals: { resource: resource, show: show_for, preview_path: preview_path }
-  end  
+  end
 end

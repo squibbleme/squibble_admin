@@ -4,18 +4,13 @@
       = portlet_title_caption resource_attribute_name(:preview)
     = portlet_body do
 
-      - if resource.preview_content_type.present? && resource.preview_content_type.starts_with?('image')
-        = sq_image_responsive_tag preview_path
-        %hr
+      %div{ data: { path: resource.preview.path, url: resource.preview.url } }
+        - if resource.preview_content_type.present? && resource.preview_content_type.starts_with?('image')
+          = sq_image_responsive_tag preview_path
+          %hr
 
-      = show.attribute :path do
-        = resource.preview.path
-
-      = show.attribute :url do
-        = resource.preview.url
-
-      = show.attribute :preview_file_name
-      = show.attribute :preview_file_size do
-        = number_to_human_size resource.preview_file_size
-      = show.attribute :preview_content_type
-      = show.attribute :preview_extension
+        = show.attribute :preview_file_name
+        = show.attribute :preview_file_size do
+          = number_to_human_size resource.preview_file_size
+        = show.attribute :preview_content_type
+        = show.attribute :preview_extension
