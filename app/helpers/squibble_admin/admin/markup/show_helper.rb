@@ -7,7 +7,9 @@ module SquibbleAdmin::Admin::Markup::ShowHelper
   end
 
   def file_show(resource, show_for, preview_path = nil)
-    preview_path = resource.file.thumb.url if preview_path.nil?
+    if resource.file.respond_to?(:thumb) && preview_path.nil?
+      preview_path = resource.file.thumb.url
+    end
     render partial: 'helpers/squibble_admin/admin/markup/show_helper/file_show',
            locals: { resource: resource, show: show_for, preview_path: preview_path }
   end
