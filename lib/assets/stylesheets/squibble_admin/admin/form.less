@@ -1,13 +1,56 @@
 @import 'app/assets/vendor/bootstrap/less/variables';
 @import 'app/assets/vendor/lesshat/build/lesshat';
 
-.form-body {
-  .form-group {
+form {
+  .form-body {
+    .form-group {
 
-    .help-block {
-      display: block;
-      position: relative;
-      width: 100%;
+      .help-block {
+        display: block;
+        position: relative;
+        width: 100%;
+      }
+    }
+
+    .portlet {
+      .portlet-body {
+
+        // Überschriften zur Unterteilung von Formularen
+        // innerhalb eines .portlet
+        //
+        h4 {
+          text-transform: uppercase;
+          font-weight: 500;
+
+          margin-top: 50px;
+          padding-bottom: 5px;
+          border-bottom: 1px solid black;
+          margin-bottom: 10px;
+
+          &:first-child {
+            margin-top: 15px;
+          }
+        }
+
+
+        // Rahmen für .select2-container
+        //
+        .select2-container--bootstrap {
+          .select2-selection {
+            border-color: #c2cad8;
+          }
+        }
+
+        // Dicke der Linie unterhalb von Formular Feldern
+        //
+        .form-group {
+          &.required {
+            .form-control {
+              border-bottom-width: 1px;
+            }
+          }
+        }
+      }
     }
   }
 }
