@@ -49,9 +49,12 @@ module SquibbleService
       begin
         entry.save
       rescue Faraday::TimeoutError => e
-        eval("Rails.logger.application.#{level} \'#{message}\'")
+        msg = "Faraday::TimeoutError: Unable to save '#{message}': #{e.message}"
+        Rails.logger.application.error msg
+      rescue SystemStackError => e
+        msg = "SystemStackError: Unable to save '#{message}': #{e.message}"
+        Rails.logger.application.error msg
       end
-
 
       return unless Rails.env.production?
       if [:error, :fatal].include?(level)
