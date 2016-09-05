@@ -12,7 +12,7 @@
     .col-md-4
       = render 'admin/index_filter', resource_class: resource_class
 
-- cache index_collection_cache_key_with_pagination do
+- cache index_collection_cache_key_with_pagination( resource_class, collection, current_admin_user: current_admin_user) do
   - breadcrumb "admin_#{params[:controller].sub('admin/', '').gsub('/', '_')}".to_sym
 
   %section#sq_collection.admin_index{ class: [ resource_class.to_s.parameterize ] }
