@@ -108,3 +108,9 @@ end
 * 30.08.2016: FIX: Navigation wurde im prod. Einsatz teilweise ausgeblendet. Überarbeitung Indizierung von Datensätzen
 * 31.08.2016: FIX: Exceptions für CSVService bei einem Fehler in der CSVEntryOperation, leerer Collection oder falschen Typen innerhalb einer gegebenen Collection
 * 06.09.2016: Optimierung ElasticSearch Indizierung
+
+## Version 0.2.0
+
+* 06.09.2016: Auslagerung der Konfiguration für Sidekiq. Erweiterung der bestehenden Konfiguration um zusätzliche komplett unabhängigen Pool für :low Priority Operationen.
+* 06.09.2016: Auslagerung des OperationsService
+* 06.09.2016: Auslagerung der Scripte für das Management der Applikationen (Unicorn, Sidekiq)

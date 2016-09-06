@@ -1,3 +1,3 @@
 module SquibbleAdmin
-  VERSION = '0.1.38'
+  VERSION = '0.2.0'
 end

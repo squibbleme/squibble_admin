@@ -1,7 +1,7 @@
 class Deletion::CreateWorker
   include Sidekiq::Worker
   include SquibbleService
-  sidekiq_options queue: Settings.sidekiq.default_queue,
+  sidekiq_options queue: :squibble_low,
                   retry: false
 
   def perform(resource_class, resource_id, principal_id)

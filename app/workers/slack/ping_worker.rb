@@ -1,6 +1,6 @@
 class Slack::PingWorker
   include Sidekiq::Worker
-  sidekiq_options queue: Settings.sidekiq.default_queue,
+  sidekiq_options queue: :squibble_low,
                   retry: false
 
   def perform(webhook_url, message, options = {})

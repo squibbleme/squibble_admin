@@ -1,0 +1,9 @@
+:pidfile: tmp/pids/sidekiq_high.pid
+:logfile: log/sidekiq_high.log
+:concurrency: 25
+:timeout: 300
+:queues:
+  - squibble
+  - squibble_carrierwave
+  - squibble_cron
+  - devise_async

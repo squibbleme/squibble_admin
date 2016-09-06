@@ -1,0 +1,6 @@
+:pidfile: tmp/pids/sidekiq_low.pid
+:logfile: log/sidekiq_low.log
+:concurrency: 5
+:timeout: 300
+:queues:
+  - squibble_low
