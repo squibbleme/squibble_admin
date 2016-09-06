@@ -534,6 +534,25 @@
 				"buffer_size": 45,
 				"line_ending": "Unix"
 			}
+		},
+		{
+			"contents": "/*\n= require jquery-ui\n= require bootstrap/dist/css/bootstrap\n= require bootstrap-datepicker/dist/css/bootstrap-datepicker3\n= require bootstrap-switch/dist/css/bootstrap3/bootstrap-switch\n= require font-awesome/css/font-awesome\n= require jquery.uniform/themes/default/css/uniform.default.min\n= require simple-line-icons/css/simple-line-icons\n= require select2\n= require select2-bootstrap\n\n= require_tree ./general\n*/\n",
+			"file": "lib/assets/stylesheets/squibble_admin/general_manifest.css",
+			"file_size": 497,
+			"file_write_time": 131159193316018711,
+			"settings":
+			{
+				"buffer_size": 417,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "lib/assets/stylesheets/squibble_admin/admin_manifest.css",
+			"settings":
+			{
+				"buffer_size": 264,
+				"line_ending": "Unix"
+			}
 		}
 	],
 	"build_system": "",
@@ -791,9 +810,10 @@
 	[
 		"/Z/squibble/plugins/squibble_admin",
 		"/Z/squibble/plugins/squibble_admin/app",
-		"/Z/squibble/plugins/squibble_admin/config/initializers",
 		"/Z/squibble/plugins/squibble_admin/lib",
-		"/Z/squibble/plugins/squibble_admin/lib/assets",
+		"/Z/squibble/plugins/squibble_admin/lib/assets/stylesheets",
+		"/Z/squibble/plugins/squibble_admin/lib/assets/stylesheets/squibble_admin",
+		"/Z/squibble/plugins/squibble_admin/lib/assets/stylesheets/squibble_admin/general",
 		"/Z/squibble/plugins/squibble_admin/lib/squibble_admin"
 	],
 	"file_history":
@@ -1225,7 +1245,7 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 1,
+					"stack_index": 3,
 					"type": "text"
 				},
 				{
@@ -1241,8 +1261,8 @@
 						"selection":
 						[
 							[
-								39,
-								39
+								45,
+								45
 							]
 						],
 						"settings":
@@ -1259,6 +1279,74 @@
 						"zoom_level": 1.0
 					},
 					"stack_index": 0,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "lib/assets/stylesheets/squibble_admin/general_manifest.css",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 417,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								387,
+								387
+							]
+						],
+						"settings":
+						{
+							"color_scheme": "Packages/User/Color Highlighter/themes/Monokai.tmTheme",
+							"editorconfig": true,
+							"ensure_newline_at_eof_on_save": true,
+							"syntax": "Packages/LESS/LESS.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true,
+							"trim_trailing_white_space_on_save": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "lib/assets/stylesheets/squibble_admin/admin_manifest.css",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 264,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								264,
+								264
+							]
+						],
+						"settings":
+						{
+							"color_scheme": "Packages/User/Color Highlighter/themes/Monokai.tmTheme",
+							"editorconfig": true,
+							"ensure_newline_at_eof_on_save": true,
+							"syntax": "Packages/LESS/LESS.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true,
+							"trim_trailing_white_space_on_save": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
 					"type": "text"
 				}
 			]

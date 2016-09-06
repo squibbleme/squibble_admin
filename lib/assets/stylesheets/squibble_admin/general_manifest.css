@@ -9,8 +9,5 @@
 = require select2
 = require select2-bootstrap
 
-= require metronic/global/css/components
-= require metronic/global/css/plugins
-
 = require_tree ./general
 */
