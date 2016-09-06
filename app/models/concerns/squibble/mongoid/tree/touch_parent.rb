@@ -8,8 +8,7 @@ module Squibble::Mongoid::Tree::TouchParent
     # :touch ausgeführt wird.
     #
     base.after_touch do
-      # self.parent.touch if self.parent.present?
-      self.ancestors.update_all(updated_at: Time.zone.now)
+      self.parent.touch if self.parent.present?
     end
 
     base.after_save do

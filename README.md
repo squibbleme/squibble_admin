@@ -107,3 +107,4 @@ end
 * 29.08.2016: Integration ```Deletion::CreateOperation``` in SearchabelModel Concern (Callback)
 * 30.08.2016: FIX: Navigation wurde im prod. Einsatz teilweise ausgeblendet. Überarbeitung Indizierung von Datensätzen
 * 31.08.2016: FIX: Exceptions für CSVService bei einem Fehler in der CSVEntryOperation, leerer Collection oder falschen Typen innerhalb einer gegebenen Collection
+* 06.09.2016: Optimierung ElasticSearch Indizierung

@@ -55,9 +55,7 @@ class Elasticsearch::IndexOperation < ComposableOperations::Operation
 
   def _default_log_attributes(options = {})
     tmp = { resource_class: resource_class, resource_id: resource_id }
-
     tmp[:principal_id] = @resource.principal_id if @resource.present? && @resource.respond_to?(:principal_id)
-
     tmp.merge(options)
   end
 end

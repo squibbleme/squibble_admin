@@ -80,7 +80,12 @@ module SearchableModel
     end
 
     base.after_update do |resource|
-      Elasticsearch::IndexerWorker.perform_async(:update, resource.class, :update, resource.id) unless resource.embedded?
+      changed_attributes = resource.changed_attributes
+      changed_attributes.delete('updated_at')
+
+      if !changed_attributes.empty? && !resource.embedded?
+        Elasticsearch::IndexerWorker.perform_async(:update, resource.class, :update, resource.id)
+      end
     end
 
     base.after_destroy do |resource|

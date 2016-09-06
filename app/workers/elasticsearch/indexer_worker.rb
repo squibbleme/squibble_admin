@@ -6,6 +6,7 @@ class Elasticsearch::IndexerWorker
 
   def perform(callback_method, resource_class, operation, resource_id)
     method = operation.parameterize.underscore.to_sym
+
     operation = Elasticsearch::IndexOperation.new(
       operation: method,
       resource_class: resource_class,
