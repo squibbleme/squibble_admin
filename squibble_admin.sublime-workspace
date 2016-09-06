@@ -520,10 +520,10 @@
 	"buffers":
 	[
 		{
-			"file": "config/locales/de.yml",
+			"file": "config/initializers/wicket_pdf.rb",
 			"settings":
 			{
-				"buffer_size": 5731,
+				"buffer_size": 889,
 				"line_ending": "Unix"
 			}
 		},
@@ -791,23 +791,15 @@
 	[
 		"/Z/squibble/plugins/squibble_admin",
 		"/Z/squibble/plugins/squibble_admin/app",
-		"/Z/squibble/plugins/squibble_admin/app/models/concerns",
-		"/Z/squibble/plugins/squibble_admin/app/models/concerns/squibble",
-		"/Z/squibble/plugins/squibble_admin/app/models/concerns/squibble/mongoid",
-		"/Z/squibble/plugins/squibble_admin/app/workers",
+		"/Z/squibble/plugins/squibble_admin/config/initializers",
 		"/Z/squibble/plugins/squibble_admin/lib",
 		"/Z/squibble/plugins/squibble_admin/lib/assets",
-		"/Z/squibble/plugins/squibble_admin/lib/squibble_admin",
-		"/Z/squibble/plugins/squibble_admin/lib/tasks/squibble",
-		"/Z/squibble/plugins/squibble_admin/lib/tasks/squibble/import",
-		"/Z/squibble/plugins/squibble_admin/scripts/sidekiq/development",
-		"/Z/squibble/plugins/squibble_admin/scripts/sidekiq/production",
-		"/Z/squibble/plugins/squibble_admin/scripts/unicorn",
-		"/Z/squibble/plugins/squibble_admin/scripts/unicorn/development",
-		"/Z/squibble/plugins/squibble_admin/scripts/unicorn/production"
+		"/Z/squibble/plugins/squibble_admin/lib/squibble_admin"
 	],
 	"file_history":
 	[
+		"/Z/squibble/plugins/squibble_admin/config/locales/de.yml",
+		"/Z/squibble/plugins/squibble_admin/lib/squibble_admin/version.rb",
 		"/Z/squibble/plugins/squibble_admin/config/initializers/wicket_pdf.rb",
 		"/Z/squibble/plugins/squibble_admin/config/unicorn/production.rb",
 		"/Z/squibble/squibble-2016/scripts/unicorn/development/start.sh",
@@ -840,7 +832,6 @@
 		"/Z/squibble/plugins/squibble_admin/scripts/unicorn/stop.sh",
 		"/Z/squibble/plugins/squibble_admin/config/sidekiq_high.yml",
 		"/Z/squibble/plugins/squibble_admin/config/sidekiq_low.yml",
-		"/Z/squibble/plugins/squibble_admin/lib/squibble_admin/version.rb",
 		"/Z/squibble/plugins/squibble_admin/README.md",
 		"/Z/squibble/plugins/squibble_admin/scripts/start_sidekiq_production.sh",
 		"/Z/squibble/plugins/squibble_admin/scripts/start_sidekiq_development.sh",
@@ -887,7 +878,6 @@
 		"/Z/squibble/plugins/squibble_admin/config/locales/de.devise.yml",
 		"/Z/squibble/plugins/squibble_admin/config/locales/en.simple_form.yml",
 		"/Z/squibble/plugins/squibble_admin/config/locales/en.show_for.yml",
-		"/Z/squibble/plugins/squibble_admin/config/locales/de.yml",
 		"/Z/squibble/plugins/squibble_admin/config/locales/en.devise.yml",
 		"/Z/squibble/plugins/squibble_admin/config/locales/de.helpers.yml",
 		"/Z/squibble/plugins/squibble_admin/config/locales/de.show_for.yml",
@@ -1207,32 +1197,32 @@
 			[
 				{
 					"buffer": 0,
-					"file": "config/locales/de.yml",
+					"file": "config/initializers/wicket_pdf.rb",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 5731,
+						"buffer_size": 889,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								5448,
-								5448
+								372,
+								372
 							]
 						],
 						"settings":
 						{
 							"editorconfig": true,
 							"ensure_newline_at_eof_on_save": true,
-							"syntax": "Packages/YAML/YAML.sublime-syntax",
+							"syntax": "Packages/Ruby/Ruby.sublime-syntax",
 							"tab_size": 2,
 							"translate_tabs_to_spaces": true,
 							"trim_trailing_white_space_on_save": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 3456.0,
+						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 1,

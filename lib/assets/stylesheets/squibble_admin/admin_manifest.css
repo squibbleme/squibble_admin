@@ -4,5 +4,8 @@
 = require metronic/pages/css/profile
 = require metronic/pages/css/error
 
+= require metronic/global/css/components
+= require metronic/global/css/plugins
+
 = require_tree ./admin
 */
