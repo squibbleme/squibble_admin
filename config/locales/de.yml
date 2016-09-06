@@ -221,6 +221,7 @@ de:
       default: "%A, %d. %B %Y, %H:%M Uhr"
       long: "%A, %d. %B %Y, %H:%M Uhr"
       mail: "%d. %B %Y, %H:%M Uhr"
+      month_year: "%B %Y"
       short: "%d. %B, %H:%M Uhr"
       system: ! '%Y%m%d_%H%M'
       system_only_time: ! '%H:%M'
