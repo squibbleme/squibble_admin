@@ -1,3 +1,5 @@
+# TEMPLATE
+# =========================================================
 :pidfile: tmp/pids/sidekiq_high.pid
 :logfile: log/sidekiq_high.log
 :concurrency: 25
