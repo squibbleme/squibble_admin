@@ -1,59 +1,53 @@
-%header.page-header
-  %nav.navbar.mega-menu{ role: :navigation }
-    .container-fluid
-      .clearfix.navbar-fixed-top
+- cache [ 'layouts/shared/admin/header', current_admin_user, current_principal ] do
+  %header.page-header
+    %nav.navbar.mega-menu{ role: :navigation }
+      .container-fluid
+        .clearfix.navbar-fixed-top
 
-        %button.navbar-toggle{ type: :button, data: { toggle: :collapse, target: :'.navbar-responsive-collapse'} }
-          %span.sr-only Toggle navigation
-          %span.toggle-icon
-            %span.icon-bar
-            %span.icon-bar
-            %span.icon-bar
+          %button.navbar-toggle{ type: :button, data: { toggle: :collapse, target: :'.navbar-responsive-collapse'} }
+            %span.sr-only Toggle navigation
+            %span.toggle-icon
+              %span.icon-bar
+              %span.icon-bar
+              %span.icon-bar
 
-        %a#index.class-logo{ href: admin_dashboard_path }
-          %img{ src: asset_path('logo-black.png'), alt: 'Squibble' }
+          %a#index.class-logo{ href: admin_dashboard_path }
+            %img{ src: asset_path('logo-black.png'), alt: 'Squibble' }
 
-        .topbar-actions
-          - if self.respond_to?(:new_admin_ticket_request_path)
-            .btn-group-red.btn-group{ class: hidden_mobile }
-              %button.btn.btn-sm.md-skip.dropdown-toggle{ type: :button, data: { toggle: :dropdown, hover: :dropdown, close: { others: :true } } }
-                %i.fa.fa-info
+          .topbar-actions
+            - if self.respond_to?(:new_admin_ticket_request_path)
+              .btn-group-red.btn-group{ class: hidden_mobile }
+                %button.btn.btn-sm.md-skip.dropdown-toggle{ type: :button, data: { toggle: :dropdown, hover: :dropdown, close: { others: :true } } }
+                  %i.fa.fa-info
 
-              %ul.dropdown-menu-v2{ role: :menu }
-                %li
-                  %a{ href: new_admin_ticket_request_path }
-                    %i.fa.fa-plus
-                    = t('routes.admin.ticket.requests.new.title')
+                %ul.dropdown-menu-v2{ role: :menu }
+                  %li
+                    %a{ href: new_admin_ticket_request_path }
+                      %i.fa.fa-plus
+                      = t('routes.admin.ticket.requests.new.title')
 
-          - cache [ 'admin/admin_top_menu_principals_dropdown', current_admin_user, current_principal ] do
-            - unless current_admin_user.principals.empty?
-              .btn-group-img.btn-group#sq-application-top-menu-principals-dropdown
-                - cache [ 'admin/admin_top_menu_principals_dropdown/current_principal', current_principal ] do
-                  %button.btn.btn-sm.dropdown-toggle{ type: :button, data: { toggle: :dropdown, hower: :dropdown, close: { others: :true } } }
-                    %span= current_principal.name
+            = render partial: 'layouts/shared/admin/custom_nav_content'
 
-                - cache [ 'admin/admin_top_menu_principals_dropdown/selection', current_admin_user ] do
-                  %ul.dropdown-menu-v2{ role: :menu }
-                    = render partial: 'admin/backend/principals/top_menu_list_item', collection: current_admin_user.principals, as: :resource
+            - cache [ 'admin/admin_top_menu_principals_dropdown', current_admin_user, current_principal ] do
+              - unless current_admin_user.principals.empty?
+                .btn-group-img.btn-group#sq-application-top-menu-principals-dropdown
+                  - cache [ 'admin/admin_top_menu_principals_dropdown/current_principal', current_principal ] do
+                    %button.btn.btn-sm.dropdown-toggle{ type: :button, data: { toggle: :dropdown, hower: :dropdown, close: { others: :true } } }
+                      %span= current_principal.name
 
-          - cache [ 'layouts/admin/nav/current_admin_user', current_admin_user ] do
-            .btn-group-img.btn-group
-              %button.btn.btn-sm.dropdown-toggle{ type: :button, data: { toggle: :dropdown, hower: :dropdown, close: { others: :true } } }
-                %span= current_admin_user.name
-                = gravatar_tag current_admin_user.email, size: 35, secure: true
-              %ul.dropdown-menu-v2{ role: :menu }
-                %li
-                  %a{ href: '#' }
-                    %i.fa.fa-user
-                    My Profile
-                %li
-                  %a{ href: '#' }
-                    %i.fa.fa-list
-                    My Tasks
+                  - cache [ 'admin/admin_top_menu_principals_dropdown/selection', current_admin_user ] do
+                    %ul.dropdown-menu-v2{ role: :menu }
+                      = render partial: 'admin/backend/principals/top_menu_list_item', collection: current_admin_user.principals, as: :resource
 
-                %li
-                  %a{ href: destroy_admin_user_session_path }
-                    %i.fa.fa-sign-out
-                    Logout
+            - cache [ 'layouts/admin/nav/current_admin_user', current_admin_user ] do
+              .btn-group-img.btn-group
+                %button.btn.btn-sm.dropdown-toggle{ type: :button, data: { toggle: :dropdown, hower: :dropdown, close: { others: :true } } }
+                  %span= current_admin_user.name
+                  = gravatar_tag current_admin_user.email, size: 35, secure: true
+                %ul.dropdown-menu-v2{ role: :menu }
+                  %li
+                    %a{ href: destroy_admin_user_session_path }
+                      %i.fa.fa-sign-out
+                      Logout
 
-      = navigation
+        = navigation

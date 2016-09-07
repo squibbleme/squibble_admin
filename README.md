@@ -114,3 +114,4 @@ end
 * 06.09.2016: Auslagerung der Konfiguration für Sidekiq. Erweiterung der bestehenden Konfiguration um zusätzliche komplett unabhängigen Pool für :low Priority Operationen.
 * 06.09.2016: Auslagerung des OperationsService
 * 06.09.2016: Auslagerung der Scripte für das Management der Applikationen (Unicorn, Sidekiq)
+* 07.09.2016: Möglichkeit des Einfügens von zusätzlichem Inhalt in die Nav Bar durch Überschreiben des Templates ```layouts/shared/admin/_custom_nav_content.html.haml```

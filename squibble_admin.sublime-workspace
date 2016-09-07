@@ -520,37 +520,18 @@
 	"buffers":
 	[
 		{
-			"file": "config/initializers/wicket_pdf.rb",
-			"settings":
-			{
-				"buffer_size": 889,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "lib/squibble_admin/version.rb",
-			"settings":
-			{
-				"buffer_size": 45,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"contents": "/*\n= require jquery-ui\n= require bootstrap/dist/css/bootstrap\n= require bootstrap-datepicker/dist/css/bootstrap-datepicker3\n= require bootstrap-switch/dist/css/bootstrap3/bootstrap-switch\n= require font-awesome/css/font-awesome\n= require jquery.uniform/themes/default/css/uniform.default.min\n= require simple-line-icons/css/simple-line-icons\n= require select2\n= require select2-bootstrap\n\n= require_tree ./general\n*/\n",
-			"file": "lib/assets/stylesheets/squibble_admin/general_manifest.css",
-			"file_size": 497,
-			"file_write_time": 131159193316018711,
-			"settings":
-			{
-				"buffer_size": 417,
-				"line_ending": "Unix"
-			}
-		},
-		{
 			"file": "lib/assets/stylesheets/squibble_admin/admin_manifest.css",
 			"settings":
 			{
 				"buffer_size": 264,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "/Z/squibble/plugins/squibble_print/lib/squibble_print/version.rb",
+			"settings":
+			{
+				"buffer_size": 45,
 				"line_ending": "Unix"
 			}
 		}
@@ -808,19 +789,30 @@
 	},
 	"expanded_folders":
 	[
-		"/Z/squibble/plugins/squibble_admin",
 		"/Z/squibble/plugins/squibble_admin/app",
-		"/Z/squibble/plugins/squibble_admin/lib",
-		"/Z/squibble/plugins/squibble_admin/lib/assets/stylesheets",
+		"/Z/squibble/plugins/squibble_admin/lib/assets",
+		"/Z/squibble/plugins/squibble_admin/lib/assets/javascripts",
+		"/Z/squibble/plugins/squibble_admin/lib/assets/javascripts/squibble_admin",
+		"/Z/squibble/plugins/squibble_admin/lib/assets/javascripts/squibble_admin/general",
 		"/Z/squibble/plugins/squibble_admin/lib/assets/stylesheets/squibble_admin",
+		"/Z/squibble/plugins/squibble_admin/lib/assets/stylesheets/squibble_admin/admin",
+		"/Z/squibble/plugins/squibble_admin/lib/assets/stylesheets/squibble_admin/admin/elements",
 		"/Z/squibble/plugins/squibble_admin/lib/assets/stylesheets/squibble_admin/general",
-		"/Z/squibble/plugins/squibble_admin/lib/squibble_admin"
+		"/Z/squibble/plugins/squibble_admin/lib/assets/stylesheets/squibble_admin/general/elements",
+		"/Z/squibble/plugins/squibble_print",
+		"/Z/squibble/plugins/squibble_print/app",
+		"/Z/squibble/plugins/squibble_print/app/views/layouts",
+		"/Z/squibble/plugins/squibble_print/lib",
+		"/Z/squibble/plugins/squibble_print/lib/squibble_print"
 	],
 	"file_history":
 	[
-		"/Z/squibble/plugins/squibble_admin/config/locales/de.yml",
+		"/Z/squibble/plugins/squibble_admin/lib/assets/stylesheets/squibble_admin/general_manifest.css",
+		"/Z/squibble/plugins/squibble_print/app/views/layouts/print.html.haml",
+		"/Z/squibble/plugins/squibble_admin/app/views/layouts/shared/admin/_header.html.haml",
 		"/Z/squibble/plugins/squibble_admin/lib/squibble_admin/version.rb",
 		"/Z/squibble/plugins/squibble_admin/config/initializers/wicket_pdf.rb",
+		"/Z/squibble/plugins/squibble_admin/config/locales/de.yml",
 		"/Z/squibble/plugins/squibble_admin/config/unicorn/production.rb",
 		"/Z/squibble/squibble-2016/scripts/unicorn/development/start.sh",
 		"/Z/squibble/squibble-2016/scripts/sidekiq/development/start.sh",
@@ -892,7 +884,6 @@
 		"/Z/squibble/plugins/squibble_admin/app/operations/deletion/create_operation.rb",
 		"/Z/squibble/plugins/squibble_admin/app/operations/deletion/create_execution_operation.rb",
 		"/Z/squibble/plugins/squibble_admin/app/views/layouts/shared/_google_tag_manager.html.erb",
-		"/Z/squibble/plugins/squibble_admin/app/views/layouts/shared/admin/_header.html.haml",
 		"/Z/squibble/plugins/squibble_admin/config/locales/de.kaminari.yml",
 		"/Z/squibble/plugins/squibble_admin/config/locales/de.responders.yml",
 		"/Z/squibble/plugins/squibble_admin/config/locales/de.devise.yml",
@@ -943,9 +934,7 @@
 		"/Z/squibble/plugins/squibble_admin/lib/assets/javascripts/squibble_admin/admin/elements/input-percentage.coffee",
 		"/Z/squibble/plugins/squibble_admin/lib/assets/javascripts/squibble_admin/admin/elements/input-number.coffee",
 		"/Z/squibble/plugins/squibble_admin/lib/assets/javascripts/squibble_admin/admin/elements/input-date.coffee",
-		"/Z/squibble/plugins/squibble_admin/lib/assets/javascripts/squibble_admin/admin/elements/input-date-time.coffee",
-		"/Z/squibble/plugins/squibble_admin/lib/assets/javascripts/squibble_admin/admin/elements/easy-pie-chart.coffee",
-		"/Z/squibble/plugins/squibble_admin/lib/assets/javascripts/squibble_admin/general/sq-price.coffee"
+		"/Z/squibble/plugins/squibble_admin/lib/assets/javascripts/squibble_admin/admin/elements/input-date-time.coffee"
 	],
 	"find":
 	{
@@ -1217,106 +1206,6 @@
 			[
 				{
 					"buffer": 0,
-					"file": "config/initializers/wicket_pdf.rb",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 889,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								372,
-								372
-							]
-						],
-						"settings":
-						{
-							"editorconfig": true,
-							"ensure_newline_at_eof_on_save": true,
-							"syntax": "Packages/Ruby/Ruby.sublime-syntax",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true,
-							"trim_trailing_white_space_on_save": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 3,
-					"type": "text"
-				},
-				{
-					"buffer": 1,
-					"file": "lib/squibble_admin/version.rb",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 45,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								45,
-								45
-							]
-						],
-						"settings":
-						{
-							"editorconfig": true,
-							"ensure_newline_at_eof_on_save": true,
-							"syntax": "Packages/Ruby/Ruby.sublime-syntax",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true,
-							"trim_trailing_white_space_on_save": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 0,
-					"type": "text"
-				},
-				{
-					"buffer": 2,
-					"file": "lib/assets/stylesheets/squibble_admin/general_manifest.css",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 417,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								387,
-								387
-							]
-						],
-						"settings":
-						{
-							"color_scheme": "Packages/User/Color Highlighter/themes/Monokai.tmTheme",
-							"editorconfig": true,
-							"ensure_newline_at_eof_on_save": true,
-							"syntax": "Packages/LESS/LESS.tmLanguage",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true,
-							"trim_trailing_white_space_on_save": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 2,
-					"type": "text"
-				},
-				{
-					"buffer": 3,
 					"file": "lib/assets/stylesheets/squibble_admin/admin_manifest.css",
 					"semi_transient": false,
 					"settings":
@@ -1347,6 +1236,39 @@
 						"zoom_level": 1.0
 					},
 					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "/Z/squibble/plugins/squibble_print/lib/squibble_print/version.rb",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 45,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								45,
+								45
+							]
+						],
+						"settings":
+						{
+							"editorconfig": true,
+							"ensure_newline_at_eof_on_save": true,
+							"syntax": "Packages/Ruby/Ruby.sublime-syntax",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true,
+							"trim_trailing_white_space_on_save": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
 					"type": "text"
 				}
 			]
@@ -1945,7 +1867,7 @@
 	"show_open_files": false,
 	"show_tabs": true,
 	"side_bar_visible": true,
-	"side_bar_width": 274.0,
+	"side_bar_width": 391.0,
 	"status_bar_visible": true,
 	"template_settings":
 	{
