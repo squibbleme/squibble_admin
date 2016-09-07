@@ -4,6 +4,10 @@
 		"selected_items":
 		[
 			[
+				"current",
+				"current_principal"
+			],
+			[
 				"changed",
 				"changed_attributes"
 			],
@@ -186,10 +190,6 @@
 			[
 				"requ",
 				"request_information"
-			],
-			[
-				"current",
-				"current_admin_user"
 			],
 			[
 				"reop",
@@ -534,6 +534,14 @@
 				"buffer_size": 45,
 				"line_ending": "Unix"
 			}
+		},
+		{
+			"file": "app/views/layouts/shared/admin/_header.html.haml",
+			"settings":
+			{
+				"buffer_size": 2772,
+				"line_ending": "Unix"
+			}
 		}
 	],
 	"build_system": "",
@@ -789,28 +797,23 @@
 	},
 	"expanded_folders":
 	[
+		"/Z/squibble/plugins/squibble_admin",
 		"/Z/squibble/plugins/squibble_admin/app",
-		"/Z/squibble/plugins/squibble_admin/lib/assets",
-		"/Z/squibble/plugins/squibble_admin/lib/assets/javascripts",
-		"/Z/squibble/plugins/squibble_admin/lib/assets/javascripts/squibble_admin",
-		"/Z/squibble/plugins/squibble_admin/lib/assets/javascripts/squibble_admin/general",
-		"/Z/squibble/plugins/squibble_admin/lib/assets/stylesheets/squibble_admin",
-		"/Z/squibble/plugins/squibble_admin/lib/assets/stylesheets/squibble_admin/admin",
-		"/Z/squibble/plugins/squibble_admin/lib/assets/stylesheets/squibble_admin/admin/elements",
-		"/Z/squibble/plugins/squibble_admin/lib/assets/stylesheets/squibble_admin/general",
-		"/Z/squibble/plugins/squibble_admin/lib/assets/stylesheets/squibble_admin/general/elements",
-		"/Z/squibble/plugins/squibble_print",
-		"/Z/squibble/plugins/squibble_print/app",
-		"/Z/squibble/plugins/squibble_print/app/views/layouts",
-		"/Z/squibble/plugins/squibble_print/lib",
-		"/Z/squibble/plugins/squibble_print/lib/squibble_print"
+		"/Z/squibble/plugins/squibble_admin/app/views",
+		"/Z/squibble/plugins/squibble_admin/app/views/layouts",
+		"/Z/squibble/plugins/squibble_admin/app/views/layouts/shared",
+		"/Z/squibble/plugins/squibble_admin/app/views/layouts/shared/admin",
+		"/Z/squibble/plugins/squibble_admin/lib",
+		"/Z/squibble/plugins/squibble_admin/lib/squibble_admin"
 	],
 	"file_history":
 	[
+		"/Z/squibble/plugins/squibble_admin/README.md",
+		"/Z/squibble/plugins/squibble_admin/app/views/layouts/shared/admin/_custom_nav_content.html.haml",
+		"/Z/squibble/plugins/squibble_admin/lib/squibble_admin/version.rb",
 		"/Z/squibble/plugins/squibble_admin/lib/assets/stylesheets/squibble_admin/general_manifest.css",
 		"/Z/squibble/plugins/squibble_print/app/views/layouts/print.html.haml",
 		"/Z/squibble/plugins/squibble_admin/app/views/layouts/shared/admin/_header.html.haml",
-		"/Z/squibble/plugins/squibble_admin/lib/squibble_admin/version.rb",
 		"/Z/squibble/plugins/squibble_admin/config/initializers/wicket_pdf.rb",
 		"/Z/squibble/plugins/squibble_admin/config/locales/de.yml",
 		"/Z/squibble/plugins/squibble_admin/config/unicorn/production.rb",
@@ -844,7 +847,6 @@
 		"/Z/squibble/plugins/squibble_admin/scripts/unicorn/stop.sh",
 		"/Z/squibble/plugins/squibble_admin/config/sidekiq_high.yml",
 		"/Z/squibble/plugins/squibble_admin/config/sidekiq_low.yml",
-		"/Z/squibble/plugins/squibble_admin/README.md",
 		"/Z/squibble/plugins/squibble_admin/scripts/start_sidekiq_production.sh",
 		"/Z/squibble/plugins/squibble_admin/scripts/start_sidekiq_development.sh",
 		"/Z/squibble/plugins/squibble_admin/scripts/stop_sidekiq.sh",
@@ -933,8 +935,7 @@
 		"/Z/squibble/plugins/squibble_admin/lib/assets/javascripts/squibble_admin/admin/elements/input-price.coffee",
 		"/Z/squibble/plugins/squibble_admin/lib/assets/javascripts/squibble_admin/admin/elements/input-percentage.coffee",
 		"/Z/squibble/plugins/squibble_admin/lib/assets/javascripts/squibble_admin/admin/elements/input-number.coffee",
-		"/Z/squibble/plugins/squibble_admin/lib/assets/javascripts/squibble_admin/admin/elements/input-date.coffee",
-		"/Z/squibble/plugins/squibble_admin/lib/assets/javascripts/squibble_admin/admin/elements/input-date-time.coffee"
+		"/Z/squibble/plugins/squibble_admin/lib/assets/javascripts/squibble_admin/admin/elements/input-date.coffee"
 	],
 	"find":
 	{
@@ -1201,7 +1202,7 @@
 	"groups":
 	[
 		{
-			"selected": 1,
+			"selected": 2,
 			"sheets":
 			[
 				{
@@ -1235,7 +1236,7 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 1,
+					"stack_index": 2,
 					"type": "text"
 				},
 				{
@@ -1257,6 +1258,7 @@
 						],
 						"settings":
 						{
+							"color_scheme": "Packages/User/Color Highlighter/themes/Monokai.tmTheme",
 							"editorconfig": true,
 							"ensure_newline_at_eof_on_save": true,
 							"syntax": "Packages/Ruby/Ruby.sublime-syntax",
@@ -1268,9 +1270,48 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "app/views/layouts/shared/admin/_header.html.haml",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 2772,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1459,
+								1483
+							]
+						],
+						"settings":
+						{
+							"color_scheme": "Packages/User/Color Highlighter/themes/Monokai.tmTheme",
+							"editorconfig": true,
+							"ensure_newline_at_eof_on_save": true,
+							"syntax": "Packages/Rails/Ruby Haml.sublime-syntax",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true,
+							"trim_trailing_white_space_on_save": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 216.0,
+						"zoom_level": 1.0
+					},
 					"stack_index": 0,
 					"type": "text"
 				}
+			]
+		},
+		{
+			"sheets":
+			[
 			]
 		}
 	],
@@ -1291,11 +1332,18 @@
 				0,
 				1,
 				1
+			],
+			[
+				1,
+				0,
+				2,
+				1
 			]
 		],
 		"cols":
 		[
 			0.0,
+			0.5,
 			1.0
 		],
 		"rows":
@@ -1326,6 +1374,10 @@
 		"last_filter": "",
 		"selected_items":
 		[
+			[
+				"readme",
+				"squibble_admin\\README.md"
+			],
 			[
 				"de.yml",
 				"squibble_admin\\config\\locales\\de.yml"
@@ -1453,10 +1505,6 @@
 			[
 				"index.html",
 				"squibble_admin\\app\\views\\admin\\index.html.haml"
-			],
-			[
-				"readme",
-				"squibble_admin\\README.md"
 			],
 			[
 				"showhel",
@@ -1859,7 +1907,7 @@
 		],
 		"width": 816.0
 	},
-	"selected_group": 0,
+	"selected_group": 1,
 	"settings":
 	{
 	},
