@@ -37,6 +37,7 @@ module CarrierWave
         img
       end
     end
+  end
 
   module Uploader
     # ple@2014-11-08:
