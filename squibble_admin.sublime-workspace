@@ -542,6 +542,14 @@
 				"buffer_size": 45,
 				"line_ending": "Unix"
 			}
+		},
+		{
+			"file": "config/initializers/carrierwave_extensions.rb",
+			"settings":
+			{
+				"buffer_size": 1563,
+				"line_ending": "Unix"
+			}
 		}
 	],
 	"build_system": "",
@@ -798,8 +806,6 @@
 	"expanded_folders":
 	[
 		"/Z/squibble/plugins/squibble_admin",
-		"/Z/squibble/plugins/squibble_admin/app/views/admin",
-		"/Z/squibble/plugins/squibble_admin/app/views/layouts",
 		"/Z/squibble/plugins/squibble_admin/lib",
 		"/Z/squibble/plugins/squibble_admin/lib/squibble_admin"
 	],
@@ -1199,7 +1205,7 @@
 	"groups":
 	[
 		{
-			"selected": 2,
+			"selected": 3,
 			"sheets":
 			[
 				{
@@ -1233,7 +1239,7 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 2,
+					"stack_index": 3,
 					"type": "text"
 				},
 				{
@@ -1267,7 +1273,7 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 1,
+					"stack_index": 2,
 					"type": "text"
 				},
 				{
@@ -1298,6 +1304,39 @@
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "config/initializers/carrierwave_extensions.rb",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1563,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1355,
+								1355
+							]
+						],
+						"settings":
+						{
+							"editorconfig": true,
+							"ensure_newline_at_eof_on_save": true,
+							"syntax": "Packages/Ruby/Ruby.sublime-syntax",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true,
+							"trim_trailing_white_space_on_save": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 324.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 0,
@@ -1358,6 +1397,10 @@
 		"last_filter": "",
 		"selected_items":
 		[
+			[
+				"carrier",
+				"squibble_admin\\config\\initializers\\carrierwave_extensions.rb"
+			],
 			[
 				"storeattributespreview.rb",
 				"squibble_carrierwave_attributes\\app\\models\\concerns\\carrierwave\\store_attributes\\preview.rb"
@@ -1865,10 +1908,6 @@
 			[
 				"orderpositioncacl",
 				"app\\operations\\business\\order\\position\\calculate_price_operation.rb"
-			],
-			[
-				"orderworker",
-				"app\\workers\\business\\order\\calculate_price_worker.rb"
 			]
 		],
 		"width": 0.0

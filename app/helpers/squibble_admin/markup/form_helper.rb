@@ -89,7 +89,8 @@ module SquibbleAdmin::Markup::FormHelper
                },
                disabled: (options[:disabled] == true ? true : false),
                autofocus: options[:autofocus],
-               hint: options[:hint]
+               hint: options[:hint],
+               wrapper: options[:wrapper]
   end
 
   def form_field_percentage(form, attribute = :percentage, options = {})
