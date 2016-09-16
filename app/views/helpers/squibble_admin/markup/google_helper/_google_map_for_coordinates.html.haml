@@ -1,3 +1,2 @@
-- cache [ 'helpers/squibble_admin/markup/google_helper/google_map_for_coordinates', latitude, longitude ] do
-  %div.google-map-for-coordinates{ id: "#{latitude}-#{longitude}", data: { scrollwheel: scrollwheel, draggable: draggable, latitude: latitude, longitude: longitude }, style: "height: #{height}px;" }
-
+- cache [ 'helpers/squibble_admin/markup/google_helper/google_map_for_coordinates', latitude, longitude, data_options ] do
+  %div.google-map-for-coordinates{ id: "#{latitude}-#{longitude}", data: data_options, style: "height: #{data_options[:height]}px;" }

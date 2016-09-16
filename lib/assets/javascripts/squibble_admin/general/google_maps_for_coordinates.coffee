@@ -9,16 +9,25 @@ googleMapsForCoordinates = () ->
 
     # Standard Zoom
     #
-    zoom = data.optionsZoom unless _.isUndefined(data.optionsZoom)
+    # zoom = data.optionsZoom unless _.isUndefined(data.optionsZoom)
 
     mapOptions =
       div: document.getElementById(that.attr('id'))
       lat: data.latitude
       lng: data.longitude
       scrollwheel: data.scrollwheel
-      zoom: zoom
+      zoom: data.zoom
       draggable: data.draggable
+      navigationControl: data.navigationcontrol
 
+      # Entfernen der Skalierungsanzeige
+      scaleControl: data.scalecontrol
+
+      # Icon für Street View
+      streetViewControl: data.streetviewcontrol
+
+      # Standard UI Elemente (Scroll, Switch für Karte / Satellit) ausblenden
+      disableDefaultUI: data.disabledefaultui
 
     # Generieren der Karte
     #
