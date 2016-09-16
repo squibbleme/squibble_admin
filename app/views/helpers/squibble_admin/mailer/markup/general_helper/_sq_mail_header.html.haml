@@ -7,9 +7,9 @@
           = sq_mail_table_container do
             %tr
               %td.wrapper.last{style: 'padding: 0;'}
-                = sq_mail_table_twelve_columns do
+                = sq_mail_table(:twelve) do
                   %tr
-                    = sq_mail_td_twelve_sub_columns(class: 'last', style: 'padding-right: 10px; padding-left: 10px; padding-top: 10px; padding-bottom: 10px; text-align: right;') do
+                    = sq_mail_td_sub_columns(:twelve, classes: 'last', style: 'padding-right: 10px; padding-left: 10px; padding-top: 10px; padding-bottom: 10px; text-align: right;') do
                       = sq_mail_header_image(@principal, {style: 'float: right; display: block; align: right;'})
 
               %td.expander

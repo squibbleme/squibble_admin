@@ -167,94 +167,24 @@ module SquibbleAdmin::Mailer::Markup::GeneralHelper
     end
   end
 
-
-  # TODO: Auslagern in Template sq_mail_table_columns(:width, options = {}, &block)
-  #
-  def sq_mail_table_twelve_columns(options = {}, &block)
+  def sq_mail_table(amount, options = {}, &block)
     styles = if options[:style].present?
                options[:style]
              end
-    content_tag(:table, class: 'twelve columns', style: "min-width: #{Settings.layout.mailer.foundation_mailer.width_percentage.twelve}; margin: 0 auto; padding: 0; width: #{Settings.layout.mailer.foundation_mailer.width.twelve}px; #{styles}", &block)
+
+    if [:one, :two, :three, :four, :five, :six, :seven, :eight, :nine, :ten, :eleven, :twelve].include? amount.to_sym
+      render partial: 'helpers/squibble_admin/mailer/markup/general_helper/sq_mail_table',
+             locals: {
+               amount: amount,
+               block: block,
+               styles: styles,
+               min_width: eval('Settings.layout.mailer.foundation_mailer.width_percentage.' + amount.to_s),
+               width: eval('Settings.layout.mailer.foundation_mailer.width.' + amount.to_s)
+             }
+    end
   end
 
-  def sq_mail_table_eleven_columns(options = {}, &block)
-    styles = if options[:style].present?
-               options[:style]
-             end
-    content_tag(:table, class: 'eleven columns', style: "min-width: #{Settings.layout.mailer.foundation_mailer.width_percentage.eleven}; margin: 0 auto; padding: 0; width: #{Settings.layout.mailer.foundation_mailer.width.eleven}px; #{styles}", &block)
-  end
-
-  def sq_mail_table_ten_columns(options = {}, &block)
-    styles = if options[:style].present?
-               options[:style]
-             end
-    content_tag(:table, class: 'ten columns', style: "min-width: #{Settings.layout.mailer.foundation_mailer.width_percentage.ten}; margin: 0 auto; padding: 0; width: #{Settings.layout.mailer.foundation_mailer.width.ten}px; #{styles}", &block)
-  end
-
-  def sq_mail_table_nine_columns(options = {}, &block)
-    styles = if options[:style].present?
-               options[:style]
-             end
-    content_tag(:table, class: 'nine columns', style: "min-width: #{Settings.layout.mailer.foundation_mailer.width_percentage.nine}; margin: 0 auto; padding: 0; width: #{Settings.layout.mailer.foundation_mailer.width.nine}px; #{styles}", &block)
-  end
-
-  def sq_mail_table_eight_columns(options = {}, &block)
-    styles = if options[:style].present?
-               options[:style]
-             end
-    content_tag(:table, class: 'eight columns', style: "min-width: #{Settings.layout.mailer.foundation_mailer.width_percentage.eight}; margin: 0 auto; padding: 0; width: #{Settings.layout.mailer.foundation_mailer.width.eight}px; #{styles}", &block)
-  end
-
-  def sq_mail_table_seven_columns(options = {}, &block)
-    styles = if options[:style].present?
-               options[:style]
-             end
-    content_tag(:table, class: 'seven columns', style: "min-width: #{Settings.layout.mailer.foundation_mailer.width_percentage.seven}; margin: 0 auto; padding: 0; width: #{Settings.layout.mailer.foundation_mailer.width.seven}px; #{styles}", &block)
-  end
-
-  def sq_mail_table_six_columns(options = {}, &block)
-    styles = if options[:style].present?
-               options[:style]
-             end
-    content_tag(:table, class: 'six columns', style: "min-width: #{Settings.layout.mailer.foundation_mailer.width_percentage.six}; margin: 0 auto; padding: 0; width: #{Settings.layout.mailer.foundation_mailer.width.six}px; #{styles}", &block)
-  end
-
-  def sq_mail_table_five_columns(options = {}, &block)
-    styles = if options[:style].present?
-               options[:style]
-             end
-    content_tag(:table, class: 'five columns', style: "min-width: #{Settings.layout.mailer.foundation_mailer.width_percentage.five}; margin: 0 auto; padding: 0; width: #{Settings.layout.mailer.foundation_mailer.width.five}px; #{styles}", &block)
-  end
-
-  def sq_mail_table_four_columns(options = {}, &block)
-    styles = if options[:style].present?
-               options[:style]
-             end
-    content_tag(:table, class: 'four columns', style: "min-width: #{Settings.layout.mailer.foundation_mailer.width_percentage.four}; margin: 0 auto; padding: 0; width: #{Settings.layout.mailer.foundation_mailer.width.four}px; #{styles}", &block)
-  end
-
-  def sq_mail_table_three_columns(options = {}, &block)
-    styles = if options[:style].present?
-               options[:style]
-             end
-    content_tag(:table, class: 'three columns', style: "min-width: #{Settings.layout.mailer.foundation_mailer.width_percentage.three}; margin: 0 auto; padding: 0; width: #{Settings.layout.mailer.foundation_mailer.width.three}px; #{styles}", &block)
-  end
-
-  def sq_mail_table_two_columns(options = {}, &block)
-    styles = if options[:style].present?
-               options[:style]
-             end
-    content_tag(:table, class: 'two columns', style: "min-width: #{Settings.layout.mailer.foundation_mailer.width_percentage.two}; margin: 0 auto; padding: 0; width: #{Settings.layout.mailer.foundation_mailer.width.two}px; #{styles}", &block)
-  end
-
-  def sq_mail_table_one_columns(options = {}, &block)
-    styles = if options[:style].present?
-               options[:style]
-             end
-    content_tag(:table, class: 'one columns', style: "min-width: #{Settings.layout.mailer.foundation_mailer.width_percentage.one}; margin: 0 auto; padding: 0; width: #{Settings.layout.mailer.foundation_mailer.width.one}px; #{styles}", &block)
-  end
-
-  def sq_mail_td_twelve_sub_columns(options = {}, &block)
+  def sq_mail_td_sub_columns(amount, options = {}, &block)
     styles = if options[:style].present?
                options[:style]
              end
@@ -262,127 +192,233 @@ module SquibbleAdmin::Mailer::Markup::GeneralHelper
                 options[:class]
               end
 
-    content_tag(:td, class: "twelve sub-columns #{classes}", style: "min-width: 0px; width: #{Settings.layout.mailer.foundation_mailer.width_percentage.twelve}; #{styles}", &block)
+    if [:one, :two, :three, :four, :five, :six, :seven, :eight, :nine, :ten, :eleven, :twelve].include? amount.to_sym
+      render partial: 'helpers/squibble_admin/mailer/markup/general_helper/sq_mail_td_sub_columns',
+             locals: {
+               amount: amount,
+               block: block,
+               styles: styles,
+               classes: classes,
+               width: eval('Settings.layout.mailer.foundation_mailer.width.' + amount.to_s)
+             }
+    end
   end
 
-  def sq_mail_td_eleven_sub_columns(options = {}, &block)
-    styles = if options[:style].present?
-               options[:style]
-             end
-    classes = if options[:class].present?
-                options[:class]
-              end
+  # # TODO: Auslagern in Template sq_mail_table_columns(:width, options = {}, &block)
+  # #
+  # def sq_mail_table_twelve_columns(options = {}, &block)
+  #   styles = if options[:style].present?
+  #              options[:style]
+  #            end
+  #   content_tag(:table, class: 'twelve columns', style: "min-width: #{Settings.layout.mailer.foundation_mailer.width_percentage.twelve}; margin: 0 auto; padding: 0; width: #{Settings.layout.mailer.foundation_mailer.width.twelve}px; #{styles}", &block)
+  # end
 
-    content_tag(:td, class: "eleven sub-columns #{classes}", style: "min-width: 0px; width: #{Settings.layout.mailer.foundation_mailer.width_percentage.eleven}; #{styles}", &block)
-  end
+  # def sq_mail_table_eleven_columns(options = {}, &block)
+  #   styles = if options[:style].present?
+  #              options[:style]
+  #            end
+  #   content_tag(:table, class: 'eleven columns', style: "min-width: #{Settings.layout.mailer.foundation_mailer.width_percentage.eleven}; margin: 0 auto; padding: 0; width: #{Settings.layout.mailer.foundation_mailer.width.eleven}px; #{styles}", &block)
+  # end
 
-  def sq_mail_td_ten_sub_columns(options = {}, &block)
-    styles = if options[:style].present?
-               options[:style]
-             end
-    classes = if options[:class].present?
-                options[:class]
-              end
+  # def sq_mail_table_ten_columns(options = {}, &block)
+  #   styles = if options[:style].present?
+  #              options[:style]
+  #            end
+  #   content_tag(:table, class: 'ten columns', style: "min-width: #{Settings.layout.mailer.foundation_mailer.width_percentage.ten}; margin: 0 auto; padding: 0; width: #{Settings.layout.mailer.foundation_mailer.width.ten}px; #{styles}", &block)
+  # end
 
-    content_tag(:td, class: "ten sub-columns #{classes}", style: "min-width: 0px; width: #{Settings.layout.mailer.foundation_mailer.width_percentage.ten}; #{styles}", &block)
-  end
+  # def sq_mail_table_nine_columns(options = {}, &block)
+  #   styles = if options[:style].present?
+  #              options[:style]
+  #            end
+  #   content_tag(:table, class: 'nine columns', style: "min-width: #{Settings.layout.mailer.foundation_mailer.width_percentage.nine}; margin: 0 auto; padding: 0; width: #{Settings.layout.mailer.foundation_mailer.width.nine}px; #{styles}", &block)
+  # end
 
-  def sq_mail_td_nine_sub_columns(options = {}, &block)
-    styles = if options[:style].present?
-               options[:style]
-             end
-    classes = if options[:class].present?
-                options[:class]
-              end
+  # def sq_mail_table_eight_columns(options = {}, &block)
+  #   styles = if options[:style].present?
+  #              options[:style]
+  #            end
+  #   content_tag(:table, class: 'eight columns', style: "min-width: #{Settings.layout.mailer.foundation_mailer.width_percentage.eight}; margin: 0 auto; padding: 0; width: #{Settings.layout.mailer.foundation_mailer.width.eight}px; #{styles}", &block)
+  # end
 
-    content_tag(:td, class: "nine sub-columns #{classes}", style: "min-width: 0px; width: #{Settings.layout.mailer.foundation_mailer.width_percentage.nine}; #{styles}", &block)
-  end
+  # def sq_mail_table_seven_columns(options = {}, &block)
+  #   styles = if options[:style].present?
+  #              options[:style]
+  #            end
+  #   content_tag(:table, class: 'seven columns', style: "min-width: #{Settings.layout.mailer.foundation_mailer.width_percentage.seven}; margin: 0 auto; padding: 0; width: #{Settings.layout.mailer.foundation_mailer.width.seven}px; #{styles}", &block)
+  # end
 
-  def sq_mail_td_eight_sub_columns(options = {}, &block)
-    styles = if options[:style].present?
-               options[:style]
-             end
-    classes = if options[:class].present?
-                options[:class]
-              end
+  # def sq_mail_table_six_columns(options = {}, &block)
+  #   styles = if options[:style].present?
+  #              options[:style]
+  #            end
+  #   content_tag(:table, class: 'six columns', style: "min-width: #{Settings.layout.mailer.foundation_mailer.width_percentage.six}; margin: 0 auto; padding: 0; width: #{Settings.layout.mailer.foundation_mailer.width.six}px; #{styles}", &block)
+  # end
 
-    content_tag(:td, class: "eight sub-columns #{classes}", style: "min-width: 0px; width: #{Settings.layout.mailer.foundation_mailer.width_percentage.eight}; #{styles}", &block)
-  end
+  # def sq_mail_table_five_columns(options = {}, &block)
+  #   styles = if options[:style].present?
+  #              options[:style]
+  #            end
+  #   content_tag(:table, class: 'five columns', style: "min-width: #{Settings.layout.mailer.foundation_mailer.width_percentage.five}; margin: 0 auto; padding: 0; width: #{Settings.layout.mailer.foundation_mailer.width.five}px; #{styles}", &block)
+  # end
 
-  def sq_mail_td_seven_sub_columns(options = {}, &block)
-    styles = if options[:style].present?
-               options[:style]
-             end
-    classes = if options[:class].present?
-                options[:class]
-              end
+  # def sq_mail_table_four_columns(options = {}, &block)
+  #   styles = if options[:style].present?
+  #              options[:style]
+  #            end
+  #   content_tag(:table, class: 'four columns', style: "min-width: #{Settings.layout.mailer.foundation_mailer.width_percentage.four}; margin: 0 auto; padding: 0; width: #{Settings.layout.mailer.foundation_mailer.width.four}px; #{styles}", &block)
+  # end
 
-    content_tag(:td, class: "seven sub-columns #{classes}", style: "min-width: 0px; width: #{Settings.layout.mailer.foundation_mailer.width_percentage.seven}; #{styles}", &block)
-  end
+  # def sq_mail_table_three_columns(options = {}, &block)
+  #   styles = if options[:style].present?
+  #              options[:style]
+  #            end
+  #   content_tag(:table, class: 'three columns', style: "min-width: #{Settings.layout.mailer.foundation_mailer.width_percentage.three}; margin: 0 auto; padding: 0; width: #{Settings.layout.mailer.foundation_mailer.width.three}px; #{styles}", &block)
+  # end
 
-  def sq_mail_td_six_sub_columns(options = {}, &block)
-    styles = if options[:style].present?
-               options[:style]
-             end
-    classes = if options[:class].present?
-                options[:class]
-              end
+  # def sq_mail_table_two_columns(options = {}, &block)
+  #   styles = if options[:style].present?
+  #              options[:style]
+  #            end
+  #   content_tag(:table, class: 'two columns', style: "min-width: #{Settings.layout.mailer.foundation_mailer.width_percentage.two}; margin: 0 auto; padding: 0; width: #{Settings.layout.mailer.foundation_mailer.width.two}px; #{styles}", &block)
+  # end
 
-    content_tag(:td, class: "six sub-columns #{classes}", style: "min-width: 0px; width: #{Settings.layout.mailer.foundation_mailer.width_percentage.six}; #{styles}", &block)
-  end
+  # def sq_mail_table_one_columns(options = {}, &block)
+  #   styles = if options[:style].present?
+  #              options[:style]
+  #            end
+  #   content_tag(:table, class: 'one columns', style: "min-width: #{Settings.layout.mailer.foundation_mailer.width_percentage.one}; margin: 0 auto; padding: 0; width: #{Settings.layout.mailer.foundation_mailer.width.one}px; #{styles}", &block)
+  # end
 
-  def sq_mail_td_five_sub_columns(options = {}, &block)
-    styles = if options[:style].present?
-               options[:style]
-             end
-    classes = if options[:class].present?
-                options[:class]
-              end
+  # def sq_mail_td_twelve_sub_columns(options = {}, &block)
+  #   styles = if options[:style].present?
+  #              options[:style]
+  #            end
+  #   classes = if options[:class].present?
+  #               options[:class]
+  #             end
 
-    content_tag(:td, class: "five sub-columns #{classes}", style: "min-width: 0px; width: #{Settings.layout.mailer.foundation_mailer.width_percentage.five}; #{styles}", &block)
-  end
+  #   content_tag(:td, class: "twelve sub-columns #{classes}", style: "min-width: 0px; width: #{Settings.layout.mailer.foundation_mailer.width_percentage.twelve}; #{styles}", &block)
+  # end
 
-  def sq_mail_td_four_sub_columns(options = {}, &block)
-    styles = if options[:style].present?
-               options[:style]
-             end
-    classes = if options[:class].present?
-                options[:class]
-              end
+  # def sq_mail_td_eleven_sub_columns(options = {}, &block)
+  #   styles = if options[:style].present?
+  #              options[:style]
+  #            end
+  #   classes = if options[:class].present?
+  #               options[:class]
+  #             end
 
-    content_tag(:td, class: "four sub-columns #{classes}", style: "min-width: 0px; width: #{Settings.layout.mailer.foundation_mailer.width_percentage.four}; #{styles}", &block)
-  end
+  #   content_tag(:td, class: "eleven sub-columns #{classes}", style: "min-width: 0px; width: #{Settings.layout.mailer.foundation_mailer.width_percentage.eleven}; #{styles}", &block)
+  # end
 
-  def sq_mail_td_three_sub_columns(options = {}, &block)
-    styles = if options[:style].present?
-               options[:style]
-             end
-    classes = if options[:class].present?
-                options[:class]
-              end
+  # def sq_mail_td_ten_sub_columns(options = {}, &block)
+  #   styles = if options[:style].present?
+  #              options[:style]
+  #            end
+  #   classes = if options[:class].present?
+  #               options[:class]
+  #             end
 
-    content_tag(:td, class: "three sub-columns #{classes}", style: "min-width: 0px; width: #{Settings.layout.mailer.foundation_mailer.width_percentage.three}; #{styles}", &block)
-  end
+  #   content_tag(:td, class: "ten sub-columns #{classes}", style: "min-width: 0px; width: #{Settings.layout.mailer.foundation_mailer.width_percentage.ten}; #{styles}", &block)
+  # end
 
-  def sq_mail_td_two_sub_columns(options = {}, &block)
-    styles = if options[:style].present?
-               options[:style]
-             end
-    classes = if options[:class].present?
-                options[:class]
-              end
+  # def sq_mail_td_nine_sub_columns(options = {}, &block)
+  #   styles = if options[:style].present?
+  #              options[:style]
+  #            end
+  #   classes = if options[:class].present?
+  #               options[:class]
+  #             end
 
-    content_tag(:td, class: "two sub-columns #{classes}", style: "min-width: 0px; width: #{Settings.layout.mailer.foundation_mailer.width_percentage.two}; #{styles}", &block)
-  end
+  #   content_tag(:td, class: "nine sub-columns #{classes}", style: "min-width: 0px; width: #{Settings.layout.mailer.foundation_mailer.width_percentage.nine}; #{styles}", &block)
+  # end
 
-  def sq_mail_td_one_sub_columns(options = {}, &block)
-    styles = if options[:style].present?
-               options[:style]
-             end
-    classes = if options[:class].present?
-                options[:class]
-              end
+  # def sq_mail_td_eight_sub_columns(options = {}, &block)
+  #   styles = if options[:style].present?
+  #              options[:style]
+  #            end
+  #   classes = if options[:class].present?
+  #               options[:class]
+  #             end
 
-    content_tag(:td, class: "one sub-columns #{classes}", style: "min-width: 0px; width: #{Settings.layout.mailer.foundation_mailer.width_percentage.one}; #{styles}", &block)
-  end
+  #   content_tag(:td, class: "eight sub-columns #{classes}", style: "min-width: 0px; width: #{Settings.layout.mailer.foundation_mailer.width_percentage.eight}; #{styles}", &block)
+  # end
+
+  # def sq_mail_td_seven_sub_columns(options = {}, &block)
+  #   styles = if options[:style].present?
+  #              options[:style]
+  #            end
+  #   classes = if options[:class].present?
+  #               options[:class]
+  #             end
+
+  #   content_tag(:td, class: "seven sub-columns #{classes}", style: "min-width: 0px; width: #{Settings.layout.mailer.foundation_mailer.width_percentage.seven}; #{styles}", &block)
+  # end
+
+  # def sq_mail_td_six_sub_columns(options = {}, &block)
+  #   styles = if options[:style].present?
+  #              options[:style]
+  #            end
+  #   classes = if options[:class].present?
+  #               options[:class]
+  #             end
+
+  #   content_tag(:td, class: "six sub-columns #{classes}", style: "min-width: 0px; width: #{Settings.layout.mailer.foundation_mailer.width_percentage.six}; #{styles}", &block)
+  # end
+
+  # def sq_mail_td_five_sub_columns(options = {}, &block)
+  #   styles = if options[:style].present?
+  #              options[:style]
+  #            end
+  #   classes = if options[:class].present?
+  #               options[:class]
+  #             end
+
+  #   content_tag(:td, class: "five sub-columns #{classes}", style: "min-width: 0px; width: #{Settings.layout.mailer.foundation_mailer.width_percentage.five}; #{styles}", &block)
+  # end
+
+  # def sq_mail_td_four_sub_columns(options = {}, &block)
+  #   styles = if options[:style].present?
+  #              options[:style]
+  #            end
+  #   classes = if options[:class].present?
+  #               options[:class]
+  #             end
+
+  #   content_tag(:td, class: "four sub-columns #{classes}", style: "min-width: 0px; width: #{Settings.layout.mailer.foundation_mailer.width_percentage.four}; #{styles}", &block)
+  # end
+
+  # def sq_mail_td_three_sub_columns(options = {}, &block)
+  #   styles = if options[:style].present?
+  #              options[:style]
+  #            end
+  #   classes = if options[:class].present?
+  #               options[:class]
+  #             end
+
+  #   content_tag(:td, class: "three sub-columns #{classes}", style: "min-width: 0px; width: #{Settings.layout.mailer.foundation_mailer.width_percentage.three}; #{styles}", &block)
+  # end
+
+  # def sq_mail_td_two_sub_columns(options = {}, &block)
+  #   styles = if options[:style].present?
+  #              options[:style]
+  #            end
+  #   classes = if options[:class].present?
+  #               options[:class]
+  #             end
+
+  #   content_tag(:td, class: "two sub-columns #{classes}", style: "min-width: 0px; width: #{Settings.layout.mailer.foundation_mailer.width_percentage.two}; #{styles}", &block)
+  # end
+
+  # def sq_mail_td_one_sub_columns(options = {}, &block)
+  #   styles = if options[:style].present?
+  #              options[:style]
+  #            end
+  #   classes = if options[:class].present?
+  #               options[:class]
+  #             end
+
+  #   content_tag(:td, class: "one sub-columns #{classes}", style: "min-width: 0px; width: #{Settings.layout.mailer.foundation_mailer.width_percentage.one}; #{styles}", &block)
+  # end
 end

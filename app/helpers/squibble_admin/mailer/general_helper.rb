@@ -1,4 +1,5 @@
 module SquibbleAdmin::Mailer::GeneralHelper
+  
   def sq_mail_principal_url(principal = nil)
     if principal.nil? || !principal.main_domain_connected.present?
       Settings.site.url
@@ -19,7 +20,7 @@ module SquibbleAdmin::Mailer::GeneralHelper
       when :secondary
         Settings.layout.mailer.foundation_mailer.colors.sq_brand_secondary
       when :link
-        Settings.layout.mailer.foundation_mailer.colors.sq_brand_primary
+        Settings.layout.mailer.foundation_mailer.colors.sq_brand_secondary
       when :text
         Settings.layout.mailer.foundation_mailer.colors.sq_text_color
       when :body_bg
