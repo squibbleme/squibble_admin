@@ -116,3 +116,4 @@ end
 * 06.09.2016: Auslagerung der Scripte für das Management der Applikationen (Unicorn, Sidekiq)
 * 07.09.2016: Möglichkeit des Einfügens von zusätzlichem Inhalt in die Nav Bar durch Überschreiben des Templates ```layouts/shared/admin/_custom_nav_content.html.haml```
 * 16.09.2016: Auslagern der E-Mail Helper (GeneralHelper), Erweiterung sq_mail_button, Zusammenfassen der Templates
+* 16.09.2016: Überarbeitung GoogleMap Helper

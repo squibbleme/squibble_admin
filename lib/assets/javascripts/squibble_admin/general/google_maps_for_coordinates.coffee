@@ -11,14 +11,18 @@ googleMapsForCoordinates = () ->
     #
     zoom = data.optionsZoom unless _.isUndefined(data.optionsZoom)
 
-    # Generieren der Karte
-    #
-    mapbg = new GMaps
+    mapOptions =
       div: document.getElementById(that.attr('id'))
       lat: data.latitude
       lng: data.longitude
-      scrollwheel: false
+      scrollwheel: data.scrollwheel
       zoom: zoom
+      draggable: data.draggable
+
+
+    # Generieren der Karte
+    #
+    mapbg = new GMaps( mapOptions )
 
     markerLabel = data.optionsMarkerLabel unless _.isUndefined(data.optionsMarkerLabel)
     markerContent = data.optionsMarkerContent unless _.isUndefined(data.optionsMarkerContent)

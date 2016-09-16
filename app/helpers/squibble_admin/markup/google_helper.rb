@@ -5,7 +5,12 @@ module SquibbleAdmin::Markup::GoogleHelper
   end
 
   def google_map_for_coordinates(latitude, longitude, options = {})
+    options[:draggable] = (options[:draggable].present? ? options[:draggable] : :true)
+    options[:scrollwheel] = (options[:scrollwheel].present? ? options[:scrollwheel] : :false)
+
+    locals = { latitude: latitude, longitude: longitude }.merge(options)
+
     render partial: 'helpers/squibble_admin/markup/google_helper/google_map_for_coordinates',
-           locals: { latitude: latitude, longitude: longitude, options: options }
+           locals: locals
   end
 end
