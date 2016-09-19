@@ -117,3 +117,4 @@ end
 * 07.09.2016: Möglichkeit des Einfügens von zusätzlichem Inhalt in die Nav Bar durch Überschreiben des Templates ```layouts/shared/admin/_custom_nav_content.html.haml```
 * 16.09.2016: Auslagern der E-Mail Helper (GeneralHelper), Erweiterung sq_mail_button, Zusammenfassen der Templates
 * 16.09.2016: Überarbeitung GoogleMap Helper
+* 19.09.2016: Hinzufügen des :video_container Helpers
