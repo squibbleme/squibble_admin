@@ -17,17 +17,6 @@
           .topbar-actions
             = render partial: 'layouts/shared/admin/custom_nav_content'
 
-            - cache [ 'admin/admin_top_menu_principals_dropdown', current_admin_user, current_principal ] do
-              - unless current_admin_user.principals.empty?
-                .btn-group-img.btn-group#sq-application-top-menu-principals-dropdown
-                  - cache [ 'admin/admin_top_menu_principals_dropdown/current_principal', current_principal ] do
-                    %button.btn.btn-sm.dropdown-toggle{ type: :button, data: { toggle: :dropdown, hower: :dropdown, close: { others: :true } } }
-                      %span= current_principal.name
-
-                  - cache [ 'admin/admin_top_menu_principals_dropdown/selection', current_admin_user ] do
-                    %ul.dropdown-menu-v2{ role: :menu }
-                      = render partial: 'admin/backend/principals/top_menu_list_item', collection: current_admin_user.principals, as: :resource
-
             - cache [ 'layouts/admin/nav/current_admin_user', current_admin_user ] do
               .btn-group-img.btn-group
                 %button.btn.btn-sm.dropdown-toggle{ type: :button, data: { toggle: :dropdown, hower: :dropdown, close: { others: :true } } }

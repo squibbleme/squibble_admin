@@ -2,7 +2,7 @@
 
 current_admin_user = {}
 
-$(document).on 'ready', (event) ->
+jQuery ->
 
   data = $('meta[name="current_admin_user"]').data()
 
@@ -15,7 +15,7 @@ $(document).on 'ready', (event) ->
   return
 
 
-$(document).on 'ready page:load', ( event ) ->
+jQuery ->
 
   $('[data-roles]').each ( index ) ->
     # Zwischenspeichern des gefundenen Elements

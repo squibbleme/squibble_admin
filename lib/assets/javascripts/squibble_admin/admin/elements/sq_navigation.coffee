@@ -1,8 +1,11 @@
 'use strict'
 
 jQuery ->
-  # handleNavigationPermissions()
+  handleNavigationPermissions()
+  handleNavigation()
 
+
+handleNavigationPermissions = ->
   $('.sq-nav-item.level-0:not(.processed)').each ( index ) ->
     level_0 = $(this)
 
@@ -60,10 +63,7 @@ jQuery ->
 
 
     $(this).addClass 'processed'
-jQuery ->
-  handleNavigation()
-
-
+  return
 
 handleNavigation = ->
   pathname = $(location)[0].pathname

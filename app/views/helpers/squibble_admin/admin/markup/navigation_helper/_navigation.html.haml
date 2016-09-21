@@ -1,0 +1,3 @@
+.nav-collapse.collapse.navbar-collapse.navbar-responsive-collapse#sq-nav-collapse
+  %ul.nav.navbar-nav
+    = render partial: 'helpers/squibble_admin/admin/markup/navigation_helper/nav_item', collection: collection, as: :resource, locals: { current_principal: navigation_current_principal }
