@@ -528,10 +528,10 @@
 			}
 		},
 		{
-			"file": "config/locales/de.responders.yml",
+			"file": "lib/assets/stylesheets/squibble_admin/admin/blockUI.less",
 			"settings":
 			{
-				"buffer_size": 262,
+				"buffer_size": 212,
 				"line_ending": "Unix"
 			}
 		}
@@ -791,11 +791,12 @@
 	[
 		"/Z/squibble/plugins/squibble_admin",
 		"/Z/squibble/plugins/squibble_admin/app",
-		"/Z/squibble/plugins/squibble_admin/config",
 		"/Z/squibble/plugins/squibble_admin/config/locales",
+		"/Z/squibble/plugins/squibble_admin/lib",
+		"/Z/squibble/plugins/squibble_admin/lib/assets",
+		"/Z/squibble/plugins/squibble_admin/lib/assets/stylesheets",
 		"/Z/squibble/plugins/squibble_admin/lib/assets/stylesheets/squibble_admin",
-		"/Z/squibble/plugins/squibble_admin/lib/assets/stylesheets/squibble_admin/admin",
-		"/Z/squibble/plugins/squibble_admin/lib/assets/stylesheets/squibble_admin/admin/elements"
+		"/Z/squibble/plugins/squibble_admin/lib/assets/stylesheets/squibble_admin/admin"
 	],
 	"file_history":
 	[
@@ -1197,7 +1198,7 @@
 	"groups":
 	[
 		{
-			"selected": 1,
+			"selected": 0,
 			"sheets":
 			[
 				{
@@ -1213,8 +1214,8 @@
 						"selection":
 						[
 							[
-								0,
-								0
+								46,
+								46
 							]
 						],
 						"settings":
@@ -1230,31 +1231,32 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 1,
+					"stack_index": 0,
 					"type": "text"
 				},
 				{
 					"buffer": 1,
-					"file": "config/locales/de.responders.yml",
-					"semi_transient": true,
+					"file": "lib/assets/stylesheets/squibble_admin/admin/blockUI.less",
+					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 262,
+						"buffer_size": 212,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								262,
-								262
+								212,
+								212
 							]
 						],
 						"settings":
 						{
+							"color_scheme": "Packages/User/Color Highlighter/themes/Monokai.tmTheme",
 							"editorconfig": true,
 							"ensure_newline_at_eof_on_save": true,
-							"syntax": "Packages/YAML/YAML.sublime-syntax",
+							"syntax": "Packages/LESS/LESS.tmLanguage",
 							"tab_size": 2,
 							"translate_tabs_to_spaces": true,
 							"trim_trailing_white_space_on_save": true
@@ -1263,7 +1265,7 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 0,
+					"stack_index": 1,
 					"type": "text"
 				}
 			]
