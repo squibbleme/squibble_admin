@@ -20,7 +20,7 @@ class Ability
           #
           <% @roles.each do |role| %>
             <% unless role.permissions.where( module_id: backend_module.id ).empty? %>
-              if user.role? :<%= role.key %>
+              if user.role?(:<%= role.key %>, principal_id: principal.id)
                 <% Acl::Permission.where( role_id: role.id, module_id: backend_module.id ).backend.each do |permission| %>
                   <%= permission.to_ability_class_entry -%>
                 <% end %>

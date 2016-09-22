@@ -119,3 +119,4 @@ end
 * 16.09.2016: Überarbeitung GoogleMap Helper
 * 19.09.2016: Hinzufügen des :video_container Helpers
 * 21.09.2016: Überarbeitung Navigation
+* 22.09.2016: Anpassung Ability Generator (Für neues Konzept mit Acl::AdminUser::RoleAssignment)
