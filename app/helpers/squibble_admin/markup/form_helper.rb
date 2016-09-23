@@ -1,4 +1,45 @@
 module SquibbleAdmin::Markup::FormHelper
+
+  # Diese Methode kümmert sich um die gleichmässige Ausgabe für ENUM Attribute, die
+  # sich an den "Naming Standard" halten. Dabei muss die Colletion das folgende Format aufweisen:
+  #
+  # === Beispiel für Collection Helper
+  # Verarbeitet werden soll der Enum :foobar der Klasse MyNamespace::MyClass.
+  # Der Collection Helper muss dafür my_namespace_my_class_foobar_collection heissen.
+  #
+  # === Attribute
+  # *+f+ - Formular Element
+  # *+key+ - Key des Attributes für den Enum
+  #
+  # === Optionen
+  # *+options+ - Hash aus Optionen die direkt an simple_form übergeben werden.
+  #
+  def form_default_enum_input(f, key, options = {})
+    method_name = "#{f.object.class.to_s.underscore.gsub('/', '_')}_#{key}_collection"
+
+    if options[:hint] == true
+      options[:hint] = f.object.class.human_attribute_name("#{key}_description")
+    end
+
+    f.input(key, options.merge!(collection: eval(method_name)))
+  end
+
+  def form_default_boolean_input(f, key, options = {})
+    if options[:hint] == true
+      options[:hint] = f.object.class.human_attribute_name("#{key}_description")
+    end
+
+    f.input(key, options.merge!(as: :boolean))
+  end
+
+  def form_default_input(f, key, options = {})
+    if options[:hint] == true
+      options[:hint] = f.object.class.human_attribute_name("#{key}_description")
+    end
+
+    f.input(key, options)
+  end
+
   def form_field_ckeditor(principal, form, key, options = {})
     base_options = { class: 'ckeditor' }
 
