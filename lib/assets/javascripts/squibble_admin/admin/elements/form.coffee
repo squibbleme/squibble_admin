@@ -2,31 +2,33 @@
 
 handleFormValidation = () ->
 
-  $('form.simple_form').validate
-    highlight: ( element ) ->
-      $(element).closest '.form-group'
-                .removeClass 'has-success'
-                .addClass 'has-error'
-    unhighlight: ( element ) ->
-      $(element).closest '.form-group'
-                .removeClass 'has-error'
-                .addClass 'has-success'
-    errorElement: 'span'
-    errorClass: 'help-block'
-    submitHandler: (form) ->
+  $('form.simple_form').each () ->
+    $(this).validate
+      highlight: ( element ) ->
+        $(element).closest '.form-group'
+                  .removeClass 'has-success'
+                  .addClass 'has-error'
+      unhighlight: ( element ) ->
+        $(element).closest '.form-group'
+                  .removeClass 'has-error'
+                  .addClass 'has-success'
+      errorElement: 'span'
+      errorClass: 'help-block'
+      submitHandler: (form) ->
 
-      # Starten von BlockUI
-      #
-      $.blockUI
-        message: '<i class="fa fa-spin fa-spinner fa-2x"></i> Bitte warten ...'
-        css:
-          backgroundColor: 'transparent'
-          color: '#fff'
-          border: 'none'
+        # Starten von BlockUI
+        #
+        $.blockUI
+          message: '<i class="fa fa-spin fa-spinner fa-2x"></i> Bitte warten ...'
+          css:
+            backgroundColor: 'transparent'
+            color: '#fff'
+            border: 'none'
 
-      # Übermitteln des Formulars
-      #
-      form.submit()
+        # Übermitteln des Formulars
+        #
+        form.submit()
+    return
 
 jQuery ->
   handleFormValidation()
