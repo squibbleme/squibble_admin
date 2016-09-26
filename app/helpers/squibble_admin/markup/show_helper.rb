@@ -8,7 +8,7 @@ module SquibbleAdmin::Markup::ShowHelper
   #   = show_dashboard_custom_link :path, icon: :icon, label: :label
   #
   def show_dashboard_custom(options = {}, &block)
-    content_tag(:div, class: ['sq-action', options[:class]], id: options[:id], &block)
+    content_tag(:div, class: ['sq-action', options[:class]], id: options[:id], style: options[:style], &block)
   end
 
   def show_dashboard_custom_link(link, options = {})
