@@ -12,7 +12,7 @@ module SquibbleAdmin::Markup::ShowHelper
   end
 
   def show_dashboard_custom_link(link, options = {})
-    content_tag(:a, nil, href: link, data: { method: ( options[:method] || nil ) }, target: options[:target]) do
+    content_tag(:a, nil, href: link, data: { method: ( options[:method] || nil ) }, target: options[:target], style: options[:style]) do
       tmp = content_tag :div, nil, class: 'sq-action-title' do
         content_tag :i, nil, class: options[:icon]
       end
