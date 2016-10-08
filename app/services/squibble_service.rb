@@ -18,6 +18,10 @@ module SquibbleService
   def log(level, message, options = {})
     fail ArgumentError('Only allowed to pass a hash for :options') unless options.is_a?(Hash)
 
+    # Abbruch für :debug in Produktiver Umgebung.
+    #
+    return if level == :debug && Rails.env.production?
+
     if ALLOWED_LOG_LEVELS.include?(level)
 
       # msg = if options.empty?

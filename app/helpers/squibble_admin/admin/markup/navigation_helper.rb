@@ -6,8 +6,8 @@ module SquibbleAdmin::Admin::Markup::NavigationHelper
       index_collection_cache_key_without_pagination(App::Navigation, App::Navigation.all)
     ] do
       navigation = App::Navigation.unscoped.roots
-                                            .order_by(:path.asc)
-                                            .includes(:children, :subject_class)
+                                           .order_by(:path.asc)
+                                           .includes(:children, :subject_class)
       render partial: 'helpers/squibble_admin/admin/markup/navigation_helper/navigation',
              locals: { collection: navigation }
     end
