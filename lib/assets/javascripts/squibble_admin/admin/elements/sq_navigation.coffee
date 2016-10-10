@@ -77,7 +77,6 @@ handlePermissions = ->
                 2016-10-08: INIT
 ###
 handleCurrentActive = ->
-  console.log 'current active'
   current_path_name = $(location)[0].pathname
   $('#sq-nav-collapse li.sq-nav-item').removeClass 'active'
 
