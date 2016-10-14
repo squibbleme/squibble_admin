@@ -519,15 +519,6 @@
 	},
 	"buffers":
 	[
-		{
-			"file": "app/views/layouts/admin.html.haml",
-			"settings":
-			{
-				"buffer_size": 2396,
-				"encoding": "UTF-8",
-				"line_ending": "Unix"
-			}
-		}
 	],
 	"build_system": "",
 	"build_system_choices":
@@ -783,23 +774,26 @@
 	"expanded_folders":
 	[
 		"/Z/squibble/plugins/squibble_admin",
-		"/Z/squibble/plugins/squibble_admin/app",
 		"/Z/squibble/plugins/squibble_admin/app/assets",
-		"/Z/squibble/plugins/squibble_admin/lib",
-		"/Z/squibble/plugins/squibble_admin/lib/assets",
-		"/Z/squibble/plugins/squibble_admin/lib/assets/javascripts",
+		"/Z/squibble/plugins/squibble_admin/config",
+		"/Z/squibble/plugins/squibble_admin/config/initializers",
+		"/Z/squibble/plugins/squibble_admin/config/locales",
 		"/Z/squibble/plugins/squibble_admin/lib/assets/javascripts/squibble_admin",
 		"/Z/squibble/plugins/squibble_admin/lib/assets/javascripts/squibble_admin/admin",
+		"/Z/squibble/plugins/squibble_admin/lib/assets/javascripts/squibble_admin/admin/elements",
 		"/Z/squibble/plugins/squibble_admin/lib/assets/stylesheets",
 		"/Z/squibble/plugins/squibble_admin/lib/assets/stylesheets/squibble_admin"
 	],
 	"file_history":
 	[
+		"/Z/squibble/plugins/squibble_admin/config/initializers/lograge.rb",
+		"/Z/squibble/plugins/squibble_admin/config/initializers/carrierwave_backgrounder.rb",
+		"/Z/squibble/plugins/squibble_admin/config/initializers/generators.rb",
+		"/Z/squibble/plugins/squibble_admin/app/views/layouts/admin.html.haml",
 		"/Z/squibble/plugins/squibble_admin/lib/assets/stylesheets/squibble_admin/admin_manifest.css",
 		"/Z/squibble/plugins/squibble_admin/lib/assets/javascripts/squibble_admin/admin_manifest.js",
 		"/Z/squibble/plugins/squibble_admin/lib/assets/stylesheets/squibble_admin/general_manifest.css",
 		"/Z/squibble/plugins/squibble_admin/lib/assets/javascripts/squibble_admin/general_manifest.js",
-		"/Z/squibble/plugins/squibble_admin/app/views/layouts/admin.html.haml",
 		"/Z/squibble/plugins/squibble_admin/app/helpers/squibble_admin/markup/css_classes_helper.rb",
 		"/Z/squibble/plugins/squibble_admin/config/locales/en.show_for.yml",
 		"/Z/squibble/plugins/squibble_admin/config/initializers/show_for.rb",
@@ -899,12 +893,9 @@
 		"/Z/squibble/plugins/squibble_admin/config/unicorn/production.rb",
 		"/Z/squibble/squibble-2016/scripts/unicorn/development/start.sh",
 		"/Z/squibble/squibble-2016/scripts/sidekiq/development/start.sh",
-		"/Z/squibble/plugins/squibble_admin/config/initializers/generators.rb",
 		"/Z/squibble/plugins/squibble_admin/config/initializers/ckeditor_rails.rb",
-		"/Z/squibble/plugins/squibble_admin/config/initializers/carrierwave_backgrounder.rb",
 		"/Z/squibble/plugins/squibble_admin/config/initializers/vpim_patch.rb",
 		"/Z/squibble/plugins/squibble_admin/config/initializers/state_machine_patch.rb",
-		"/Z/squibble/plugins/squibble_admin/config/initializers/lograge.rb",
 		"/Z/squibble/plugins/squibble_admin/config/initializers/date_quarter.rb",
 		"/Z/squibble/plugins/squibble_admin/config/initializers/sidekiq_cron_jobs.rb",
 		"/Z/squibble/plugins/squibble_admin/config/initializers/rabl_rails.rb",
@@ -1199,43 +1190,8 @@
 	"groups":
 	[
 		{
-			"selected": 0,
 			"sheets":
 			[
-				{
-					"buffer": 0,
-					"file": "app/views/layouts/admin.html.haml",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 2396,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								1623,
-								1623
-							]
-						],
-						"settings":
-						{
-							"color_scheme": "Packages/User/Color Highlighter/themes/Monokai.tmTheme",
-							"editorconfig": true,
-							"ensure_newline_at_eof_on_save": true,
-							"syntax": "Packages/Rails/Ruby Haml.sublime-syntax",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true,
-							"trim_trailing_white_space_on_save": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 0,
-					"type": "text"
-				}
 			]
 		}
 	],
@@ -1291,6 +1247,14 @@
 		"last_filter": "",
 		"selected_items":
 		[
+			[
+				"logra",
+				"squibble_admin\\config\\initializers\\lograge.rb"
+			],
+			[
+				"carrierwave_backgrounder.rb",
+				"squibble_admin\\config\\initializers\\carrierwave_backgrounder.rb"
+			],
 			[
 				"admin.html.haml",
 				"squibble_admin\\app\\views\\layouts\\admin.html.haml"
@@ -1794,14 +1758,6 @@
 			[
 				"accounting_record.rb",
 				"app\\models\\business\\accounting_record.rb"
-			],
-			[
-				"printaccounts_contr",
-				"app\\controllers\\print\\business\\accounts_controller.rb"
-			],
-			[
-				"printtaxesquarter",
-				"app\\views\\print\\business\\taxes\\quarter.html.haml"
 			]
 		],
 		"width": 0.0
