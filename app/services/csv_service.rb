@@ -21,11 +21,11 @@ module CSVService
   end
 
   def csv_format_date(date)
-    I18n.l(date.to_date, format: :system)
+    I18n.l(date.to_date, format: :system) if date.present?
   end
 
   def csv_format_time(time)
-    I18n.l(time.to_time, format: :system_only_time)
+    I18n.l(time.to_time, format: :system_only_time) if time.present?
   end
 
   def csv_content_timestamps(resource)
