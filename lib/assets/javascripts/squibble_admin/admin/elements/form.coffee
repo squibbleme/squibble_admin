@@ -19,7 +19,7 @@ handleFormValidation = () ->
         # Starten von BlockUI
         #
         $.blockUI
-          message: '<i class="fa fa-spin fa-smile-o fa-2x"></i> Bitte warten ...'
+          message: '<i class="fa fa-spin fa-smile-o fa-2x"></i> Please wait and smile!'
           css:
             backgroundColor: 'transparent'
             color: '#fff'
