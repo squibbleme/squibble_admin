@@ -22,7 +22,7 @@ handleButtons = () ->
   $('button.sq-destroy-btn').click (e) ->
 
     $.blockUI
-      message: '<i class="fa fa-spin fa-spinner fa-2x"></i> Datensatz wird gelöscht. Bitte warten ...'
+      message: '<i class="fa fa-spin fa-smile fa-2x"></i> Datensatz wird gelöscht. Bitte warten ...'
       css:
         backgroundColor: 'transparent'
         color: '#fff'

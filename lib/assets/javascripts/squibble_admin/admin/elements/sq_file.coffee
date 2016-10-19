@@ -7,5 +7,4 @@ jQuery ->
   # verfügt, soll der Dateiname entfernt werden.
   #
   $('input.sq_file').change (e) ->
-    console.log 'changed'
     console.log $(this).parent().find('span.sq-file-input-file-name').remove()
