@@ -27,11 +27,13 @@ class Elasticsearch::IndexOperation < ComposableOperations::Operation
 
   def _index
     @resource = _get_resource
+    return if @resource.nil?
     @resource.__elasticsearch__.index_document
   end
 
   def _update
     @resource = _get_resource
+    return if @resource.nil?
     @resource.__elasticsearch__.update_document
   end
 
