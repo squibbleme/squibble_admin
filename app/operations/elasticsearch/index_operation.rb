@@ -18,6 +18,8 @@ class Elasticsearch::IndexOperation < ComposableOperations::Operation
     when :destroy
       _destroy
     end
+  rescue Elasticsearch::Transport::Transport::Errors::BadRequest => e
+    log(:error, "Elasticsearch::Transport::Transport::Errors::BadRequest: #{e.message}", message: e.message)
   end
 
 

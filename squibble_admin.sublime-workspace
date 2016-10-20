@@ -523,7 +523,16 @@
 			"file": "app/services/csv_service.rb",
 			"settings":
 			{
-				"buffer_size": 4564,
+				"buffer_size": 4598,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "lib/squibble_admin/version.rb",
+			"settings":
+			{
+				"buffer_size": 45,
 				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
@@ -783,10 +792,7 @@
 	"expanded_folders":
 	[
 		"/Z/squibble/plugins/squibble_admin",
-		"/Z/squibble/plugins/squibble_admin/lib/assets/javascripts",
-		"/Z/squibble/plugins/squibble_admin/lib/assets/javascripts/squibble_admin",
-		"/Z/squibble/plugins/squibble_admin/lib/assets/stylesheets",
-		"/Z/squibble/plugins/squibble_admin/lib/assets/stylesheets/squibble_admin",
+		"/Z/squibble/plugins/squibble_admin/lib",
 		"/Z/squibble/plugins/squibble_admin/lib/squibble_admin"
 	],
 	"file_history":
@@ -1196,7 +1202,7 @@
 	"groups":
 	[
 		{
-			"selected": 0,
+			"selected": 1,
 			"sheets":
 			[
 				{
@@ -1205,15 +1211,48 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 4564,
+						"buffer_size": 4598,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								2523,
-								2523
+								3286,
+								3286
+							]
+						],
+						"settings":
+						{
+							"editorconfig": true,
+							"ensure_newline_at_eof_on_save": true,
+							"syntax": "Packages/Ruby/Ruby.sublime-syntax",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true,
+							"trim_trailing_white_space_on_save": true
+						},
+						"translation.x": -0.0,
+						"translation.y": 2058.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "lib/squibble_admin/version.rb",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 45,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								45,
+								45
 							]
 						],
 						"settings":
@@ -1226,7 +1265,7 @@
 							"trim_trailing_white_space_on_save": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 1293.0,
+						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 0,
@@ -1287,6 +1326,10 @@
 		"last_filter": "",
 		"selected_items":
 		[
+			[
+				"csvser",
+				"squibble_admin\\app\\services\\csv_service.rb"
+			],
 			[
 				"csvserv",
 				"squibble_admin\\app\\services\\csv_service.rb"
@@ -1794,10 +1837,6 @@
 			[
 				"print/business/payment_receipts/payments_table_head",
 				"app\\views\\print\\business\\payment_receipts\\_payments_table_head.html.haml"
-			],
-			[
-				"routes",
-				"config\\routes.rb"
 			]
 		],
 		"width": 0.0
@@ -1832,7 +1871,7 @@
 	"show_open_files": false,
 	"show_tabs": true,
 	"side_bar_visible": true,
-	"side_bar_width": 503.0,
+	"side_bar_width": 211.0,
 	"status_bar_visible": true,
 	"template_settings":
 	{
