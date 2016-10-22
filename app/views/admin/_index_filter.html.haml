@@ -16,7 +16,7 @@
 
     - cache [ 'admin/index_filter/search', current_principal, resource_class, params[:query] ] do
       %form.search-form{ action: collection_path, method: :get }
-        %input.form-control.input-sm{ type: :search, placeholder: t('routes.admin.index.filter.search.placeholder'), value: params[:query], name: :query, autofocus: true, data: { url: api_v1_general_search_suggestions_path( subject_class: ActiveModel::Naming.singular(resource_class) ) } }
+        %input.form-control.input-sm{ type: :search, placeholder: t('routes.admin.index.filter.search.placeholder'), value: params[:query], name: :query, autofocus: true, data: { url: main_app.api_v1_general_search_suggestions_path( subject_class: ActiveModel::Naming.singular(resource_class) ) } }
 
       .input-group-btn
         %button.btn.btn-sm.btn-default{ type: :submit, data: { toggle: :tooltip }, title: t('routes.admin.index.filter.search.label') }

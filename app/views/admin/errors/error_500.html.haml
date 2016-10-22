@@ -16,7 +16,7 @@
       %hr
 
       %p
-        = link_to 'Back to Dashboard', admin_dashboard_overview_path, class: %w(btn btn-default)
+        = link_to 'Back to Dashboard', main_app.admin_dashboard_overview_path, class: %w(btn btn-default)
 
 
       - if admin_user_signed_in? and current_admin_user.role? :super_administrator
