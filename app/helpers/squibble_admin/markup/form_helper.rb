@@ -32,6 +32,14 @@ module SquibbleAdmin::Markup::FormHelper
     f.input(key, options.merge!(as: :boolean))
   end
 
+  def form_default_number_input(f, key, options = {})
+    if options[:hint] == true
+      options[:hint] = f.object.class.human_attribute_name("#{key}_description")
+    end
+
+    form_field_number(f, key, options)
+  end
+
   def form_default_input(f, key, options = {})
     if options[:hint] == true
       options[:hint] = f.object.class.human_attribute_name("#{key}_description")

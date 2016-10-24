@@ -48,7 +48,7 @@ class Deletion::CreateOperation < ComposableOperations::Operation
   def _get_backend_principal
     Backend::Principal.find( principal_id )
   rescue Mongoid::Errors::DocumentNotFound
-    msg = "Unable to find Backend::Principal for #{principal_id}."
+    msg = "Unable to find Backend::Principal for #{principal_id} to create a #{resource_class} deletion."
     log(:error, msg, _default_log_attributes )
     halt msg
   end
