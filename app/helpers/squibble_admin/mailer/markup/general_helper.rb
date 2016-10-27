@@ -12,18 +12,31 @@ module SquibbleAdmin::Mailer::Markup::GeneralHelper
 
     brand_name = principal.present? ? principal.name : Settings.site.name
 
-    if !principal.nil? && !principal.module_setting_mailer.nil? && !principal.module_setting_mailer.header_dimensions.nil?
-      dimensions = principal.module_setting_mailer.header_dimensions[:original]
-    end
-
     image_tag("#{sq_mail_header_image_url(principal)}",
-      height: "#{(dimensions.nil? || !use_principal_layout?) ? Settings.layout.mailer.foundation_mailer.images.header_image.height : dimensions[:height]}",
-      width: "#{(dimensions.nil? || !use_principal_layout?) ? Settings.layout.mailer.foundation_mailer.images.header_image.width : dimensions[:width]}",
+      width: sq_mail_header_image_width(principal),
       alt: "#{brand_name} Logo Header",
       title: "#{brand_name} Logo Header",
       style: "#{styles}",
       align: :right
+      # height: sq_mail_header_image_height(principal),
     )
+  end
+
+  def sq_mail_header_image_height(principal = nil)
+    if !principal.nil? && !principal.module_setting_mailer.nil? && !principal.module_setting_mailer.header_dimensions.nil?
+      dimensions = principal.module_setting_mailer.header_dimensions[:original]
+    end
+
+    (dimensions.nil? || !use_principal_layout?) ? Settings.layout.mailer.foundation_mailer.images.header_image.height : dimensions[:height]
+  end
+
+  def sq_mail_header_image_width(principal = nil)
+    if !principal.nil? && !principal.module_setting_mailer.nil? && !principal.module_setting_mailer.header_dimensions.nil?
+      dimensions = principal.module_setting_mailer.header_dimensions[:original]
+    end
+
+    width = (dimensions.nil? || !use_principal_layout?) ? Settings.layout.mailer.foundation_mailer.images.header_image.width : dimensions[:width]
+    width > 300 ? 300 : width
   end
 
   def sq_mail_footer
@@ -42,12 +55,12 @@ module SquibbleAdmin::Mailer::Markup::GeneralHelper
     end
 
     image_tag("#{sq_mail_footer_image_url(principal)}",
-      height: "#{(dimensions.nil? || !use_principal_layout?) ? Settings.layout.mailer.foundation_mailer.images.footer_image.height : dimensions[:height]}",
-      width: "#{(dimensions.nil? || !use_principal_layout?) ? Settings.layout.mailer.foundation_mailer.images.footer_image.width : dimensions[:width]}",
+      width: sq_mail_footer_image_width(principal),
       alt: "#{brand_name} Logo Footer",
       title: "#{brand_name} Logo Footer",
       style: "#{styles}",
       align: :center
+      # height: "#{(dimensions.nil? || !use_principal_layout?) ? Settings.layout.mailer.foundation_mailer.images.footer_image.height : dimensions[:height]}",
     )
   end
 
@@ -57,6 +70,7 @@ module SquibbleAdmin::Mailer::Markup::GeneralHelper
     end
 
     width = (dimensions.nil? || !use_principal_layout?) ? Settings.layout.mailer.foundation_mailer.images.footer_image.width : dimensions[:width]
+    width > 300 ? 300 : width
   end
 
 
@@ -143,7 +157,7 @@ module SquibbleAdmin::Mailer::Markup::GeneralHelper
 
   def sq_mail_table_container(&block)
     content_tag(:table,
-                class: 'container',
+                class: 'container content-table',
                 style: 'width: 580px; margin: 0 auto; padding: 0; text-align: center; border-spacing: 0; border-collapse: collapse;',
                 &block)
   end
@@ -158,11 +172,14 @@ module SquibbleAdmin::Mailer::Markup::GeneralHelper
     styles = if options[:style].present?
                options[:style]
              end
+    classes = if options[:class].present?
+                options[:class]
+              end
 
     content_tag(:tr, style: 'padding: 0;') do
       content_tag(:td,
-                class: 'panel',
-                style: "min-width: 100%; background: #{sq_mail_color(:well_bg, @principal)}; border: 1px solid #{sq_mail_color(:border, @principal)}; padding: 10px 10px 10px 10px; margin-bottom: 10px; #{styles}",
+                class: "panel #{classes}",
+                style: "background: #{sq_mail_color(:well_bg, @principal)}; border: 1px solid #{sq_mail_color(:border, @principal)}; padding: 10px 10px 10px 10px; margin-bottom: 10px; #{styles}",
                 &block)
     end
   end
@@ -171,14 +188,17 @@ module SquibbleAdmin::Mailer::Markup::GeneralHelper
     styles = if options[:style].present?
                options[:style]
              end
+    classes = if options[:class].present?
+                options[:class]
+              end
 
     if [:one, :two, :three, :four, :five, :six, :seven, :eight, :nine, :ten, :eleven, :twelve].include? amount.to_sym
       render partial: 'helpers/squibble_admin/mailer/markup/general_helper/sq_mail_table',
              locals: {
+               classes: classes,
                amount: amount,
                block: block,
                styles: styles,
-               min_width: eval('Settings.layout.mailer.foundation_mailer.width_percentage.' + amount.to_s),
                width: eval('Settings.layout.mailer.foundation_mailer.width.' + amount.to_s)
              }
     end

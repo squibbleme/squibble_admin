@@ -1,15 +1,24 @@
 - cache ['helpers/mailer/markup/general_helper/sq_mail_footer'] do
-
   %table.row.footer{style: "background: #{sq_mail_color(:container_bg, @principal)}; border-spacing: 0; border-collapse: collapse; vertical-align: top; width: 100%; position: relative; padding: 0px;"}
     %tr
       %td.center{align: :center, style: 'word-break: break-word; -webkit-hyphens: auto; -moz-hyphens: auto; hyphens: auto; border-collapse: collapse !important; vertical-align: top; margin: 0; padding: 0;'}
-        %center{style: "width: 100%; min-width: #{Settings.layout.mailer.foundation_mailer.full_column_width}px;"}
+        %center{style: "width: 100%;"}
           = sq_mail_table_container do
             %tr
               %td.wrapper{align: :center, style: "margin: 0; padding: 0; border-top: 1px solid #{sq_mail_color(:primary, @principal)};"}
                 %center
-                  = sq_mail_p(style: "margin: 20px auto; width: #{sq_mail_footer_image_width(@principal)}; text-align: center;") do
-                    = sq_mail_footer_image(@principal, {style: 'display: block; align: :center'})
+
+                  %table.content-table{:align => "center", :border => "0", :cellpadding => "0", :cellspacing => "0", :width => "580"}
+                    %tr
+                      %td{:align => "left", :width => "#{(580 - sq_mail_header_image_width(@principal) - 20) / 2}"}
+
+                      %td{:align => "left", :valign => "middle", :width => "#{sq_mail_header_image_width(@principal) + 20}"}
+                        = sq_mail_p(style: "margin: 20px auto; width: #{sq_mail_header_image_width(@principal)}; text-align: center;") do
+                          = sq_mail_footer_image(@principal, {style: 'display: block; align: :center'})
+                      
+                      %td{:align => "left", :width => "#{(580 - sq_mail_header_image_width(@principal) - 20) / 2}"}
+
+                      %td.expander
 
             %tr
               %td.wrapper{style: 'margin: 0; padding: 0;'}
