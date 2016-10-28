@@ -46,11 +46,17 @@
 
     @media only screen and (max-device-width: 480px) {
       table[class=content-table] {
-        width:320px !important;
+        width: 320px !important;
       }
-    }
 
-    @media only screen and (max-device-width: 480px) {
+      .content-table {
+        width: 320px !important;
+      }
+
+      .show-mobile {
+        display: initial !important;
+      }
+
       .hidden-mobile {
         display: none !important;
         width: 0 !important;
@@ -62,9 +68,6 @@
     }
 
     @media only screen and (max-device-width: 480px) {
-      .show-mobile {
-        display: initial !important;
-      }
     }
 
     / @media only screen and (max-device-width: 480px) {

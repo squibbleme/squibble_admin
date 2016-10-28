@@ -176,7 +176,7 @@ module SquibbleAdmin::Mailer::Markup::GeneralHelper
                 options[:class]
               end
 
-    content_tag(:tr, style: 'padding: 0;') do
+    content_tag(:tr, style: 'padding: 0;', class: "#{classes}") do
       content_tag(:td,
                 class: "panel #{classes}",
                 style: "background: #{sq_mail_color(:well_bg, @principal)}; border: 1px solid #{sq_mail_color(:border, @principal)}; padding: 10px 10px 10px 10px; margin-bottom: 10px; #{styles}",
