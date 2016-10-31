@@ -13,7 +13,7 @@
       %table.body{style: "background: #{sq_mail_color(:body_bg, @principal)}; border-spacing: 0; border-collapse: collapse; vertical-align: top; text-align: left; height: 100%; width: 100%; margin: 0; padding: 0;"}
         %tr
           %td.center{align: :center, style: 'word-break: break-word; border-collapse: collapse !important; vertical-align: top; text-align: center; margin: 0; padding: 0;'}
-            %center{:style => "width: 100%; min-width: 580px;"}
+            %center{:style => "width: 100%;"}
 
 
               %table{style: "background: #{sq_mail_color(:container_bg, @principal)};"}
@@ -26,7 +26,7 @@
                       %tr
                         %td.center{align: :center, style: 'word-break: break-word; -webkit-hyphens: auto; -moz-hyphens: auto; hyphens: auto; border-collapse: collapse !important; vertical-align: top; margin: 0; padding: 0;'}
                           %center{style: "width: 100%; min-width: #{Settings.layout.mailer.foundation_mailer.full_column_width}px;"}
-                            %table.container{style: 'border-spacing: 0; border-collapse: collapse; vertical-align: top; width: 580px; margin-bottom: 30px; padding: 0;'}
+                            %table.container.container-responsive{style: 'border-spacing: 0; border-collapse: collapse; vertical-align: top; width: 580px; margin-bottom: 30px; padding: 0;'}
                               %tr
                                 %td{style: 'margin: 0; padding: 0;'}
                                   = yield
