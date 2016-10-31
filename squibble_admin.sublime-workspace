@@ -531,7 +531,16 @@
 			"file": "app/decorators/app/navigation_decorator.rb",
 			"settings":
 			{
-				"buffer_size": 1262,
+				"buffer_size": 1347,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "lib/squibble_admin/version.rb",
+			"settings":
+			{
+				"buffer_size": 46,
 				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
@@ -806,9 +815,9 @@
 	],
 	"file_history":
 	[
+		"/Z/squibble/plugins/squibble_admin/lib/squibble_admin/version.rb",
 		"/Z/squibble/plugins/squibble_admin/app/controllers/concerns/squibble/admin_crud_actions.rb",
 		"/Z/squibble/plugins/squibble_admin/app/controllers/concerns/squibble/admin_crud_action/update.rb",
-		"/Z/squibble/plugins/squibble_admin/lib/squibble_admin/version.rb",
 		"/Z/squibble/plugins/squibble_admin/app/views/layouts/shared/_google_tag_manager.html.erb",
 		"/Z/squibble/plugins/squibble_admin/lib/assets/javascripts/squibble_admin/admin/elements/form.coffee",
 		"/Z/squibble/plugins/squibble_admin/app/controllers/concerns/squibble/admin_crud_action/create.rb",
@@ -1212,7 +1221,7 @@
 	"groups":
 	[
 		{
-			"selected": 1,
+			"selected": 2,
 			"sheets":
 			[
 				{
@@ -1246,24 +1255,57 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 1,
+					"stack_index": 2,
 					"type": "text"
 				},
 				{
 					"buffer": 1,
 					"file": "app/decorators/app/navigation_decorator.rb",
-					"semi_transient": true,
+					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 1262,
+						"buffer_size": 1347,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								581,
-								581
+								217,
+								217
+							]
+						],
+						"settings":
+						{
+							"editorconfig": true,
+							"ensure_newline_at_eof_on_save": true,
+							"syntax": "Packages/Ruby/Ruby.sublime-syntax",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true,
+							"trim_trailing_white_space_on_save": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "lib/squibble_admin/version.rb",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 46,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								46,
+								46
 							]
 						],
 						"settings":
@@ -1282,6 +1324,11 @@
 					"stack_index": 0,
 					"type": "text"
 				}
+			]
+		},
+		{
+			"sheets":
+			[
 			]
 		}
 	],
@@ -1302,11 +1349,18 @@
 				0,
 				1,
 				1
+			],
+			[
+				1,
+				0,
+				2,
+				1
 			]
 		],
 		"cols":
 		[
 			0.0,
+			0.5,
 			1.0
 		],
 		"rows":
@@ -1337,6 +1391,14 @@
 		"last_filter": "",
 		"selected_items":
 		[
+			[
+				"version",
+				"squibble_admin\\lib\\squibble_admin\\version.rb"
+			],
+			[
+				"versin",
+				"squibble_admin\\lib\\squibble_admin\\version.rb"
+			],
 			[
 				"helpers/squibble_admin/admin/markup/navigation_helper/nav_item",
 				"squibble_admin\\app\\views\\helpers\\squibble_admin\\admin\\markup\\navigation_helper\\_nav_item.html.haml"
@@ -1630,10 +1692,6 @@
 				"squibble_admin\\README.md"
 			],
 			[
-				"version",
-				"squibble_admin\\lib\\squibble_admin\\version.rb"
-			],
-			[
 				"preview_deco",
 				"squibble_carrierwave_attributes\\app\\decorators\\carrierwave\\preview_decorator.rb"
 			],
@@ -1844,10 +1902,6 @@
 			[
 				"sync_contr",
 				"app\\controllers\\api\\v1\\general\\sync_controller.rb"
-			],
-			[
-				"photographyupda",
-				"app\\uploaders\\photography\\gallery\\preview_uploader.rb"
 			]
 		],
 		"width": 0.0

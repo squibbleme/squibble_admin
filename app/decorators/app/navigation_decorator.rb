@@ -31,8 +31,8 @@ class App::NavigationDecorator < Draper::Decorator
       # Es wurde eine Subject Class für das aktuelle Element
       # hinterlegt.
       begin
-        permission_key = object.action.present? ? object.action.key : :index
-        h.can? permission_key, eval(object.subject_class.key)
+        permission_key = object.action.present? ? object.action.key.to_sym : :index
+        h.can?(permission_key, object.subject_class.key.constantize)
       rescue NameError
         # Die hinterlegte Subject Class ist aktuell noch nicht
         # im System verfügbar.
