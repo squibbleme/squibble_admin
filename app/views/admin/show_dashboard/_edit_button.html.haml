@@ -1,0 +1,9 @@
+- if can?(:update, resource)
+  - begin
+    .sq-action.sq-action-edit
+      %a{ href: edit_resource_path(resource.id) }
+        .sq-action-title
+          %i.fa.fa-edit
+        .sq-action-text
+          %span= t('helpers.edit')
+  - rescue NoMethodError

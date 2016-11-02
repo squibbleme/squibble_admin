@@ -89,7 +89,7 @@ module SearchableModel
     end
 
     base.after_destroy do |resource|
-      Elasticsearch::IndexerWorker.perform_async(:destroy, resource.class, :destroy, resource.id)
+      # Elasticsearch::IndexerWorker.perform_async(:destroy, resource.class, :destroy, resource.id)
 
       Deletion::CreateWorker.perform_async(resource.class.to_s, resource.id, resource.principal_id) if resource.respond_to?(:principal_id)
     end

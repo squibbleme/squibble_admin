@@ -1,0 +1,9 @@
+- if can?(:create, resource_class)
+  - begin
+    .sq-action.sq-action-clone
+      %a{ href: new_resource_path(clone_by_id: resource.id) }
+        .sq-action-title
+          %i.fa.fa-clone
+        .sq-action-text
+          %span= t('helpers.copy')
+  - rescue NoMethodError

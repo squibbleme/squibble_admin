@@ -14,23 +14,8 @@
     .sq-actions
       .sq-actions-container
 
-        - if can? :create, resource_class
-          - begin
-            .sq-action.sq-action-clone
-              %a{ href: new_resource_path(clone_by_id: resource.id) }
-                .sq-action-title
-                  %i.fa.fa-clone
-                .sq-action-text
-                  %span= t('helpers.copy')
-          - rescue NoMethodError
-
-        - if can? :update, resource
-          .sq-action.sq-action-edit
-            %a{ href: edit_resource_path(resource.id) }
-              .sq-action-title
-                %i.fa.fa-edit
-              .sq-action-text
-                %span= t('helpers.edit')
+        = render 'admin/show_dashboard/new_button'
+        = render 'admin/show_dashboard/edit_button'
 
         -# Ausgabe der Custom Actions für bspw die Druckausgabe
         -#
