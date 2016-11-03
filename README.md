@@ -122,3 +122,7 @@ end
 * 22.09.2016: Anpassung Ability Generator (Für neues Konzept mit Acl::AdminUser::RoleAssignment)
 * 08.10.2016: Überarbeitung der Navigation (Darstellung der Einträge in jQuery), ```bash git rm app/decorators/acl/admin_user_decorator.rb```
 * 10.10.2016: Überarbeitung destroy_button mit :_callback_url für die Weiterleitung auf die entsprechende ursprüngliche Seite.
+
+## Version 0.3.0
+
+* 03.11.2016: responsive Bilder in E-Mail Templates (class: img-responsive)
