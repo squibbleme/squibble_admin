@@ -23,6 +23,7 @@
                   %span= current_admin_user.name
                   = gravatar_tag current_admin_user.email, size: 35, secure: true
                 %ul.dropdown-menu-v2{ role: :menu }
+                  = render partial: 'layouts/shared/admin/custom_dropdown_items'
                   %li
                     %a{ href: main_app.destroy_admin_user_session_path }
                       %i.fa.fa-sign-out
