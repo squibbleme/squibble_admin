@@ -126,3 +126,4 @@ end
 ## Version 0.3.0
 
 * 03.11.2016: responsive Bilder in E-Mail Templates (class: img-responsive)
+* 17.11.2016: Fix: sq_mail_button nimmt nun die primäre Farbe des Principal
