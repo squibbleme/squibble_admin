@@ -80,7 +80,7 @@ module SquibbleAdmin::Mailer::Markup::GeneralHelper
     font_size = options[:font_size].present? ? options[:font_size] : 20
     margin = options[:margin].present? ? options[:margin] : 15
 
-    button_color = options[:button_color].present? ? options[:button_color] : sq_mail_color(:primary)
+    button_color = options[:button_color].present? ? options[:button_color] : sq_mail_color(:primary, @principal)
     border_color = options[:border_color].present? ? options[:border_color] : sq_mail_color(:border)
     text_color = options[:text_color].present? ? options[:text_color] : sq_mail_color(:container_bg)
 
