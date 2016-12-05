@@ -19,7 +19,8 @@ class Elasticsearch::IndexOperation < ComposableOperations::Operation
       _destroy
     end
   rescue Elasticsearch::Transport::Transport::Errors::BadRequest => e
-    log(:error, "Elasticsearch::Transport::Transport::Errors::BadRequest: #{e.message}", message: e.message)
+    log(:error, "Elasticsearch::Transport::Transport::Errors::BadRequest: #{e.message}",
+        default_log_attributes(message: e.message))
   end
 
 
@@ -47,7 +48,7 @@ class Elasticsearch::IndexOperation < ComposableOperations::Operation
     )
   rescue Elasticsearch::Transport::Transport::Errors::NotFound => e
     msg = "Unable to destroy #{resource_class} [##{resource_id}] search index, because there is none."
-    log(:debug, msg, _default_log_attributes)
+    log(:debug, msg, default_log_attributes)
   end
 
   def _get_resource
@@ -57,7 +58,7 @@ class Elasticsearch::IndexOperation < ComposableOperations::Operation
     log(:debug, msg, _default_log_attributes)
   end
 
-  def _default_log_attributes(options = {})
+  def default_log_attributes(options = {})
     tmp = { resource_class: resource_class, resource_id: resource_id }
     tmp[:principal_id] = @resource.principal_id if @resource.present? && @resource.respond_to?(:principal_id)
     tmp.merge(options)
