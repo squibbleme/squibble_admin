@@ -18,13 +18,11 @@ class Deletion::CreateOperation < ComposableOperations::Operation
       internal_description: message
     )
 
-    if deletion.save
-      log(:debug, "Successfully created Deletion::Entry ##{deletion.id} for #{subject_class.key} ##{resource_id}.", _default_log_attributes)
-    else
-      msg = "Unable to create Deletion::Entry: #{deletion.errors.messages}."
-      log(:error, msg, _default_log_attributes(errors: deletion.errors.messages))
-      halt msg
-    end
+    return if deletion.save
+
+    msg = "Unable to create Deletion::Entry: #{deletion.errors.messages}."
+    log(:error, msg, _default_log_attributes(errors: deletion.errors.messages))
+    halt msg
   end
 
   private
