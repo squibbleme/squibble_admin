@@ -520,20 +520,19 @@
 	"buffers":
 	[
 		{
-			"file": "app/uploaders/squibble_base_uploader.rb",
-			"settings":
-			{
-				"buffer_size": 650,
-				"encoding": "UTF-8",
-				"line_ending": "Unix"
-			}
-		},
-		{
 			"file": "lib/squibble_admin/version.rb",
 			"settings":
 			{
 				"buffer_size": 46,
 				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "lib/squibble_admin.rb",
+			"settings":
+			{
+				"buffer_size": 98,
 				"line_ending": "Unix"
 			}
 		}
@@ -793,11 +792,11 @@
 	[
 		"/Z/squibble/plugins/squibble_admin",
 		"/Z/squibble/plugins/squibble_admin/app",
-		"/Z/squibble/plugins/squibble_admin/app/models",
 		"/Z/squibble/plugins/squibble_admin/app/models/concerns",
 		"/Z/squibble/plugins/squibble_admin/app/models/concerns/squibble",
-		"/Z/squibble/plugins/squibble_admin/app/uploaders",
-		"/Z/squibble/plugins/squibble_admin/app/workers"
+		"/Z/squibble/plugins/squibble_admin/app/workers/deletion",
+		"/Z/squibble/plugins/squibble_admin/config/initializers",
+		"/Z/squibble/plugins/squibble_admin/lib"
 	],
 	"file_history":
 	[
@@ -1211,44 +1210,11 @@
 	"groups":
 	[
 		{
-			"selected": 1,
+			"selected": 0,
 			"sheets":
 			[
 				{
 					"buffer": 0,
-					"file": "app/uploaders/squibble_base_uploader.rb",
-					"semi_transient": true,
-					"settings":
-					{
-						"buffer_size": 650,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								650,
-								650
-							]
-						],
-						"settings":
-						{
-							"editorconfig": true,
-							"ensure_newline_at_eof_on_save": true,
-							"syntax": "Packages/Ruby/Ruby.sublime-syntax",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true,
-							"trim_trailing_white_space_on_save": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 1,
-					"type": "text"
-				},
-				{
-					"buffer": 1,
 					"file": "lib/squibble_admin/version.rb",
 					"semi_transient": false,
 					"settings":
@@ -1278,6 +1244,39 @@
 						"zoom_level": 1.0
 					},
 					"stack_index": 0,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "lib/squibble_admin.rb",
+					"semi_transient": true,
+					"settings":
+					{
+						"buffer_size": 98,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"editorconfig": true,
+							"ensure_newline_at_eof_on_save": true,
+							"syntax": "Packages/Ruby/Ruby.sublime-syntax",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true,
+							"trim_trailing_white_space_on_save": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
 					"type": "text"
 				}
 			]

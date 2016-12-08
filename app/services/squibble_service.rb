@@ -70,6 +70,9 @@ module SquibbleService
     else
       fail ArgumentError "Level :#{level} is an invalid log level"
     end
+  rescue Elasticsearch::Transport::Transport::Errors::ServiceUnavailable => e
+    msg = "Elasticsearch::Transport::Transport::Errors::ServiceUnavailable: #{e.message}"
+    Rails.logger.appliocation.error msg
   end
 
   # Diese Methode retourniert die Übersetzungen für die aktuelle
