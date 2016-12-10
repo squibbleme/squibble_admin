@@ -12,11 +12,11 @@ module Squibble::AdminCrudAction::Destroy
 
         success.js do
           flash[:notice] = t('flash.actions.destroy.notice', resource_name: resource_class.model_name.human)
-          redirect_to redirect_url, turbolinks: true
+          redirect_to redirect_url
         end
         success.html do
           flash[:notice] = t('flash.actions.destroy.notice', resource_name: resource_class.model_name.human)
-          redirect_to redirect_url, turbolinks: true
+          redirect_to redirect_url
         end
       end
     end
