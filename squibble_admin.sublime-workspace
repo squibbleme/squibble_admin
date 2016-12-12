@@ -527,15 +527,6 @@
 				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
-		},
-		{
-			"file": "app/controllers/concerns/squibble/admin_crud_action/destroy.rb",
-			"settings":
-			{
-				"buffer_size": 789,
-				"encoding": "UTF-8",
-				"line_ending": "Unix"
-			}
 		}
 	],
 	"build_system": "",
@@ -793,23 +784,19 @@
 	[
 		"/Z/squibble/plugins/squibble_admin",
 		"/Z/squibble/plugins/squibble_admin/app",
-		"/Z/squibble/plugins/squibble_admin/app/assets/plugins/metronic",
-		"/Z/squibble/plugins/squibble_admin/app/controllers",
-		"/Z/squibble/plugins/squibble_admin/app/controllers/concerns",
-		"/Z/squibble/plugins/squibble_admin/app/controllers/concerns/squibble",
-		"/Z/squibble/plugins/squibble_admin/app/controllers/concerns/squibble/admin_crud_action",
-		"/Z/squibble/plugins/squibble_admin/lib/assets",
-		"/Z/squibble/plugins/squibble_admin/lib/assets/javascripts",
-		"/Z/squibble/plugins/squibble_admin/lib/assets/javascripts/squibble_admin",
-		"/Z/squibble/plugins/squibble_admin/lib/assets/javascripts/squibble_admin/admin",
-		"/Z/squibble/plugins/squibble_admin/lib/assets/javascripts/squibble_admin/admin/elements"
+		"/Z/squibble/plugins/squibble_admin/app/helpers",
+		"/Z/squibble/plugins/squibble_admin/app/helpers/squibble_admin",
+		"/Z/squibble/plugins/squibble_admin/app/helpers/squibble_admin/admin",
+		"/Z/squibble/plugins/squibble_admin/app/helpers/squibble_admin/markup"
 	],
 	"file_history":
 	[
+		"/Z/squibble/plugins/squibble_admin/app/helpers/squibble_admin/markup/form_helper.rb",
+		"/Z/squibble/plugins/squibble_admin/lib/squibble_admin/version.rb",
+		"/Z/squibble/plugins/squibble_admin/app/controllers/concerns/squibble/admin_crud_action/destroy.rb",
 		"/Z/squibble/plugins/squibble_admin/app/services/squibble_service.rb",
 		"/Z/squibble/plugins/squibble_admin/app/services/csv_service.rb",
 		"/Z/squibble/plugins/squibble_admin/app/services/operations_service.rb",
-		"/Z/squibble/plugins/squibble_admin/lib/squibble_admin/version.rb",
 		"/Z/squibble/plugins/squibble_admin/app/models/concerns/searchable_model.rb",
 		"/Z/squibble/plugins/squibble_admin/app/operations/elasticsearch/index_operation.rb",
 		"/Z/squibble/plugins/squibble_admin/app/operations/deletion/create_execution_operation.rb",
@@ -842,8 +829,6 @@
 		"/Z/squibble/plugins/squibble_admin/app/controllers/concerns/squibble/admin_crud_action/show.rb",
 		"/Z/squibble/plugins/squibble_admin/app/controllers/concerns/squibble/admin_crud_action/new.rb",
 		"/Z/squibble/plugins/squibble_admin/app/controllers/concerns/squibble/admin_crud_action/edit.rb",
-		"/Z/squibble/plugins/squibble_admin/app/controllers/concerns/squibble/admin_crud_action/destroy.rb",
-		"/Z/squibble/plugins/squibble_admin/app/helpers/squibble_admin/markup/form_helper.rb",
 		"/Z/squibble/plugins/squibble_admin/app/views/admin/errors/error_500.html.haml",
 		"/Z/squibble/plugins/squibble_admin/app/views/admin/errors/error_422.html.haml",
 		"/Z/squibble/plugins/squibble_admin/app/views/admin/errors/error_400.html.haml",
@@ -944,6 +929,7 @@
 		"height": 327.0,
 		"where_history":
 		[
+			"Z:\\squibble\\plugins\\squibble_admin\\app\\helpers",
 			"Z:\\squibble\\plugins\\squibble_admin\\app\\views",
 			"Z:\\squibble\\plugins\\squibble_admin\\lib\\assets\\stylesheets",
 			"Z:\\squibble\\plugins\\squibble_admin\\lib\\assets\\stylesheets\\squibble_admin\\admin",
@@ -1012,6 +998,7 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"current_quarter",
 			"suggest",
 			"asset-url",
 			"__handle_update_success",
@@ -1138,8 +1125,7 @@
 			"        %p\n          Stand: #{sq_time Time.zone.now}",
 			"sq_time",
 			"    %header\n      = print_business_header current_principal\n\n      .address-container\n        .address\n          = print_business_sender current_principal\n          = current_address_tag",
-			"      %header\n        = print_business_header current_principal\n\n        .address-container\n          .address\n            = print_business_sender current_principal\n            = current_address_tag",
-			"_handle_pagination"
+			"      %header\n        = print_business_header current_principal\n\n        .address-container\n          .address\n            = print_business_sender current_principal\n            = current_address_tag"
 		],
 		"highlight": true,
 		"in_selection": false,
@@ -1216,7 +1202,7 @@
 	"groups":
 	[
 		{
-			"selected": 1,
+			"selected": 0,
 			"sheets":
 			[
 				{
@@ -1231,40 +1217,13 @@
 						},
 						"selection":
 						[
+							[
+								46,
+								46
+							]
 						],
 						"settings":
 						{
-							"color_scheme": "Packages/User/Color Highlighter/themes/Monokai.tmTheme",
-							"editorconfig": true,
-							"ensure_newline_at_eof_on_save": true,
-							"syntax": "Packages/Ruby/Ruby.sublime-syntax",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true,
-							"trim_trailing_white_space_on_save": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 1,
-					"type": "text"
-				},
-				{
-					"buffer": 1,
-					"file": "app/controllers/concerns/squibble/admin_crud_action/destroy.rb",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 789,
-						"regions":
-						{
-						},
-						"selection":
-						[
-						],
-						"settings":
-						{
-							"color_scheme": "Packages/User/Color Highlighter/themes/Monokai.tmTheme",
 							"editorconfig": true,
 							"ensure_newline_at_eof_on_save": true,
 							"syntax": "Packages/Ruby/Ruby.sublime-syntax",
