@@ -1,3 +1,11 @@
 .nav-collapse.collapse.navbar-collapse.navbar-responsive-collapse#sq-nav-collapse
   %ul.nav.navbar-nav
+    - begin
+      = render 'helpers/squibble_admin/admin/markup/navigation_helper/before'
+    - rescue ActionView::MissingTemplate
+
     = render partial: 'helpers/squibble_admin/admin/markup/navigation_helper/nav_item', collection: collection, as: :resource, locals: { current_principal: navigation_current_principal }
+
+    - begin
+      = render 'helpers/squibble_admin/admin/markup/navigation_helper/after'
+    - rescue ActionView::MissingTemplate

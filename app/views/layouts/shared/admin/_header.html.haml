@@ -11,7 +11,7 @@
               %span.icon-bar
               %span.icon-bar
 
-          %a#index.class-logo{ href: main_app.admin_dashboard_overview_path }
+          %a#index.class-logo{ href: main_app.admin_dashboard_overview_path(principal_slug: current_principal.to_param) }
             %img{ src: asset_path('logo-black.png'), alt: 'Squibble' }
 
           .topbar-actions
