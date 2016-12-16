@@ -57,8 +57,12 @@ handleLevel2 = (level_1) ->
 handlePermissions = ->
   $('#sq-nav-collapse > ul > li.level-0').each (index) ->
     level_0 = $(this)
-    # console.debug "Prüfe LVL0: #{s.humanize(level_0.find('>a').text())}"
-    handleLevel1(level_0)
+
+    if checkEntry(level_0)
+      # console.debug "Prüfe LVL0: #{s.humanize(level_0.find('>a').text())}"
+      handleLevel1(level_0)
+    else
+      removeEntry(level_0)
 
     # Das Element verfügte initial über Unterelemente allerdings wurden
     # sämtliche Unterelemente für diesen LVL_0 Eintrag wurden entfernt.

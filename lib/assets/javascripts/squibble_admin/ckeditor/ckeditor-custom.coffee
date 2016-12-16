@@ -21,7 +21,7 @@ jQuery ->
     attrs = {}
 
     if baseHref
-      attrs.baseHref = "http://#{baseHref}"
+      attrs.baseHref = "#{location.protocol}://#{baseHref}"
 
     if height
       attrs.height = height
@@ -30,7 +30,7 @@ jQuery ->
     if assets_name
       attrs.contentsCss = assets_name.split ','
     else
-      attrs.contentsCss = "http://#{window.location.hostname}/assets/frontend.css"
+      attrs.contentsCss = "#{location.protocol}://#{window.location.hostname}/assets/frontend.css"
 
     if language
       attrs.language = language
@@ -40,3 +40,5 @@ jQuery ->
     )
 
     $(this).addClass 'processed'
+
+  return
