@@ -1,0 +1,15 @@
+.page-quick-sidebar-wrapper
+  .page-quick-sidebar
+    %ul.nav.nav-tabs
+      - SquibbleAdminConfig.quick_sidebar.entries.each_with_index do |entry, index_counter|
+        %li{ class: (entry == SquibbleAdminConfig.quick_sidebar.entries.first ? :active : nil) }
+          %a{ href: 'javascript:;', data: { target: "#quick_sidebar_tab_#{entry}", toggle: :tab } }
+            = t("squibble_admin.quick_sidebar.#{entry}.tab.title")
+
+    .tab-content
+      - SquibbleAdminConfig.quick_sidebar.entries.each_with_index do |entry, index_counter|
+        = render "layouts/shared/admin/quick_sidebar/default_content", entry: entry, index_counter: index_counter
+
+-# Abdunkeln des Hintergrund Elements
+-#
+.sq-page-quick-sidebar-background.sq-quick-sidebar-toggler

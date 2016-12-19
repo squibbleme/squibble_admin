@@ -1,0 +1,28 @@
+%h3.list-heading= t('squibble_admin.quick_sidebar.current_admin_user.content.title', current_admin_user: current_admin_user.name)
+
+%ul.media-list.list-items
+  = render 'admin/acl/admin_users/media_list_item', resource: current_admin_user
+
+%ul.button-list
+  - begin
+    = render "layouts/shared/admin/quick_sidebar/current_admin_user_custom_content_before"
+  - rescue ActionView::MissingTemplate
+
+  %li
+    %a{ href: main_app.destroy_admin_user_session_path }
+      %i.fa.fa-sign-out
+      = t('.sign_out')
+
+  - begin
+    = render "layouts/shared/admin/quick_sidebar/current_admin_user_custom_content_after"
+  - rescue ActionView::MissingTemplate
+
+
+-#
+  %ul.media-list.list-items
+    %li.media
+      .media-status
+        %span.badge.badge-success 3
+      .media-body
+        %h4.media-heading aktueller mandant
+        .media-heading-sub untertitel

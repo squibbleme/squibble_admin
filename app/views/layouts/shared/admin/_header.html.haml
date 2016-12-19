@@ -19,14 +19,8 @@
 
             - cache [ 'layouts/admin/nav/current_admin_user', current_admin_user ] do
               .btn-group-img.btn-group
-                %button.btn.btn-sm.dropdown-toggle{ type: :button, data: { toggle: :dropdown, hower: :dropdown, close: { others: :true } } }
+                %button.btn.btn-sm.dropdown-toggle.sq-quick-sidebar-toggler{ type: :button }
                   = gravatar_tag current_admin_user.email, size: 35, secure: true
                   %span= current_admin_user.name
-                %ul.dropdown-menu-v2{ role: :menu }
-                  = render partial: 'layouts/shared/admin/custom_dropdown_items'
-                  %li
-                    %a{ href: main_app.destroy_admin_user_session_path }
-                      %i.fa.fa-sign-out
-                      Logout
 
         = navigation

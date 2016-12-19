@@ -1,0 +1,12 @@
+.tab-pane{ class: (entry == SquibbleAdminConfig.quick_sidebar.entries.first ? :active : nil), id: "quick_sidebar_tab_#{entry}" }
+
+  %div{ class: "page-quick-sidebar-#{entry}" }
+    - begin
+      = render "layouts/shared/admin/quick_sidebar/#{entry}_content_before"
+    - rescue ActionView::MissingTemplate
+
+    = render "layouts/shared/admin/quick_sidebar/#{entry}_content"
+
+    - begin
+      = render "layouts/shared/admin/quick_sidebar/#{entry}_content_after"
+    - rescue ActionView::MissingTemplate

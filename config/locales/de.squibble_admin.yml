@@ -1,0 +1,14 @@
+de:
+  squibble_admin:
+    quick_sidebar:
+      current_admin_user:
+        tab:
+          title: Administrator
+        content:
+          title: Administrator
+  layouts:
+    shared:
+      admin:
+        quick_sidebar:
+          current_admin_user_content:
+            sign_out: Abmelden
