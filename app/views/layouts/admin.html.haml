@@ -14,7 +14,7 @@
 
     = javascript_include_tag "//maps.google.com/maps/api/js?key=#{Settings.google.api.key}"
     = javascript_include_tag :'squibble_basics/application', :'data-turbolinks-track' => :reload, debug: false
-    = javascript_include_tag :admin, :'data-turbolinks-track' => :reload
+    = javascript_include_tag :admin, :'data-turbolinks-track' => :reload, debug: false
 
   %body.admin.page-header-fixed.page-sidebar-closed-hide-logo{ class: "rails-env-#{Rails.env}"}
 
