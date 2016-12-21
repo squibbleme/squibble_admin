@@ -33,7 +33,7 @@ CKEDITOR.addTemplates "bootstrap",
             <div class="col-md-4">
               <h3>Hier kommt eine Überschrift</h3>
               <p>
-                <img src="http://placehold.it/640x480" class="img-responsive" />
+                <img src="https://placehold.it/640x480" class="img-responsive" />
               </p>
               <p>
                 Hier kommt der entsprechende Inhalt zu dieser eben erwähnten Überschrift
@@ -76,7 +76,7 @@ CKEDITOR.addTemplates "bootstrap",
           <div class="col-md-4">
             <h3>Hier kommt eine Überschrift</h3>
             <p>
-              <img src="http://placehold.it/640x480" class="img-responsive" />
+              <img src="https://placehold.it/640x480" class="img-responsive" />
             </p>
             <p>
               Hier kommt der entsprechende Inhalt zu dieser eben erwähnten Überschrift
@@ -102,7 +102,7 @@ CKEDITOR.addTemplates "bootstrap",
         <div class="col-md-4">
           <h3>Hier kommt eine Überschrift</h3>
           <p>
-            <img src="http://placehold.it/640x480" class="img-responsive" />
+            <img src="https://placehold.it/640x480" class="img-responsive" />
           </p>
           <p>
             Hier kommt der entsprechende Inhalt zu dieser eben erwähnten Überschrift
@@ -128,7 +128,7 @@ CKEDITOR.addTemplates "bootstrap",
         <div class="col-md-3">
           <h3>Hier kommt eine Überschrift</h3>
           <p>
-            <img src="http://placehold.it/640x480" class="img-responsive" />
+            <img src="https://placehold.it/640x480" class="img-responsive" />
           </p>
           <p>
             Hier kommt der entsprechende Inhalt zu dieser eben erwähnten Überschrift
@@ -137,7 +137,7 @@ CKEDITOR.addTemplates "bootstrap",
         <div class="col-md-3">
           <h3>Hier kommt eine Überschrift</h3>
           <p>
-            <img src="http://placehold.it/640x480" class="img-responsive" />
+            <img src="https://placehold.it/640x480" class="img-responsive" />
           </p>
           <p>
             Hier kommt der entsprechende Inhalt zu dieser eben erwähnten Überschrift
@@ -146,7 +146,7 @@ CKEDITOR.addTemplates "bootstrap",
         <div class="col-md-3">
           <h3>Hier kommt eine Überschrift</h3>
           <p>
-            <img src="http://placehold.it/640x480" class="img-responsive" />
+            <img src="https://placehold.it/640x480" class="img-responsive" />
           </p>
           <p>
             Hier kommt der entsprechende Inhalt zu dieser eben erwähnten Überschrift
@@ -155,7 +155,7 @@ CKEDITOR.addTemplates "bootstrap",
         <div class="col-md-3">
           <h3>Hier kommt eine Überschrift</h3>
           <p>
-            <img src="http://placehold.it/640x480" class="img-responsive" />
+            <img src="https://placehold.it/640x480" class="img-responsive" />
           </p>
           <p>
             Hier kommt der entsprechende Inhalt zu dieser eben erwähnten Überschrift
