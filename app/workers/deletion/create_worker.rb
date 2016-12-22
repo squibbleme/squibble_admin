@@ -11,8 +11,5 @@ class Deletion::CreateWorker
       principal_id: principal_id
     )
     operation.perform
-
-    return if operation.succeeded?
-    log(:error, "Unable to execute Deletion::CreateOperation: #{operation.message}")
   end
 end
