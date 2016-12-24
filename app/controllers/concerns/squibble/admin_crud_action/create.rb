@@ -51,7 +51,6 @@ module Squibble::AdminCrudAction::Create
     def __handle_create_failure_callback
     end
 
-
     # Internal Helper Methods
     #
     def after_create_success_path
