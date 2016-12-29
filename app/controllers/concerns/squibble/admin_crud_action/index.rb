@@ -9,6 +9,8 @@ module Squibble::AdminCrudAction::Index
         __before_index
         @actions_index = [] unless @actions_index.is_a?(Array)
 
+        handle_meta_tags
+
         begin
             _register_index_action(:new, resource_class, new_resource_path(params.except(:action, :controller, :principal_slug)))
           rescue
@@ -22,6 +24,10 @@ module Squibble::AdminCrudAction::Index
     end
 
     private
+
+    def handle_meta_tags
+      set_meta_title resource_class.model_name.human(count: collection.total_count)
+    end
 
     def __after_index
     end
