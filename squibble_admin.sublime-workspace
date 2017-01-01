@@ -520,19 +520,37 @@
 	"buffers":
 	[
 		{
-			"file": "app/views/layouts/shared/admin/_header.html.haml",
+			"file": "app/views/helpers/squibble_admin/admin/markup/show_helper/_preview_show.html.haml",
 			"settings":
 			{
-				"buffer_size": 1147,
+				"buffer_size": 618,
 				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "app/views/layouts/admin.html.haml",
+			"file": "lib/squibble_admin/version.rb",
 			"settings":
 			{
-				"buffer_size": 1719,
+				"buffer_size": 46,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "app/views/helpers/squibble_admin/admin/markup/show_helper/_thumbnail_show.html.haml",
+			"settings":
+			{
+				"buffer_size": 631,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "app/helpers/squibble_admin/admin/markup/show_helper.rb",
+			"settings":
+			{
+				"buffer_size": 1306,
 				"line_ending": "Unix"
 			}
 		}
@@ -800,14 +818,24 @@
 	[
 		"/Z/squibble/plugins/squibble_admin",
 		"/Z/squibble/plugins/squibble_admin/app",
+		"/Z/squibble/plugins/squibble_admin/app/helpers/squibble_admin",
+		"/Z/squibble/plugins/squibble_admin/app/helpers/squibble_admin/admin",
+		"/Z/squibble/plugins/squibble_admin/app/helpers/squibble_admin/admin/markup",
 		"/Z/squibble/plugins/squibble_admin/app/views",
-		"/Z/squibble/plugins/squibble_admin/app/views/admin",
-		"/Z/squibble/plugins/squibble_admin/app/views/layouts",
+		"/Z/squibble/plugins/squibble_admin/app/views/helpers",
+		"/Z/squibble/plugins/squibble_admin/app/views/helpers/squibble_admin",
+		"/Z/squibble/plugins/squibble_admin/app/views/helpers/squibble_admin/admin",
+		"/Z/squibble/plugins/squibble_admin/app/views/helpers/squibble_admin/admin/markup",
+		"/Z/squibble/plugins/squibble_admin/app/views/helpers/squibble_admin/admin/markup/show_helper",
+		"/Z/squibble/plugins/squibble_admin/app/views/helpers/squibble_admin/markup",
 		"/Z/squibble/plugins/squibble_admin/app/views/layouts/shared",
 		"/Z/squibble/plugins/squibble_admin/app/views/layouts/shared/admin"
 	],
 	"file_history":
 	[
+		"/Z/squibble/plugins/squibble_admin/app/helpers/squibble_admin/admin/markup/show_helper.rb",
+		"/Z/squibble/plugins/squibble_admin/app/views/layouts/admin.html.haml",
+		"/Z/squibble/plugins/squibble_admin/app/views/layouts/shared/admin/_header.html.haml",
 		"/Z/squibble/plugins/squibble_admin/app/views/layouts/shared/admin/_meta.html.haml",
 		"/Z/squibble/plugins/squibble_admin/app/views/admin/index.html.haml",
 		"/Z/squibble/plugins/squibble_admin/app/controllers/concerns/squibble/admin_crud_action/index.rb",
@@ -822,7 +850,6 @@
 		"/Z/squibble/plugins/squibble_admin/app/workers/deletion/create_worker.rb",
 		"/Z/squibble/plugins/squibble_admin/lib/assets/javascripts/squibble_admin/admin_manifest.js",
 		"/Z/squibble/plugins/squibble_admin/app/operations/deletion/create_operation.rb",
-		"/Z/squibble/plugins/squibble_admin/app/views/layouts/admin.html.haml",
 		"/Z/squibble/plugins/squibble_admin/lib/assets/javascripts/squibble_admin/ckeditor/config.js.erb",
 		"/Z/squibble/plugins/squibble_admin/lib/assets/javascripts/squibble_admin/ckeditor/ckeditor-custom.coffee",
 		"/Z/squibble/plugins/squibble_admin/lib/assets/javascripts/squibble_admin/ckeditor/templates/bootstrap-templates.coffee",
@@ -830,7 +857,6 @@
 		"/Z/squibble/plugins/squibble_admin/app/helpers/squibble_admin/markup/general_helper.rb",
 		"/Z/squibble/plugins/squibble_admin/app/views/helpers/squibble_admin/markup/general_helper/_show_timestamps.html.haml",
 		"/Z/squibble/plugins/squibble_admin/Gemfile",
-		"/Z/squibble/plugins/squibble_admin/app/views/layouts/shared/admin/_header.html.haml",
 		"/Z/squibble/plugins/squibble_admin/app/views/admin/_form_actions.html.haml",
 		"/Z/squibble/plugins/squibble_admin/app/views/layouts/shared/admin/_custom_dropdown_items.html.haml",
 		"/Z/squibble/plugins/squibble_admin/app/assets/plugins/metronic/layouts/layout5/css/layout.css",
@@ -934,7 +960,6 @@
 		"/Z/squibble/plugins/squibble_mongoid_fields/app/models/concerns/squibble/discount.rb",
 		"/Z/squibble/plugins/squibble_print/app/views/layouts/print.html.haml",
 		"/Z/squibble/plugins/squibble_admin/lib/assets/stylesheets/squibble_admin/admin/blockUI.less",
-		"/Z/squibble/plugins/squibble_admin/app/helpers/squibble_admin/admin/markup/show_helper.rb",
 		"/Z/squibble/plugins/squibble_admin/app/views/helpers/squibble_admin/admin/markup/show_helper/_file_show.html.haml"
 	],
 	"find":
@@ -1022,6 +1047,8 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"preview_content_type",
+			"preview_show",
 			"default_table_classes",
 			"create_tracking",
 			"collection_path",
@@ -1147,9 +1174,7 @@
 			"date",
 			"AccountingYear",
 			"accounting_year",
-			"outstanding_am",
-			"payments",
-			"payments."
+			"outstanding_am"
 		],
 		"highlight": true,
 		"in_selection": false,
@@ -1227,64 +1252,24 @@
 	"groups":
 	[
 		{
-			"selected": 0,
+			"selected": 1,
 			"sheets":
 			[
 				{
 					"buffer": 0,
-					"file": "app/views/layouts/shared/admin/_header.html.haml",
+					"file": "app/views/helpers/squibble_admin/admin/markup/show_helper/_preview_show.html.haml",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 1147,
+						"buffer_size": 618,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								489,
-								489
-							]
-						],
-						"settings":
-						{
-							"color_scheme": "Packages/User/Color Highlighter/themes/Monokai.tmTheme",
-							"editorconfig": true,
-							"ensure_newline_at_eof_on_save": true,
-							"syntax": "Packages/Rails/Ruby Haml.sublime-syntax",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true,
-							"trim_trailing_white_space_on_save": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 0,
-					"type": "text"
-				}
-			]
-		},
-		{
-			"selected": 0,
-			"sheets":
-			[
-				{
-					"buffer": 1,
-					"file": "app/views/layouts/admin.html.haml",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 1719,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								126,
-								126
+								618,
+								618
 							]
 						],
 						"settings":
@@ -1302,6 +1287,112 @@
 						"zoom_level": 1.0
 					},
 					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "lib/squibble_admin/version.rb",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 46,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								46,
+								46
+							]
+						],
+						"settings":
+						{
+							"editorconfig": true,
+							"ensure_newline_at_eof_on_save": true,
+							"syntax": "Packages/Ruby/Ruby.sublime-syntax",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true,
+							"trim_trailing_white_space_on_save": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "app/views/helpers/squibble_admin/admin/markup/show_helper/_thumbnail_show.html.haml",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 631,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								305,
+								305
+							]
+						],
+						"settings":
+						{
+							"color_scheme": "Packages/User/Color Highlighter/themes/Monokai.tmTheme",
+							"editorconfig": true,
+							"ensure_newline_at_eof_on_save": true,
+							"syntax": "Packages/Rails/Ruby Haml.sublime-syntax",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true,
+							"trim_trailing_white_space_on_save": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
+					"type": "text"
+				}
+			]
+		},
+		{
+			"selected": 0,
+			"sheets":
+			[
+				{
+					"buffer": 3,
+					"file": "app/helpers/squibble_admin/admin/markup/show_helper.rb",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1306,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								958,
+								970
+							]
+						],
+						"settings":
+						{
+							"editorconfig": true,
+							"ensure_newline_at_eof_on_save": true,
+							"syntax": "Packages/Ruby/Ruby.sublime-syntax",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true,
+							"trim_trailing_white_space_on_save": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 3,
 					"type": "text"
 				}
 			]
@@ -1335,7 +1426,7 @@
 		"cols":
 		[
 			0.0,
-			0.38693264003,
+			0.5,
 			1.0
 		],
 		"rows":
@@ -1369,6 +1460,14 @@
 			[
 				"vers",
 				"lib\\squibble_admin\\version.rb"
+			],
+			[
+				"markupshow_hel",
+				"app\\helpers\\squibble_admin\\admin\\markup\\show_helper.rb"
+			],
+			[
+				"helpers/squibble_admin/admin/markup/show_helper/preview_show",
+				"app\\views\\helpers\\squibble_admin\\admin\\markup\\show_helper\\_preview_show.html.haml"
 			],
 			[
 				"index",
@@ -1869,14 +1968,6 @@
 			[
 				"create_work",
 				"squibble_admin\\app\\workers\\deletion\\create_worker.rb"
-			],
-			[
-				"indexer_wo",
-				"squibble_admin\\app\\workers\\elasticsearch\\indexer_worker.rb"
-			],
-			[
-				"helpers/squibble_admin/markup/google_helper/google_map_for_address",
-				"squibble_admin\\app\\views\\helpers\\squibble_admin\\markup\\google_helper\\_google_map_for_address.html.haml"
 			]
 		],
 		"width": 0.0
