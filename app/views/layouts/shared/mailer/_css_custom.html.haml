@@ -3,7 +3,8 @@
 
     /* GENERAL SQUIBBLE CSS */
     body, table.body, h1, h2, h3, h4, h5, h6, p, td {
-      font-family: "Roboto Condensed", sans-serif !important;
+      // font-family: "Roboto Condensed", sans-serif !important;
+      font-family: 'Raleway', 'Arial', 'Verdana', sans-serif !important;
       color: #{sq_mail_color(:text, @principal)};
     }
 
@@ -52,11 +53,19 @@
 
     @media only screen and (max-device-width: 480px) {
       table[class=content-table] {
-        width: 320px !important;
+        width: 290px !important;
       }
 
       .content-table {
-        width: 320px !important;
+        width: 290px !important;
+      }
+
+      table[class=full-width] {
+        width: 380px !important;
+      }
+
+      .full-width {
+        width: 380px !important;
       }
 
       .img-responsive {

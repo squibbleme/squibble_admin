@@ -1,4 +1,4 @@
-- cache ['helpers/mailer/markup/general_helper/sq_mail_header', title] do
+- cache ['helpers/mailer/markup/general_helper/sq_mail_header', title, @principal] do
   %table.row.header{style: "background: #{sq_mail_color(:primary, @principal)}; border-spacing: 0; border-collapse: collapse; vertical-align: top; width: 100%; position: relative;"}
     %tr
       %td.center{align: :center, style: 'word-break: break-word; -webkit-hyphens: auto; -moz-hyphens: auto; hyphens: auto; border-collapse: collapse !important; vertical-align: top; margin: 0; padding: 10px;'}

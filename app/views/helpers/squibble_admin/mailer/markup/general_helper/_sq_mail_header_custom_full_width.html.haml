@@ -1,0 +1,15 @@
+- cache 'helpers/mailer/markup/general_helper/sq_mail_header_custom' do
+  %tr
+    %td{style: 'margin: 0; padding: 0; height: 10px; background-color: black;'}
+
+  %tr
+    %td.center{align: :center, style: 'word-break: break-word; border-collapse: collapse !important; vertical-align: top; text-align: center; margin: 0; padding: 0;'}
+      %center{:style => "width: 100%;"}
+
+
+        %table.full-width{style: "max-height: 250px; width: 610px; margin: 0; padding: 0;"}
+          %tr
+            %td{style: "max-height: 250px; margin: 0; padding: 0;"}
+              %center
+                = sq_mail_header_image(@principal)
+        
