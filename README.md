@@ -128,3 +128,4 @@ end
 * 03.11.2016: responsive Bilder in E-Mail Templates (class: img-responsive)
 * 17.11.2016: Fix: sq_mail_button nimmt nun die primäre Farbe des Principal
 * 07.12.2016: Hinzufügen Concern Squibble::RebuildPath mit Option skip_rebuild_path!
+* 07.01.2016: Überarbeiten des E-mail Layout und div. mobile Optimisierungen für Mobile E-Mail

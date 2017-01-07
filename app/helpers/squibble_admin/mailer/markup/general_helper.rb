@@ -15,10 +15,12 @@ module SquibbleAdmin::Mailer::Markup::GeneralHelper
   def sq_mail_header_image(principal = nil, options = {})
     if sq_principal?(principal)
       image_tag(sq_mail_asset_url('logo-squibble-mailer.png'),
-        width: 610,
+        width: 610, height: 250,
+        class: 'header-image-custom',
         alt: 'Squibble Header Logo',
         title: 'Squibble Header Logo',
-        style: 'display: block;',
+        align: :left,
+        style: 'float: left; display: block; vertical-align: bottom; margin: 0;',
       )
     else
       styles = if options[:style].present?

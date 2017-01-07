@@ -11,24 +11,25 @@
       = render 'layouts/shared/mailer/css_custom'
 
       %table.body{style: "background: #{sq_mail_color(:body_bg, @principal)}; border-spacing: 0; border-collapse: collapse; vertical-align: top; text-align: left; height: 100%; width: 100%; margin: 0; padding: 0;"}
-        = sq_mail_header_full_width(@principal)    
-        %tr
-          %td.center{align: :center, style: 'word-break: break-word; border-collapse: collapse !important; vertical-align: top; text-align: center; margin: 0; padding: 0;'}
-            %center{:style => "width: 100%;"}
+        %tbody
+          = sq_mail_header_full_width(@principal)    
+          %tr
+            %td.center{align: :center, style: 'word-break: break-word; border-collapse: collapse !important; vertical-align: top; text-align: center; margin: 0; padding: 0;'}
+              %center{style: "width: 100%;"}
 
-              %table{style: "background: #{sq_mail_color(:container_bg, @principal)};"}
-                %tr
-                  %td{style: "padding-left: 30px; padding-right: 30px; padding-top: 15px; padding-bottom: 15px; background: #{sq_mail_color(:container_bg, @principal)};"}
+                %table{style: "background: #{sq_mail_color(:container_bg, @principal)};"}
+                  %tr
+                    %td{style: "padding-left: 30px; padding-right: 30px; padding-top: 15px; padding-bottom: 15px; background: #{sq_mail_color(:container_bg, @principal)};"}
 
-                    = sq_mail_header(@subject, @principal)
+                      = sq_mail_header(@subject, @principal)
 
-                    %table.row{style: "background: #{sq_mail_color(:container_bg, @principal)}; border-spacing: 0; border-collapse: collapse; vertical-align: top; width: 100%; position: relative; padding: 0px;"}
-                      %tr
-                        %td.center{align: :center, style: 'word-break: break-word; -webkit-hyphens: auto; -moz-hyphens: auto; hyphens: auto; border-collapse: collapse !important; vertical-align: top; margin: 0; padding: 0;'}
-                          %center{style: "width: 100%; min-width: #{Settings.layout.mailer.foundation_mailer.full_column_width}px;"}
-                            %table.container.container-responsive{style: "border-spacing: 0; border-collapse: collapse; vertical-align: top; width: #{Settings.layout.mailer.foundation_mailer.full_column_width}px; margin-bottom: 30px; padding: 0;"}
-                              %tr
-                                %td{style: 'margin: 0; padding: 0;'}
-                                  = yield
+                      %table.row{style: "background: #{sq_mail_color(:container_bg, @principal)}; border-spacing: 0; border-collapse: collapse; vertical-align: top; width: 100%; position: relative; padding: 0px;"}
+                        %tr
+                          %td.center{align: :center, style: 'word-break: break-word; -webkit-hyphens: auto; -moz-hyphens: auto; hyphens: auto; border-collapse: collapse !important; vertical-align: top; margin: 0; padding: 0;'}
+                            %center{style: "width: 100%; min-width: #{Settings.layout.mailer.foundation_mailer.full_column_width}px;"}
+                              %table.container.container-responsive{style: "border-spacing: 0; border-collapse: collapse; vertical-align: top; width: #{Settings.layout.mailer.foundation_mailer.full_column_width}px; margin-bottom: 30px; padding: 0;"}
+                                %tr
+                                  %td{style: 'margin: 0; padding: 0;'}
+                                    = yield
 
-                    = sq_mail_footer(@principal)
+                      = sq_mail_footer(@principal)
