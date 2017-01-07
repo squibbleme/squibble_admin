@@ -64,8 +64,28 @@ form {
 // Entfernen des riesigen Abstandes unter Eingabe-
 // elementen
 //
+
 .form-group.form-md-line-input {
   margin-bottom: 0;
+
+  .form-control {
+    .transition(0.3s font-size ease-in-out);
+
+    & ~ label.has-error {
+      top: 0;
+      font-size: 14px;
+      color: #e73d4a;
+    }
+
+    &:focus {
+      font-size: 13px;
+
+      & ~ label.has-error {
+        font-size: 13px;
+      }
+    }
+  }
+
 
   .help-block {
     .opacity(1);
