@@ -7,11 +7,9 @@
   - cache [ 'layouts/shared/admin/meta/current_admin_user', current_admin_user ] do
     %meta{ name: :current_admin_user, data: { current_admin_user: { email: current_admin_user.email, name: current_admin_user.name, id: current_admin_user.id, roles: current_admin_user.role_keys } } }
 
-- if current_principal.present?
+- unless current_principal.is_a?(Backend::Principal::Missing)
   - cache [ 'layouts/shared/admin/meta/current_principal', current_principal ] do
     %meta{ name: :current_principal, data: current_principal.decorate.admin_layout_meta_tag_attributes }
 
 - if current_principal.present? && current_principal.respond_to?(:currency)
   %meta{ name: :'sq-current-principal-currency-unit', content: current_principal.currency.unit }
-- else
-  %meta{ name: :'sq-current-principal-currency-unit', content: Settings.company.currency.code }
