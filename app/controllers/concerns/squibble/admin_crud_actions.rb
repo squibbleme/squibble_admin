@@ -44,9 +44,9 @@ module Squibble::AdminCrudActions
 
   def end_of_association_chain
     if params[:query].present?
-      super
+      super.without(:version, :versions)
     else
-      super.backend
+      super.backend.without(:version, :versions)
     end
   end
 
