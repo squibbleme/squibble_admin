@@ -1,7 +1,21 @@
 module SquibbleAdmin::Mailer::GeneralHelper
+  # Diese Methode retourniert, ob der mitgegebene Principal
+  # (falls vorhanden) der Squibble Principal ist.
+  #
+  def sq_principal?(principal)
+    if principal.nil?
+      begin
+        @principal = Backend::Principal.find(Settings.default.application_principal_id)      
+      rescue NameError
+      end
+      return true
+    else
+      return principal.id.to_s == Settings.default.application_principal_id.to_s
+    end
+  end
   
   def sq_mail_principal_url(principal = nil)
-    if principal.nil? || !principal.main_domain_connected.present?
+    if principal.nil? || !principal.main_domain_connected.present? || !use_principal_layout?
       Settings.site.url
     else
       principal.main_domain_connected

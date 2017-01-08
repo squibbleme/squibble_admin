@@ -1,0 +1,31 @@
+- cache ['helpers/mailer/markup/general_helper/sq_mail_footer_custom'] do
+  %table.row.footer{style: "background: #{sq_mail_color(:container_bg, @principal)}; border-spacing: 0; border-collapse: collapse; vertical-align: top; width: 100%; position: relative; padding: 0px;"}
+    %tr
+      %td.center{align: :center, style: 'word-break: break-word; -webkit-hyphens: auto; -moz-hyphens: auto; hyphens: auto; border-collapse: collapse !important; vertical-align: top; margin: 0; padding: 0;'}
+        %center{style: "width: 100%;"}
+          = sq_mail_table_container do
+            %tr
+              %td.wrapper{align: :center, style: "margin: 0; padding: 0; border-top: 1px solid #{sq_mail_color(:primary, @principal)};"}
+                %center
+                  = sq_mail_p(style: 'text-align: center; margin-top: 30px; line-height: 100%; font-size: 11px;') do
+                    = I18n.t('layout.footer_custom.copyright')
+
+                  - unless @principal.nil? && @address.nil?
+                    = sq_mail_p(style: 'text-align: center; margin-top: 15px; line-height: 130%; font-size: 11px;') do
+                      - unless @address.nil?
+                        %span{style: 'margin-bottom: 5px;'}
+                          = I18n.t('layout.footer_custom.email_send_to', email: @address)
+                          %br
+                      - unless @principal.nil?
+                        %span{style: 'padding-right: 5px;'}
+                          = @principal.company.name
+                        %span{style: 'padding-left: 5px; padding-right: 5px;'}
+                          = @principal.company.street
+                        %span{style: 'padding-left: 5px; padding-right: 5px;'}
+                          = "#{@principal.company.country}-#{@principal.company.zip_code} #{@principal.company.town}"
+                        - if @principal.company.phone_number.present?
+                          %span{style: 'padding-left: 5px; padding-right: 5px;'}
+                            = @principal.company.phone_number
+                        - if @principal.company.email.present?
+                          %span{style: 'padding-left: 5px;'}
+                            = @principal.company.email

@@ -1,25 +1,43 @@
 module SquibbleAdmin::Mailer::Markup::GeneralHelper
+  def sq_mail_header(title, principal = nil)
+    unless sq_principal?(principal)
+      render partial: 'helpers/squibble_admin/mailer/markup/general_helper/sq_mail_header',
+             locals: { title: title }
+    end
+  end
 
-  def sq_mail_header(title)
-    render partial: 'helpers/squibble_admin/mailer/markup/general_helper/sq_mail_header',
-           locals: { title: title }
+  def sq_mail_header_full_width(principal = nil)
+    if sq_principal?(principal)
+      render partial: 'helpers/squibble_admin/mailer/markup/general_helper/sq_mail_header_custom_full_width'
+    end
   end
 
   def sq_mail_header_image(principal = nil, options = {})
-    styles = if options[:style].present?
-               options[:style]
-             end
+    if sq_principal?(principal)
+      image_tag(sq_mail_asset_url('logo-squibble-mailer.png'),
+        width: 610, height: 250,
+        class: 'header-image-custom',
+        alt: 'Squibble Header Logo',
+        title: 'Squibble Header Logo',
+        align: :left,
+        style: 'float: left; display: block; vertical-align: bottom; margin: 0;',
+      )
+    else
+      styles = if options[:style].present?
+                 options[:style]
+               end
 
-    brand_name = principal.present? ? principal.name : Settings.site.name
+      brand_name = principal.present? ? principal.name : Settings.site.name
 
-    image_tag("#{sq_mail_header_image_url(principal)}",
-      width: sq_mail_header_image_width(principal),
-      alt: "#{brand_name} Logo Header",
-      title: "#{brand_name} Logo Header",
-      style: "#{styles}",
-      align: :right
-      # height: sq_mail_header_image_height(principal),
-    )
+      image_tag("#{sq_mail_header_image_url(principal)}",
+        width: sq_mail_header_image_width(principal),
+        alt: "#{brand_name} Logo Header",
+        title: "#{brand_name} Logo Header",
+        style: "#{styles}",
+        align: :right
+        # height: sq_mail_header_image_height(principal),
+      )
+    end
   end
 
   def sq_mail_header_image_height(principal = nil)
@@ -39,8 +57,12 @@ module SquibbleAdmin::Mailer::Markup::GeneralHelper
     width > 300 ? 300 : width
   end
 
-  def sq_mail_footer
-    render partial: 'helpers/squibble_admin/mailer/markup/general_helper/sq_mail_footer'
+  def sq_mail_footer(principal = nil)
+    if sq_principal?(principal)
+      render partial: 'helpers/squibble_admin/mailer/markup/general_helper/sq_mail_footer_custom'
+    else
+      render partial: 'helpers/squibble_admin/mailer/markup/general_helper/sq_mail_footer'
+    end
   end
 
   def sq_mail_footer_image(principal = nil, options = {})
@@ -74,15 +96,25 @@ module SquibbleAdmin::Mailer::Markup::GeneralHelper
   end
 
 
-  def sq_mail_button(text, href, options = {})
-    width = options[:width].present? ? options[:width] : 250
-    height = options[:height].present? ? options[:height] : 30
-    font_size = options[:font_size].present? ? options[:font_size] : 20
-    margin = options[:margin].present? ? options[:margin] : 15
+  def sq_mail_button(text, href, principal = nil, options = {})
+    if sq_principal?(principal)
+      height = options[:height].present? ? options[:height] : 15
+      font_size = options[:font_size].present? ? options[:font_size] : 11
+      
+      border_color = options[:border_color].present? ? options[:border_color] : '#000000'
+      text_color = options[:text_color].present? ? options[:text_color] : '#ffffff'
 
-    button_color = options[:button_color].present? ? options[:button_color] : sq_mail_color(:primary, @principal)
-    border_color = options[:border_color].present? ? options[:border_color] : sq_mail_color(:border)
-    text_color = options[:text_color].present? ? options[:text_color] : sq_mail_color(:container_bg)
+      text = text.upcase
+    else
+      height = options[:height].present? ? options[:height] : 30
+      font_size = options[:font_size].present? ? options[:font_size] : 20
+
+      border_color = options[:border_color].present? ? options[:border_color] : sq_mail_color(:border, @principal)
+      text_color = options[:text_color].present? ? options[:text_color] : sq_mail_color(:container_bg, @principal)
+    end
+      width = options[:width].present? ? options[:width] : 290
+      margin = options[:margin].present? ? options[:margin] : 15
+      button_color = options[:button_color].present? ? options[:button_color] : sq_mail_color(:primary, @principal)
 
     render partial: 'helpers/squibble_admin/mailer/markup/general_helper/sq_mail_button',
            locals: {
@@ -108,7 +140,7 @@ module SquibbleAdmin::Mailer::Markup::GeneralHelper
             else
               sq_mail_color(:text, @principal)
             end
-    content_tag(:p, style: "color: #{color}; font-family: Roboto Condensed, sans-serif !important; font-size: 16px; margin-top: 10px; margin-bottom: 10px; #{styles}", &block)
+    content_tag(:p, style: "color: #{color}; font-size: 14px; margin-top: 10px; margin-bottom: 10px; #{styles}", &block)
   end
 
   def sq_mail_a(href, options = {}, &block)
@@ -136,7 +168,7 @@ module SquibbleAdmin::Mailer::Markup::GeneralHelper
             end
 
     content_tag(:h1,
-                style: "color: #{color}; font-family: Roboto Condensed, sans-serif !important; font-size: 20px; text-align: left; margin-top: 15px; margin-bottom: 30px; #{styles}",
+                style: "color: #{color}; font-size: 20px; text-align: left; margin-top: 15px; margin-bottom: 30px; #{styles}",
                 &block)
   end
 
@@ -151,14 +183,14 @@ module SquibbleAdmin::Mailer::Markup::GeneralHelper
             end
 
     content_tag(:h2,
-                style: "color: #{color}; font-family: Roboto Condensed, sans-serif !important; font-size: 18px; text-align: left; margin-top: 10px; margin-bottom: 10px; #{styles}",
+                style: "color: #{color}; font-size: 18px; text-align: left; margin-top: 10px; margin-bottom: 20px; #{styles}",
                 &block)
   end
 
   def sq_mail_table_container(&block)
     content_tag(:table,
                 class: 'container content-table',
-                style: 'width: 580px; margin: 0 auto; padding: 0; text-align: center; border-spacing: 0; border-collapse: collapse;',
+                style: 'width: 550px; margin: 0 auto; padding: 0 !important; text-align: center; border-spacing: 0; border-collapse: collapse;',
                 &block)
   end
 
@@ -179,7 +211,7 @@ module SquibbleAdmin::Mailer::Markup::GeneralHelper
     content_tag(:tr, style: 'padding: 0;', class: "#{classes}") do
       content_tag(:td,
                 class: "panel #{classes}",
-                style: "background: #{sq_mail_color(:well_bg, @principal)}; border: 1px solid #{sq_mail_color(:border, @principal)}; padding: 10px 10px 10px 10px; margin-bottom: 10px; #{styles}",
+                style: "background: #{sq_mail_color(:well_bg, @principal)}; max-width: 528px; border: 1px solid #{sq_mail_color(:border, @principal)}; padding: 10px 10px 10px 10px; margin-bottom: 10px; #{styles}",
                 &block)
     end
   end
@@ -217,7 +249,7 @@ module SquibbleAdmin::Mailer::Markup::GeneralHelper
              locals: {
                amount: amount,
                block: block,
-               styles: styles,
+               styles: "padding: 0; #{styles}",
                classes: classes,
                width: eval('Settings.layout.mailer.foundation_mailer.width.' + amount.to_s)
              }
