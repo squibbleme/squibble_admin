@@ -14,7 +14,7 @@ module SquibbleAdmin::Mailer::Markup::GeneralHelper
 
   def sq_mail_header_image(principal = nil, options = {})
     if sq_principal?(principal)
-      image_tag(sq_mail_asset_url('logo-squibble-mailer.png'),
+      image_tag(sq_mail_asset_url('squibble_email_header.png'),
         width: 610, height: 250,
         class: 'header-image-custom',
         alt: 'Squibble Header Logo',
@@ -100,7 +100,7 @@ module SquibbleAdmin::Mailer::Markup::GeneralHelper
     if sq_principal?(principal)
       height = options[:height].present? ? options[:height] : 15
       font_size = options[:font_size].present? ? options[:font_size] : 11
-      
+
       border_color = options[:border_color].present? ? options[:border_color] : '#000000'
       text_color = options[:text_color].present? ? options[:text_color] : '#ffffff'
 

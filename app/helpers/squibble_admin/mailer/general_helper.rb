@@ -5,7 +5,7 @@ module SquibbleAdmin::Mailer::GeneralHelper
   def sq_principal?(principal)
     if principal.nil?
       begin
-        @principal = Backend::Principal.find(Settings.default.application_principal_id)      
+        @principal = Backend::Principal.find(Settings.default.application_principal_id)
       rescue NameError
       end
       return true
@@ -13,7 +13,7 @@ module SquibbleAdmin::Mailer::GeneralHelper
       return principal.id.to_s == Settings.default.application_principal_id.to_s
     end
   end
-  
+
   def sq_mail_principal_url(principal = nil)
     if principal.nil? || !principal.main_domain_connected.present? || !use_principal_layout?
       Settings.site.url
@@ -23,7 +23,7 @@ module SquibbleAdmin::Mailer::GeneralHelper
   end
 
   def sq_mail_asset_url(asset)
-    "http://#{Rails.application.routes.default_url_options[:host]}/assets/#{asset}"
+    "#{Rails.application.routes.default_url_options[:protocol]}://#{Rails.application.routes.default_url_options[:host]}/assets/#{asset}"
   end
 
   def sq_mail_color_without_principal(key)
