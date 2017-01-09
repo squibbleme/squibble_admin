@@ -4,11 +4,7 @@ module SquibbleAdmin::Mailer::GeneralHelper
   #
   def sq_principal?(principal)
     if principal.nil?
-      begin
-        @principal = Backend::Principal.find(Settings.default.application_principal_id)
-      rescue NameError
-      end
-      return true
+      return false
     else
       return principal.id.to_s == Settings.default.application_principal_id.to_s
     end
