@@ -17,9 +17,14 @@ module Squibble::AdminCrudActions
 
     # TODO: Entfernen sobald die Übertragung in engine_admin erfolgreich war
     #
-    helper_method :form_path, :form_resource_url, :simple_form_resource
+    helper_method :form_path, :form_resource_url, :simple_form_resource, :form_back_to_overview_path
+
     def form_path
       'form'
+    end
+
+    def form_back_to_overview_path
+      collection_path
     end
 
     def simple_form_resource(resource)

@@ -2,6 +2,8 @@ module Squibble::AdminCrudAction::Show
   extend ActiveSupport::Concern
 
   included do
+    helper_method :show_back_to_overview_path
+
     def show
       # if stale?(etag: resource, last_modified: resource.updated_at, public: true)
       show! do
@@ -22,6 +24,10 @@ module Squibble::AdminCrudAction::Show
       @dashboard_show = [] unless @dashboard_show.is_a?(Array)
 
       @dashboard_show << [resource.send(attribute).count, attribute.to_sym, path]
+    end
+
+    def show_back_to_overview_path
+      collection_path
     end
   end
 end

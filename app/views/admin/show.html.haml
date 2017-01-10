@@ -14,6 +14,6 @@
     = show_for resource do |show|
       = render 'show_general', show: show
 
-  %a.hidden-print{ class: [ default_button_classes, 'btn-default' ], href: collection_path }
+  %a.hidden-print{ class: [ default_button_classes, 'btn-default' ], href: show_back_to_overview_path }
     %i.fa.fa-angle-double-left
     = t 'helpers.back_to_overview'
