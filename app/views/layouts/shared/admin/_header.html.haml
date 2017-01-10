@@ -20,7 +20,7 @@
             - cache [ 'layouts/admin/nav/current_admin_user', current_admin_user ] do
               .btn-group-img.btn-group
                 %button.btn.btn-sm.dropdown-toggle.sq-quick-sidebar-toggler{ type: :button }
-                  = sq_image_responsive_tag current_admin_user.decorate.profile_picture_url(:square_tiny), current_admin_user.name
+                  = image_tag current_admin_user.decorate.profile_picture_url(:square_tiny), title: current_admin_user.name, alt: current_admin_user.name, width: 35, height: 35
                   %span= current_admin_user.name
 
         = navigation
