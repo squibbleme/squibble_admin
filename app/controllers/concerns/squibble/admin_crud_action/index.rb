@@ -29,11 +29,9 @@ module Squibble::AdminCrudAction::Index
       set_meta_title resource_class.model_name.human(count: collection.total_count)
     end
 
-    def __after_index
-    end
+    def __after_index; end
 
-    def __before_index
-    end
+    def __before_index; end
 
     def _set_actions_index
       @actions_index = []

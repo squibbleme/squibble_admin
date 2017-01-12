@@ -23,8 +23,7 @@ module Squibble::AdminCrudAction::New
 
     private
 
-    def __after_new
-    end
+    def __after_new; end
 
     def get_clone_object(clone_by_id)
       resource_class.accessible_by(current_ability).find(clone_by_id)

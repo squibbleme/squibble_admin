@@ -15,10 +15,8 @@ module Squibble::AdminCrudAction::Edit
 
     private
 
-    def __after_edit
-    end
+    def __after_edit; end
 
-    def __before_edit
-    end
+    def __before_edit; end
   end
 end

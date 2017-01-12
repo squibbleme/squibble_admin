@@ -31,15 +31,12 @@ module Squibble::AdminCrudAction::Create
     def __handle_create_success(_resource, resource_class)
       __handle_create_success_callback
 
-      create_tracking
-
       flash[:notice] = t('flash.actions.create.notice', resource_name: resource_class.model_name.human)
 
       redirect_to after_create_success_path
     end
 
-    def __handle_create_success_callback
-    end
+    def __handle_create_success_callback; end
 
     def __handle_create_failure(_resource, _resource_class)
       __handle_create_failure_callback
@@ -48,18 +45,17 @@ module Squibble::AdminCrudAction::Create
                    status: 400
     end
 
-    def __handle_create_failure_callback
-    end
+    def __handle_create_failure_callback; end
 
     # Internal Helper Methods
     #
     def after_create_success_path
       if params[:_add_another]
-         new_resource_path
-       elsif params[:_add_edit]
-         edit_resource_path(resource._id)
-       else
-         __after_create_collection_path
+        new_resource_path
+      elsif params[:_add_edit]
+        edit_resource_path(resource._id)
+      else
+        __after_create_collection_path
        end
     end
   end

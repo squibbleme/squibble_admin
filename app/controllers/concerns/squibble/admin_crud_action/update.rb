@@ -27,15 +27,13 @@ module Squibble::AdminCrudAction::Update
 
     private
 
-    def __after_update
-    end
+    def __after_update; end
 
     def __after_update_collection_path
       collection_path
     end
 
-    def __before_update
-    end
+    def __before_update; end
 
     def __handle_update_failure(_resource, _resource_class)
       render :edit, change: 'sq_resource:edit'
@@ -43,9 +41,6 @@ module Squibble::AdminCrudAction::Update
 
     def __handle_update_success(_resource, resource_class)
       flash[:notice] = t('flash.actions.update.notice', resource_name: resource_class.model_name.human)
-
-      create_tracking
-
       redirect_to __after_update_collection_path
     end
   end

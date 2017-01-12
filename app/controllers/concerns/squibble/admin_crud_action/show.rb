@@ -17,8 +17,7 @@ module Squibble::AdminCrudAction::Show
 
     private
 
-    def __after_show
-    end
+    def __after_show; end
 
     def _register_show_dashboard(attribute, path = nil)
       @dashboard_show = [] unless @dashboard_show.is_a?(Array)
