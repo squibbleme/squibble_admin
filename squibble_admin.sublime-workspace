@@ -520,10 +520,11 @@
 	"buffers":
 	[
 		{
-			"file": "app/controllers/concerns/squibble/admin_exception_handling.rb",
+			"file": "app/views/admin/_index_actions.html.haml",
 			"settings":
 			{
-				"buffer_size": 1086,
+				"buffer_size": 1317,
+				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
 		}
@@ -794,12 +795,13 @@
 		"/Z/squibble/plugins/squibble_admin/app/controllers",
 		"/Z/squibble/plugins/squibble_admin/app/controllers/concerns",
 		"/Z/squibble/plugins/squibble_admin/app/controllers/concerns/squibble",
-		"/Z/squibble/plugins/squibble_admin/app/views/helpers/squibble_admin/admin/markup",
-		"/Z/squibble/plugins/squibble_admin/app/views/helpers/squibble_admin/admin/markup/show_helper",
-		"/Z/squibble/plugins/squibble_admin/app/views/helpers/squibble_admin/markup"
+		"/Z/squibble/plugins/squibble_admin/app/controllers/concerns/squibble/admin_crud_action",
+		"/Z/squibble/plugins/squibble_admin/app/views",
+		"/Z/squibble/plugins/squibble_admin/app/views/admin"
 	],
 	"file_history":
 	[
+		"/Z/squibble/plugins/squibble_admin/app/controllers/concerns/squibble/admin_crud_action/index.rb",
 		"/Z/squibble/plugins/squibble_admin/app/helpers/squibble_admin/admin/markup/show_helper.rb",
 		"/Z/squibble/plugins/squibble_admin/lib/squibble_admin/version.rb",
 		"/Z/squibble/plugins/squibble_admin/app/views/helpers/squibble_admin/admin/markup/show_helper/_image_show.html.haml",
@@ -809,7 +811,6 @@
 		"/Z/squibble/plugins/squibble_admin/app/views/layouts/shared/admin/_header.html.haml",
 		"/Z/squibble/plugins/squibble_admin/app/views/layouts/shared/admin/_meta.html.haml",
 		"/Z/squibble/plugins/squibble_admin/app/views/admin/index.html.haml",
-		"/Z/squibble/plugins/squibble_admin/app/controllers/concerns/squibble/admin_crud_action/index.rb",
 		"/Z/squibble/plugins/squibble_admin/app/helpers/squibble_admin/markup/portlet_helper.rb",
 		"/Z/squibble/plugins/squibble_admin/app/views/admin/_form.html.haml",
 		"/Z/squibble/plugins/squibble_admin/app/helpers/squibble_admin/markup/button_helper.rb",
@@ -1014,6 +1015,7 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"_register_index_action",
 			"preview_content_type",
 			"preview_show",
 			"default_table_classes",
@@ -1140,8 +1142,7 @@
 			"_build_reversal",
 			"date",
 			"AccountingYear",
-			"accounting_year",
-			"outstanding_am"
+			"accounting_year"
 		],
 		"highlight": true,
 		"in_selection": false,
@@ -1224,26 +1225,27 @@
 			[
 				{
 					"buffer": 0,
-					"file": "app/controllers/concerns/squibble/admin_exception_handling.rb",
-					"semi_transient": true,
+					"file": "app/views/admin/_index_actions.html.haml",
+					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 1086,
+						"buffer_size": 1317,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								1086,
-								1086
+								932,
+								932
 							]
 						],
 						"settings":
 						{
+							"color_scheme": "Packages/User/Color Highlighter/themes/Monokai.tmTheme",
 							"editorconfig": true,
 							"ensure_newline_at_eof_on_save": true,
-							"syntax": "Packages/Ruby/Ruby.sublime-syntax",
+							"syntax": "Packages/Rails/Ruby Haml.sublime-syntax",
 							"tab_size": 2,
 							"translate_tabs_to_spaces": true,
 							"trim_trailing_white_space_on_save": true
@@ -1855,7 +1857,7 @@
 	"show_open_files": false,
 	"show_tabs": true,
 	"side_bar_visible": true,
-	"side_bar_width": 405.0,
+	"side_bar_width": 253.0,
 	"status_bar_visible": true,
 	"template_settings":
 	{

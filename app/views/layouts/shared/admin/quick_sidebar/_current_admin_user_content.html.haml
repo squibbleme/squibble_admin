@@ -9,20 +9,10 @@
   - rescue ActionView::MissingTemplate
 
   %li
-    %a{ href: main_app.destroy_admin_user_session_path }
+    = link_to eval(SquibbleAdminConfig.app.sign_out_path) do
       %i.fa.fa-sign-out
       = t('.sign_out')
 
   - begin
     = render "layouts/shared/admin/quick_sidebar/current_admin_user_custom_content_after"
   - rescue ActionView::MissingTemplate
-
-
--#
-  %ul.media-list.list-items
-    %li.media
-      .media-status
-        %span.badge.badge-success 3
-      .media-body
-        %h4.media-heading aktueller mandant
-        .media-heading-sub untertitel
