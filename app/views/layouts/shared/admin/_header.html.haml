@@ -15,8 +15,7 @@
             %img{ src: asset_path(SquibbleAdminConfig.app.logo.path), alt: SquibbleAdminConfig.app.name }
 
           .topbar-actions
-            = render partial: 'layouts/shared/admin/header/custom_nav_content'
-
+            = render 'layouts/shared/admin/header/custom_nav_content'
             = render 'layouts/shared/admin/header/current_admin_user'
 
         = navigation
