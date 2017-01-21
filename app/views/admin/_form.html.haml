@@ -1,4 +1,4 @@
-= simple_form_for( simple_form_resource(resource), url: form_resource_url(resource), html: { remote: :true, class: [ ( resource.new_record? ? :new_record : :edit_record ), resource_class.to_s.underscore.gsub('/', '_') ] } ) do |f|
+= simple_form_for( simple_form_resource, url: form_resource_url, html: { remote: :true, class: [ ( resource.new_record? ? :new_record : :edit_record ), resource_class.to_s.underscore.gsub('/', '_') ] } ) do |f|
   .form-body
 
     = form_error_messages(resource.errors)
@@ -6,9 +6,9 @@
     -# ple@2014-10-01:
     -# Hinzufügen der Mandanten ID zum Formular, sofern der entsprechende Datensatz
     -# über eine Verbindung zum Mandanten verfügt.
-    - if resource.respond_to?(:principal_id)
+    - if form_resource.respond_to?(:principal_id)
       = f.input :principal_id, as: :hidden
 
     = render 'form_general', f: f
 
-  = render 'form_actions', f: f, resource: resource
+  = render 'form_actions', f: f, resource: form_resource
