@@ -5,9 +5,10 @@
       - actions.each do |action|
         - cache [ 'admin/index_actions/button_item', action[:path], action[:resource_class]] do
           .btn-group
-            = link_to action[:path], class: [ 'btn btn-sm', default_green ] do
+            - translation_key = "admin.#{action[:resource_class].to_s.underscore.pluralize.gsub('/', '.')}.#{action[:type]}.title"
+            = link_to action[:path], class: [ 'btn btn-sm', default_green ], data: { translation_key: translation_key } do
               %i.fa.fa-plus
-              = t "admin.#{action[:resource_class].to_s.downcase.pluralize.underscore.gsub('/', '.')}.#{action[:type]}.title", default: t('helpers.new_resource', model_name: translated_resource_class(action[:resource_class]))
+              = t translation_key, default: t('helpers.new_resource', model_name: translated_resource_class(action[:resource_class]))
     - else
       .btn-group
         %a.dropdown-toggle{ class: [ default_button_classes, 'btn-sm', default_green ], type: :button, data: { toggle: :dropdown, hower: :dropdown, close: { others: :true } } }
