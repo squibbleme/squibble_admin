@@ -50,13 +50,17 @@ module Squibble::AdminCrudAction::Create
     # Internal Helper Methods
     #
     def after_create_success_path
-      if params[:_add_another]
-        new_resource_path
-      elsif params[:_add_edit]
-        edit_resource_path(resource._id)
+      if params[:_callback_url].present?
+        params[:_callback_url]
       else
-        __after_create_collection_path
-       end
+        if params[:_add_another]
+          new_resource_path
+        elsif params[:_add_edit]
+          edit_resource_path(resource._id)
+        else
+          __after_create_collection_path
+        end
+      end
     end
   end
 end
