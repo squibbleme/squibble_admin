@@ -18,7 +18,7 @@ module SquibbleAdmin::Markup::ShowHelper
       end
 
       tmp << content_tag(:div, nil, class: 'sq-action-text', data: { toggle: :tooltip, placement: :top }, title: options[:label]) do
-        content_tag :span, options[:label]
+        content_tag :span, options[:label_short].present? ? options[:label_short] : options[:label]
       end
     end
   end
