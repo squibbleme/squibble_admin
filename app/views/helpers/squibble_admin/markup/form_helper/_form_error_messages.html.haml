@@ -1,8 +1,0 @@
-.note.note-danger
-  %dl.dl-horizontal
-    - errors.messages.each do |key, message|
-      %dt= resource_attribute_name(key)
-      %dd
-        %ul.list-unstyled
-          - message.each do |msg|
-            %li= msg

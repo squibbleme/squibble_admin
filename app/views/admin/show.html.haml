@@ -1,19 +1,22 @@
-- breadcrumb default_breadcrumb_symbol(params), resource
+= render template: 'squibble_base_admin/application/show'
 
-- content_for :page_head do
-  - if @page_title.present?
-    %h1
-      = @page_title
-      - if @subtitle.present?
-        %small= @subtitle
+-#
+  - breadcrumb show_breadcrumb, resource
 
-%section.admin_show.sq-resource-show{ id: "sq_resource:show:#{resource.id}", class: resource_class.to_s.parameterize.underscore }
-  = render 'show_dashboard', resource: resource
+  - content_for :page_head do
+    - if @page_title.present?
+      %h1
+        = @page_title
+        - if @subtitle.present?
+          %small= @subtitle
 
-  - cache [ 'admin/show/show_for', resource ] do
-    = show_for resource do |show|
-      = render 'show_general', show: show
+  %section.admin_show.sq-resource-show{ id: "sq_resource:show:#{resource.id}", class: resource_class.to_s.parameterize.underscore }
+    = render 'show_dashboard', resource: resource
 
-  %a.hidden-print{ class: [ default_button_classes, 'btn-default' ], href: show_back_to_overview_path }
-    %i.fa.fa-angle-double-left
-    = t 'helpers.back_to_overview'
+    - cache [ 'admin/show/show_for', resource ] do
+      = show_for resource do |show|
+        = render 'show_general', show: show
+
+    %a.hidden-print{ class: [ default_button_classes, 'btn-default' ], href: show_back_to_overview_path }
+      %i.fa.fa-angle-double-left
+      = t 'helpers.back_to_overview'

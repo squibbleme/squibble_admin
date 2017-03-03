@@ -1,9 +1,12 @@
-- content_for :page_head do
-  - if @page_title.present?
-    %h1
-      = @page_title
-      - if @subtitle.present?
-        %small= @subtitle
+= render template: 'squibble_base_admin/application/new'
 
-%section.sq-resource-new#sq_resource:new
-  = render form_path
+-#
+  - content_for :page_head do
+    - if @page_title.present?
+      %h1
+        = @page_title
+        - if @subtitle.present?
+          %small= @subtitle
+
+  %section.sq-resource-new#sq_resource:new
+    = render form_path
