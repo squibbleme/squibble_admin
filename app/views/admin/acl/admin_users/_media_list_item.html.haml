@@ -1,6 +1,0 @@
-- cache ['admin/acl/admin_users/media_list_item', resource] do
-  %li.media
-    = image_tag current_admin_user.decorate.profile_picture_url(:square_small), class: 'media-object', title: current_admin_user.name, alt: current_admin_user.name, width: 50
-    .media-body
-      %h4.media-heading= resource.name
-      .media-heading-sub= resource.email
